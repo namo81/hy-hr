@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title></title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/popup.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" /> <!-- 2018-01-25 스크롤 css 추가 -->
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script> <!-- 2018-01-25 스크롤 js 추가 -->
+	<script src="/js/common.js"></script>
+
+	<!-- 2017-12-28 파일명 노출 추가 -->
+	<script>
+		$(function(){
+			$('#add-file').on('change',function(){
+				var fn = $(this).val();
+				$('.file-name').val(fn);
+			});
+		});
+	</script>
+	<!-- // 2017-12-28 파일명 노출 추가 -->
+</head>
+<body>
+	<div id="popup" class="pop-comment">
+		<!-- header -->
+		<header id="pop-top">
+			<h1 class="pop-title">Comment</h1>
+		</header>
+		
+		<!-- mid -->
+		<div id="pop-mid">
+			<div class="cmt-list mCustomScrollbar scroll-btm">
+				<!-- 2018-01-16 추가 -->
+				<div class="btn-view">
+					<button type="button" class="btn-s"><span>+ 더보기</span></button>
+				</div>
+				<!-- // 2018-01-16 추가 -->
+				<ul>
+					<!-- 2020-01-08 1on1 추가 -->
+					<li class="one-one" tabindex="0">											
+						<div class="comment-tit">
+							<p class="tit">1 on 1 note</p>
+							<div class="date-wrap">
+								<span class="date">'20.01.01 11:00</span>
+								<button type="button" class="btn-favorite non-tx on"><span><i>즐겨찾기</i></span></button>
+							</div>
+						</div>
+
+						<div class="comment-tx">
+							<div class="tx">
+								<div class="tx-user">
+									<span class="img"><img src="/images/temp-user.png" alt=""></span>
+									<span class="title">Coach</span>
+									<span class="name">김팀장</span>
+								</div>
+								<p class="tx-cnt">미팅 내용 공유해주세요. 디자인 시안은 2종 이상 가는 것이 좋겠습니다.</p>				
+							</div>
+							<div class="tx">
+								<div class="tx-user">
+									<span class="img"><img src="/images/temp-user.png" alt=""></span>
+									<span class="title">Coachee</span>
+									<span class="name">최사원</span>
+								</div>
+								<p class="tx-cnt">미팅 내용 공유해주세요. 디자인 시안은 2종 이상 가는 것이 좋겠습니다.</p>				
+							</div>
+							<div class="cmt-tx-ctl">
+								<div class="cmt-file-list">
+									<p class="file-title">첨부 파일 :</p>
+									<ul>
+										<li><a href="#" class="btn-file-down">SKT프로젝트 SKT프로젝트 SKT프로젝트 SKT프로젝트 .pptx</a></li>
+										<li><a href="#" class="btn-file-down">SKT프로젝트.pptx</a></li>
+										<li><a href="#" class="btn-file-down">SKT프로젝트.pptx</a></li>
+									</ul>													
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn-detail-one"><span><i class="ico"></i>자세히 보기</span></a>
+					</li>
+					<!-- // 2020-01-08 1on1 추가 -->
+					<li tabindex="0">
+						<div class="comment-top">
+							<span class="img"><img src="/images/temp-user.png" alt=""></span>
+							<span class="name">최사원</span>
+							<span class="date">'18.01.02 14:24</span>
+						</div>
+						<div class="comment-tx">
+							<div class="tx">
+								<p class="img-cmt"><img src="/images/temp_cmt.png" alt=""></p>
+								<p class="tx-cnt">미팅 내용 공유해주세요. 디자인 시안은 2종 이상 가는 것이 좋겠습니다.</p>				
+							</div>
+							<div class="cmt-tx-ctl">
+								<div class="fr"><button type="button" class="btn-tx-more"><span>더보기</span></button></div>
+								<a href="#" class="btn-file-down">첨부파일 : SKT프로젝트.pptx</a>
+							</div>
+						</div>
+						<div class="cmt-ctl">
+							<div class="fl">
+								<button type="button" class="reply-count new"><strong>13</strong>개</button>
+								<button type="button" class="write-reply"><span>댓글 달기</span></button>
+							</div>
+							<div class="fr">
+								<!-- 2019-04-22 comment 좋아요 수정 -->
+								<button type="button" class="btn-like non-tx"><span><i>좋아요</i></span></button>
+								<button type="button" class="btn-like-count"><span>99+</span></button>
+								<!-- // 2019-04-22 comment 좋아요 수정 -->
+								<button type="button" class="btn-favorite  non-tx"><span><i>즐겨찾기</i></span></button>
+							</div>
+						</div>
+						<!-- reply -->
+						<div class="cmt-reply">
+							<button type="button" class="btn-reply-more"><span>댓글 더보기</span></button>
+							<ul>
+								<li>
+									<div class="comment-top">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">최사원</span>
+										<span class="date">'18.01.02  14:24</span>
+										<!-- 2019-04-22 댓글 좋아요 수정 -->
+										<button type="button" class="btn-like non-tx"><span><i>좋아요</i></span></button>
+										<button type="button" class="btn-like-count"><span>99+</span></button>
+										<!-- // 2019-04-22 댓글 좋아요 수정 -->
+										<button type="button" class="btn-tgl-ctl"><span>수정/삭제 버튼 보기</span></button>
+										<div class="if-my-ctl">
+											<a href="#" class="btn-cmt-modify"><img src="/images/ico_cmt-modify.png" alt="수정"></a>
+											<a href="#" class="btn-cmt-del"><img src="/images/ico_cmt-del.png" alt="삭제"></a>
+										</div>
+									</div>
+									<div class="tx">
+										<textarea name="" id="">TESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSET</textarea>
+										<div class="btns tr">
+											<a href="#" class="btn-xs">확인</a>
+											<a href="#" class="btn-xs">취소</a>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="comment-top">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">최사원</span>
+										<span class="date">'18.01.02  14:24</span>													
+										<button type="button" class="btn-like non-tx"><span><i>좋아요</i></span></button>
+										<button type="button" class="btn-like-count"><span>99+</span></button>
+										<button type="button" class="btn-tgl-ctl"><span>수정/삭제 버튼 보기</span></button>
+										<div class="if-my-ctl">
+											<a href="#" class="btn-cmt-modify"><img src="/images/ico_cmt-modify.png" alt="수정"></a>
+											<a href="#" class="btn-cmt-del"><img src="/images/ico_cmt-del.png" alt="삭제"></a>
+										</div>
+									</div>
+									<div class="tx">TESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSET</div>
+								</li>
+							</ul>
+
+							<!-- 댓글 입력 -->
+							<div class="reply-inp">
+								<span class="img"><img src="/images/temp-user.png" alt=""></span>
+								<div class="inp">
+									<textarea name="" id="" style="border:none;" class="tx-height-auto" placeholder="댓글을 입력하세요"></textarea> <!-- 2020-02-19 수정 -->
+									<button type="submit"><span>등록</span></button>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<li class="my" tabindex="0">
+						<div class="comment-top">
+							<span class="img"><img src="/images/temp-user.png" alt=""></span>
+							<span class="name">최사원</span>
+							<span class="date">'18.01.02 14:24</span>
+							<a href="#" class="btn-cmt-modify"><img src="/images/ico_cmt-modify.png" alt="수정"></a>
+							<a href="#" class="btn-cmt-del"><img src="/images/ico_cmt-del.png" alt="삭제"></a>
+						</div>
+						<div class="comment-tx">
+							<div class="tx">
+								<p class="tx-cnt">미팅 내용 공유해주세요. 디자인 시안은 2종 이상 가는 것이 좋겠습니다.</p>				
+							</div>
+							<div class="cmt-tx-ctl">
+								<!-- <div class="fr"><button type="button" class="btn-tx-more"><span>더보기</span></button></div> -->
+								<a href="#" class="btn-file-down">첨부파일 : SKT프로젝트.pptx</a>
+							</div>
+						</div>
+						<div class="cmt-ctl">
+							<div class="fl">
+								<button type="button" class="reply-count new"><strong>13</strong>개</button>
+								<button type="button" class="write-reply"><span>댓글 달기</span></button>
+							</div>
+							<div class="fr">
+								<button type="button" class="btn-like non-tx"><span><i>좋아요</i></span></button>
+								<button type="button" class="btn-like-count"><span>99+</span></button>
+								<button type="button" class="btn-favorite  non-tx"><span><i>즐겨찾기</i></span></button>
+							</div>
+						</div>
+						<!-- reply -->
+						<div class="cmt-reply">
+							<button type="button" class="btn-reply-more"><span>댓글 더보기</span></button>
+							<ul>
+								<li>
+									<div class="comment-top">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">최사원</span>
+										<span class="date">'18.01.02  14:24</span>													
+										<button type="button" class="btn-like non-tx"><span><i>좋아요</i></span></button>
+										<button type="button" class="btn-like-count"><span>99+</span></button>
+										<button type="button" class="btn-tgl-ctl"><span>수정/삭제 버튼 보기</span></button>
+										<div class="if-my-ctl">
+											<a href="#" class="btn-cmt-modify"><img src="/images/ico_cmt-modify.png" alt="수정"></a>
+											<a href="#" class="btn-cmt-del"><img src="/images/ico_cmt-del.png" alt="삭제"></a>
+										</div>
+									</div>
+									<div class="tx">
+										<textarea name="" id="">TESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSET</textarea>
+										<div class="btns tr">
+											<a href="#" class="btn-xs">확인</a>
+											<a href="#" class="btn-xs">취소</a>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="comment-top">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">최사원</span>
+										<span class="date">'18.01.02  14:24</span>													
+										<button type="button" class="btn-like non-tx"><span><i>좋아요</i></span></button>
+										<button type="button" class="btn-like-count"><span>99+</span></button>
+										<button type="button" class="btn-tgl-ctl"><span>수정/삭제 버튼 보기</span></button>
+										<div class="if-my-ctl">
+											<a href="#" class="btn-cmt-modify"><img src="/images/ico_cmt-modify.png" alt="수정"></a>
+											<a href="#" class="btn-cmt-del"><img src="/images/ico_cmt-del.png" alt="삭제"></a>
+										</div>
+									</div>
+									<div class="tx">TESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSET</div>
+								</li>
+							</ul>
+
+							<!-- 댓글 입력 -->
+							<div class="reply-inp">
+								<span class="img"><img src="/images/temp-user.png" alt=""></span>
+								<div class="inp">
+									<textarea name="" id="" style="border:none;" class="tx-height-auto" placeholder="댓글을 입력하세요"></textarea> <!-- 2020-02-19 수정 -->
+									<button type="submit"><span>등록</span></button>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!-- 수정 -->
+					<li class="my" tabindex="0">
+						<div class="comment-top">
+							<span class="img"><img src="/images/temp-user.png" alt=""></span>
+							<span class="name">최사원</span>
+							<span class="date">'18.01.02 14:24</span>
+						</div>
+						<div class="comment-tx">
+							<div class="tx">
+								<textarea name="" rows="" cols="">미팅 내용 공유해주세요. 디자인 시안은 2종 이상 가는 것이 좋겠습니다.</textarea>
+							</div>
+							<div class="cmt-tx-ctl">
+								<a href="#" class="btn-file-down">첨부파일 : SKT프로젝트.pptx <img src="/images/ico_del.png" alt=""></a>
+							</div>
+							<div class="btns tr">
+								<a href="#" class="btn-xs">확인</a>
+								<a href="#" class="btn-xs">취소</a>
+							</div>
+						</div>
+						<div class="cmt-ctl">
+							<div class="fl">
+								<button type="button" class="reply-count new"><strong>13</strong>개</button>
+								<button type="button" class="write-reply"><span>댓글 달기</span></button>
+							</div>
+							<div class="fr">
+								<button type="button" class="btn-like non-tx"><span><i>좋아요</i></span></button>
+								<button type="button" class="btn-like-count"><span>99+</span></button>
+								<button type="button" class="btn-favorite  non-tx"><span><i>즐겨찾기</i></span></button>
+							</div>
+						</div>
+						<!-- reply -->
+						<div class="cmt-reply">
+							<ul>
+							</ul>
+
+							<!-- 댓글 입력 -->
+							<div class="reply-inp">
+								<span class="img"><img src="/images/temp-user.png" alt=""></span>
+								<div class="inp">
+									<textarea name="" id="" style="border:none;" class="tx-height-auto" placeholder="댓글을 입력하세요"></textarea> <!-- 2020-02-19 수정 -->
+									<button type="submit"><span>등록</span></button>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					
+					<!-- 수정 - img -->
+					<li class="my" tabindex="0">
+						<div class="comment-top">
+							<span class="img"><img src="/images/temp-user.png" alt=""></span>
+							<span class="name">최사원</span>
+							<span class="date">'18.01.02 14:24</span>
+						</div>
+						<div class="comment-tx modify">
+							<div class="tx">
+								<p class="img-cmt">
+									<img src="/images/temp_cmt.png" alt="">
+									<button type="button"><span>이미지 삭제</span></button>
+								</p>
+								<textarea name="" rows="" cols="">미팅 내용 공유해주세요. 디자인 시안은 2종 이상 가는 것이 좋겠습니다.</textarea>
+							</div>
+							<div class="cmt-tx-ctl">
+								<a href="#" class="btn-file-down">첨부파일 : SKT프로젝트.pptx <img src="/images/ico_del.png" alt=""></a>
+							</div>
+							<div class="btns tr">
+								<a href="#" class="btn-xs">확인</a>
+								<a href="#" class="btn-xs">취소</a>
+							</div>
+						</div>
+						<div class="cmt-ctl">
+							<div class="fl">
+								<button type="button" class="reply-count new"><strong>13</strong>개</button>
+								<button type="button" class="write-reply"><span>댓글 달기</span></button>
+							</div>
+							<div class="fr">
+								<button type="button" class="btn-like non-tx"><span><i>좋아요</i></span></button>
+								<button type="button" class="btn-like-count"><span>99+</span></button>
+								<button type="button" class="btn-favorite  non-tx"><span><i>즐겨찾기</i></span></button>
+							</div>
+						</div>
+						<!-- reply -->
+						<div class="cmt-reply">
+							<button type="button" class="btn-reply-more"><span>댓글 더보기</span></button>
+							<ul>
+								<li>
+									<div class="comment-top">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">최사원</span>
+										<span class="date">'18.01.02  14:24</span>													
+										<button type="button" class="btn-like non-tx"><span><i>좋아요</i></span></button>
+										<button type="button" class="btn-like-count"><span>99+</span></button>
+										<button type="button" class="btn-tgl-ctl"><span>수정/삭제 버튼 보기</span></button>
+										<div class="if-my-ctl">
+											<a href="#" class="btn-cmt-modify"><img src="/images/ico_cmt-modify.png" alt="수정"></a>
+											<a href="#" class="btn-cmt-del"><img src="/images/ico_cmt-del.png" alt="삭제"></a>
+										</div>
+									</div>
+									<div class="tx">
+										<textarea name="" id="">TESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSET</textarea>
+										<div class="btns tr">
+											<a href="#" class="btn-xs">확인</a>
+											<a href="#" class="btn-xs">취소</a>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="comment-top">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">최사원</span>
+										<span class="date">'18.01.02  14:24</span>													
+										<button type="button" class="btn-like non-tx"><span><i>좋아요</i></span></button>
+										<button type="button" class="btn-like-count"><span>99+</span></button>
+										<button type="button" class="btn-tgl-ctl"><span>수정/삭제 버튼 보기</span></button>
+										<div class="if-my-ctl">
+											<a href="#" class="btn-cmt-modify"><img src="/images/ico_cmt-modify.png" alt="수정"></a>
+											<a href="#" class="btn-cmt-del"><img src="/images/ico_cmt-del.png" alt="삭제"></a>
+										</div>
+									</div>
+									<div class="tx">TESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSETTESTESTESSTSETSET</div>
+								</li>
+							</ul>
+
+							<!-- 댓글 입력 -->
+							<div class="reply-inp">
+								<span class="img"><img src="/images/temp-user.png" alt=""></span>
+								<div class="inp">
+									<textarea name="" id="" style="border:none;" class="tx-height-auto" placeholder="댓글을 입력하세요"></textarea> <!-- 2020-02-19 수정 -->
+									<button type="submit"><span>등록</span></button>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="cmt-input">
+				<textarea name="" rows="" cols=""></textarea>
+				<!-- 2017-12-28 수정 -->
+				<div class="info">
+					<input type="text" class="file-name" value="">
+					<p class="count">3000/3000</p>
+				</div>
+				<!-- // 2017-12-28 수정 -->
+				<div class="btns">
+					<div class="inp-file">
+						<label for="add-file" class="">파일첨부</label><!-- 파일 첨부상태일 경우 'on' 클래스 추가 -->
+						<input type="file" class="" id="add-file">
+					</div>
+					<button type="button" class="btn-secret"><span>비밀</span></button><!-- 비밀설정 일 경우 'on' 클래스 추가 -->
+					<button type="submit" class="btn-reg"><span>등록</span></button>
+				</div>
+			</div>
+
+		</div>
+
+		<button type="button" class="btn-close-popup" onclick="window.close();">닫기</button>
+	</div>
+
+</body>
+</html>

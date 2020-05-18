@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title></title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mousewheel.min.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<script>
+		$(function(){
+			/* 테이블 내 + 표시 말풍선 */
+			$('.tip-wrap').hover(function(){
+				var $this = $(this),
+				$btn = $(this).find('.btn-tip'),
+				$cnt = $(this).find('.cnt-tip'),
+				//gapT = Number($btn.attr('data-top')),
+				gapL = Number($btn.attr('data-left')),
+				$btnH = $btn.innerHeight(),
+				$btnT = $(this).position().top + $btnH,
+				$btnL = $(this).position().left + gapL;
+				
+				$cnt.css({'top':''+$btnT+'px','left':''+$btnL+'px'});
+				$this.toggleClass('on');
+			});
+
+		});
+	</script>
+
+</head>
+<body>
+	<div id="popup" class="pop-type3">		<!-- 2018-10-02 type 변경 -->
+		<!-- header -->
+		<header id="pop-top">
+			<h1 class="pop-title">Dashboard</h1>
+		</header>
+
+		<!-- 2018-10-02 구조 변경 및 width 변경 -->
+		<div id="pop-mid" style="width:913px;">
+
+			<!-- 리더용 -->
+			<div class="leader-stat"> <!-- 2018-08-22 클래스 수정 -->
+				
+				<!-- 상단 그래프 -->
+				<div class="graph-wrap">
+					<ul>
+						<li class="graph-cnt blank"> <!-- 2018-07-26 blank 클래스 추가 -->
+							<div class="title balloon-wrap">
+								<button type="button" class="btn-balloon" data-top="5" data-left="-5"><span>Task</span></button> 기준:등록인원
+								<div class="cnt-balloon">
+									Task Feedback완료 / Task 진행중 – Task 비율
+								</div>
+							</div>
+							<div class="graph">
+								<div class="inbox"><span></span></div>
+							</div>
+							<div class="graph-tx">
+								<span class="comp">진행/완료<strong><i>0</i>%</strong></span>
+								<span class="none">미등록<strong><i>0</i>%</strong></span>
+							</div>
+						</li>
+						
+						<li class="graph-cnt">
+							<div class="title balloon-wrap">
+								<button type="button" class="btn-balloon" data-top="5" data-left="-5"><span>Comment</span></button> 기준:작성인원
+								<div class="cnt-balloon">
+									Task에 Commnet 작성 / 미작성 - 인원 비율
+								</div>
+							</div>
+							<div class="graph">
+								<div class="inbox"><span style="width:0%"></span></div>
+							</div>
+							<div class="graph-tx">
+								<span class="comp">작성<strong><i>60</i>%</strong></span>
+								<span class="none">미작성<strong><i>100</i>%</strong></span>
+							</div>
+						</li>
+						
+						<li class="graph-cnt"> <!-- 2018-07-26 green 클래스 제거 -->
+							<div class="title balloon-wrap">
+								<button type="button" class="btn-balloon" data-top="5" data-left="-5"><span>Self-review</span></button> 기준:건수
+								<div class="cnt-balloon">
+									Self-Review 완료 / Task 종료일이 경과 혹은 임박(일주일 이내)하였으나, <br> Self-Review 미완료 - Task 수 비율
+								</div>
+							</div>
+							<div class="graph">
+								<div class="inbox"><span style="width:0%"></span></div>
+							</div>
+							<div class="graph-tx">
+								<span class="comp">완료<strong><i>20</i>%</strong></span>
+								<span class="none">미완료<strong><i>100</i>%</strong></span>
+							</div>
+						</li>
+						
+						<li class="graph-cnt"> <!-- 2018-07-26 green 클래스 제거 -->
+							<div class="title balloon-wrap">
+								<button type="button" class="btn-balloon" data-top="5" data-left="-5"><span>Peer-F/B</span></button> 기준:건수
+								<div class="cnt-balloon">
+									Peer-F/B 완료 / Peer-F/B 미완료<br> - Peer-F/B 대상 수 비율
+								</div>
+							</div>
+							<div class="graph">
+								<div class="inbox"><span style="width:0%"></span></div>
+							</div>
+							<div class="graph-tx">
+								<span class="comp">완료<strong><i>46</i>%</strong></span>
+								<span class="none">미완료<strong><i>100</i>%</strong></span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- // 상단 그래프 -->
+
+				<!-- 테이블 -->
+				<div class="tbl-leader"><!-- 2018-08-22 클래스 수정 -->
+					<table class="tbl-top">
+						<caption></caption>
+						<colgroup>
+							<col style="width:133px"/>
+							<col style="width:189px"/>
+							<col style="width:189px"/>
+							<col style="width:189px"/>
+							<col style="width:203px"/>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">구성원</th>
+								<th scope="col">
+									Task 진행/완료 
+									<div class="balloon-wrap">
+										<button type="button" class="btn-balloon" data-top="10" data-left="-10"><span>안내</span></button>
+										<div class="cnt-balloon">
+											완료 Task 수 / 등록된 총 Task 수
+										</div>
+									</div>
+								</th>
+								<th scope="col">
+									Comment 작성
+									<div class="balloon-wrap">
+										<button type="button" class="btn-balloon" data-top="10" data-left="-10"><span>안내</span></button>
+										<div class="cnt-balloon">
+											나의 Task에 작성한 코멘트 수 / 타인의 Task에 작성한 코멘트 수
+										</div>
+									</div>
+								</th>
+								<th scope="col">
+									Self-Review 미완료
+									<div class="balloon-wrap">
+										<button type="button" class="btn-balloon" data-top="10" data-left="-90"><span>안내</span></button>
+										<div class="cnt-balloon">
+											Task 종료일이 경과 혹은 임박(일주일 이내)하였으나, Self-Review를 완료 하지 않은 Task 수
+										</div>
+									</div>
+								</th>
+								<th scope="col">
+									Peer-F/B 미작성
+									<div class="balloon-wrap">
+										<button type="button" class="btn-balloon" data-top="10" data-left="-140"><span>안내</span></button>
+										<div class="cnt-balloon">
+											Reviewer로 지정 되었으나, <br>작성 하지 않은 Peer-F/B 대상 수
+										</div>
+									</div>
+								</th>
+							</tr>
+						</thead>
+					</table>
+						
+					<div class="inbox">
+						<table>
+							<caption></caption>
+							<colgroup>
+								<col style="width:133px"/>
+								<col style="width:189px"/>
+								<col style="width:189px"/>
+								<col style="width:189px"/>
+								<col style="width:187px"/>
+							</colgroup>
+							<tbody>
+								<tr class="total">
+									<th scope="row">합계</th>
+									<td>0</td>
+									<td>0 / 0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<th scope="row">김길동</th>
+									<td class="none">0</td>
+									<td>1 / 0</td>
+									<td>0</td>
+									<td class="none">12</td> <!-- 2018-07-26 none 클래스로 변경 -->
+								</tr>
+								<tr>
+									<th scope="row">김길동</th>
+									<td>0</td>
+									<td class="none">0 / 0</td>
+									<td>0</td>
+									<td class="none tip-wrap"> <!-- 2018-07-26 none 클래스로 변경 -->
+										<button type="button" class="btn-tip" data-left="0"><span>3<i></i></span></button> <!-- 2018-07-25 data-left 값 0 -->
+										<div class="cnt-tip">
+											<p><strong>Peer-F/B대상자</strong></p>
+											<!-- 2018-07-25 수정 -->
+											<ul>
+												<li><span class="name">홍길동 </span>/<span class="team">서비스기획팀</span> <span class="count">1</span></li>
+												<li><span class="name">홍길동님 </span>/<span class="team">서비스기획팀서</span> <span class="count">12</span></li>
+												<li><span class="name">홍길동님아 </span>/<span class="team">서비스기획팀서비스기획팀</span> <span class="count">12</span></li>
+												<li><span class="name">홍길동 </span>/<span class="team">서비스기획팀</span> <span class="count">12</span></li>
+												<li><span class="name">홍길동 </span>/<span class="team">서비스기획팀</span> <span class="count">1</span></li>
+												<li><span class="name">홍길동님 </span>/<span class="team">서비스기획팀서</span> <span class="count">12</span></li>
+												<li><span class="name">홍길동님아 </span>/<span class="team">서비스기획팀서비스기획팀</span> <span class="count">12</span></li>
+												<li><span class="name">홍길동 </span>/<span class="team">서비스기획팀</span> <span class="count">12</span></li>
+												<li><span class="name">홍길동 </span>/<span class="team">서비스기획팀</span> <span class="count">1</span></li>
+												<li><span class="name">홍길동님 </span>/<span class="team">서비스기획팀서</span> <span class="count">12</span></li>
+												<li><span class="name">홍길동님아 </span>/<span class="team">서비스기획팀서비스기획팀</span> <span class="count">12</span></li>
+												<li><span class="name">홍길동 </span>/<span class="team">서비스기획팀</span> <span class="count">12</span></li>
+											</ul>														
+											<!-- // 2018-07-25 수정 -->
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">김길동</th>
+									<td class="none">0</td>
+									<td>1 / 0</td>
+									<td>0</td>
+									<td class="none">12</td> <!-- 2018-07-26 none 클래스로 변경 -->
+								</tr>
+								<tr>
+									<th scope="row">김길동</th>
+									<td class="none">0</td>
+									<td>1 / 0</td>
+									<td class="none tip-wrap"> <!-- 2018-07-26 none 클래스로 변경 -->
+										<button type="button" class="btn-tip" data-left="0"><span>0<i></i></span></button>
+										<div class="cnt-tip">
+											<p><strong>Peer-F/B대상자</strong></p>
+											<ul>
+												<li><span class="name">홍길동 </span>/<span class="team">서비스기획팀</span> <span class="count">1</span></li>
+												<li><span class="name">홍길동 </span>/<span class="team">서비스기획팀</span> <span class="count">12</span></li>
+											</ul>
+										</div>
+									</td>
+									<td>12</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<p class="under-desc">강조 표시된 건은 반드시 시행되도록 리더의 적극적인 Commitment를 바랍니다.</p> <!-- 2018-08-08 문구 수정 -->
+				<!-- //테이블 -->
+
+			</div>
+			<!-- // 리더용 -->
+				
+		</div>
+		<!-- // 2018-10-02 구조 변경 및 width 변경 -->
+
+		<button type="button" class="btn-close-popup" onclick="window.close();">닫기</button> <!-- 2018-10-02 필요 없을 경우 주석 처리 -->
+	</div>
+
+</body>
+</html>

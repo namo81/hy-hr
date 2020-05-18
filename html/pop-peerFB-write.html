@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>Task Peer-F/B</title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/popup.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/common.js"></script>
+
+	<script>
+	$(function(){
+		//키워드 선택 제어
+		
+
+		$('.peer-keyword').each(function(){
+			var $wrap = $(this).find('li'),
+			$inp = $wrap.find('input:checkbox');
+
+			$inp.on('change',function(){
+				var countG = 0,
+				countB = 0;
+
+				$('.peer-keyword').each(function(){
+					countG = $(this).find('.good').find('input[type=checkbox]:checked').length;
+					countB = $(this).find('.bad').find('input[type=checkbox]:checked').length;
+				});
+
+				if(countG < 6 && countB < 4) {
+					if($(this).is(":checked")){
+						$(this).parent().parent('li').children('.inp-check').each(function(){ 
+							$(this).find('input:checkbox').prop("checked", false);
+							$(this).find('label').removeClass('on');
+						});
+						$(this).prop("checked", true);
+						$(this).next('label').addClass('on');
+					}
+				} else {
+					$(this).prop("checked", false).attr("checked",false);
+					$(this).next('label').removeClass('on');
+				}
+				//console.log(countG, countB);
+			});
+		});
+
+		// 설문 - textarea 제어 2018-04-11 수정
+		$('.survey .inbox').each(function(){
+			var $wrap = $(this),
+				$inp = $(this).find('input[type=radio]');
+			$inp.click(function(){
+				$wrap.find('.inp-radio').each(function(){ $(this).removeClass('on') });
+				if($(this).is(":checked")){
+					$(this).parent('.inp-radio').addClass('on');
+				} 
+			});
+		});
+
+		/* 2018-04-26 textarea focus 관련 버그 임시수정 */
+		$('.peer-keyword, .etc-keyword-inp, .survey-wrap').on('mouseover',function(){
+			$('textarea').each(function(){
+				$(this).blur();
+			});
+		});
+		/* // 2018-04-26 textarea focus 관련 버그 임시수정 */
+
+	});
+	</script>
+</head>
+<body>
+	<div id="popup" class="pop-type2 pop-peerFB-write">
+		<!-- header -->
+		<header id="pop-top">
+			<h1 class="pop-title">Task Peer-Feedback</h1>
+		</header>
+		
+		<!-- mid -->
+		<div id="pop-mid">
+
+			<!-- 2018-04-06 평가 대상자 수정
+			<div class="detail-top-peer">
+				<h3 class="title-dep2">Peer-F/B 대상자 (총 <i class="tx-red">10</i>명)</h3>
+				
+				<div class="inp-select select-coworker">
+					<button type="button" class="btn-select"><span>
+						<i class="img"><img src="/images/temp-user.png" alt=""></i> 홍길동 / HR팀 - 완료
+					</span></button>
+					<ul class="select-list">
+						<li><button type="button" class="btn-sel"><i class="img"><img src="/images/temp-user.png" alt=""></i> 홍길동 / HR팀 - 완료</button></li>
+						<li><button type="button" class="btn-sel"><i class="img"><img src="/images/temp-user.png" alt=""></i> 홍이동 / HR팀 - 진행중</button></li>
+						<li><button type="button" class="btn-sel"><i class="img"><img src="/images/temp-user.png" alt=""></i> 홍삼동 / HR팀 - 진행중</button></li>
+					</ul>
+				</div> -->
+				<!-- <div class="peer-target">
+					<span class="img"><img src="/images/temp-user.png" alt=""></span>
+					<span class="name">홍길동 / UX디자인팀</span>
+				</div>
+				<!-- <span class="peer-count"><strong>Reviewer <i class="tx-red">10</i>명</strong></span>
+			</div> -->
+			<!-- // 2018-04-06 평가 대상자 수정 -->
+
+			<!-- 2019-05-20 수정 -->
+			<div class="detail-top-peer">
+				<div class="peer-target">
+					<span class="img"><img src="/images/temp-user.png" alt=""></span>
+					<span class="name">홍길동 / UX디자인팀</span>
+					<span class="task-info">Task <i>|</i> <span class="task-name">Keyword 개선 등 상호 F/B 및 Admin 고도화 Keyword 개선 등 상호 F/B 및 Admin 고도화 상호 F/B 및 Admin 고도화</span></span>
+				</div>
+			</div>
+			<!-- // 2019-05-20 수정 -->
+
+			<h2 class="peer-title">장점 및 보완점에 대한 Keyword 선택 및 Comment 작성 (구성원 전송)</h2>
+			<p class="peer-desc">※ 해당 구성원에 대한 관찰 결과를 기반으로 장점(1~5개) 및 보완점(1~3개)을 선택해 주시기 바랍니다.</p>
+
+			<!-- 키워드 선택 -->
+			<div class="peer-keyword">
+				<ul>
+					<li>
+						<span class="keyword">Trend 이해/습득 Trend 이해/습득</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="trend" id="trend-good">
+							<label for="trend-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="trend" id="trend-bad">
+							<label for="trend-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">전략적 사고</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="tactic" id="tactic-good">
+							<label for="tactic-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="tactic" id="tactic-bad">
+							<label for="tactic-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">기회 창출</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="chance" id="chance-good">
+							<label for="chance-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="chance" id="chance-bad">
+							<label for="chance-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">자발적 헌신</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="devotion" id="devotion-good">
+							<label for="devotion-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="devotion" id="devotion-bad">
+							<label for="devotion-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">아이디어 공유</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="idea" id="idea-good">
+							<label for="idea-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="idea" id="idea-bad">
+							<label for="idea-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">유연한 조율</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="tune" id="tune-good">
+							<label for="tune-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="tune" id="tune-bad">
+							<label for="tune-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">투철한 사명감/책임감</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="responsible" id="responsible-good">
+							<label for="responsible-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="responsible" id="responsible-bad">
+							<label for="responsible-bad">보완점</label>
+						</div>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<span class="keyword">발상의 전환</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="conception" id="conception-good">
+							<label for="conception-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="conception" id="conception-bad">
+							<label for="conception-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">발상의 전환</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="conception" id="conception-good">
+							<label for="conception-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="conception" id="conception-bad">
+							<label for="conception-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">발상의 전환</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="conception" id="conception-good">
+							<label for="conception-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="conception" id="conception-bad">
+							<label for="conception-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">창의적 Skill 활용</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="use-skill" id="use-skill-good">
+							<label for="use-skill-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="use-skill" id="use-skill-bad">
+							<label for="use-skill-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">장기전 Planning</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="planning" id="planning-good">
+							<label for="planning-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="planning" id="planning-bad">
+							<label for="planning-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">전사관점</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="perspective" id="perspective-good">
+							<label for="perspective-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="perspective" id="perspective-bad">
+							<label for="perspective-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">기회와 참여</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="join" id="join-good">
+							<label for="join-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="join" id="join-bad">
+							<label for="join-bad">보완점</label>
+						</div>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<span class="keyword">발상의 전환</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="conception" id="conception-good">
+							<label for="conception-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="conception" id="conception-bad">
+							<label for="conception-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">발상의 전환</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="conception" id="conception-good">
+							<label for="conception-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="conception" id="conception-bad">
+							<label for="conception-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">발상의 전환</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="conception" id="conception-good">
+							<label for="conception-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="conception" id="conception-bad">
+							<label for="conception-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">창의적 Skill 활용</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="use-skill" id="use-skill-good">
+							<label for="use-skill-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="use-skill" id="use-skill-bad">
+							<label for="use-skill-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">장기전 Planning</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="planning" id="planning-good">
+							<label for="planning-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="planning" id="planning-bad">
+							<label for="planning-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">전사관점</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="perspective" id="perspective-good">
+							<label for="perspective-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="perspective" id="perspective-bad">
+							<label for="perspective-bad">보완점</label>
+						</div>
+					</li>
+					<li>
+						<span class="keyword">기회와 참여</span>
+						<div class="inp-check good">
+							<input type="checkbox" name="join" id="join-good">
+							<label for="join-good">장점</label>
+						</div>
+						<div class="inp-check bad">
+							<input type="checkbox" name="join" id="join-bad">
+							<label for="join-bad">보완점</label>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- // 키워드 선택 -->
+
+			<!-- 기타 키워드 입력 -->
+			<div class="etc-keyword-inp">
+				<h3 class="title-dep3">기타 Keyword 입력 - <span class="good">장점</span></h3>
+				<div class="inp">
+					<input type="text" name="" placeholder="#키워드를 입력하세요">
+					<button type="submit" class="btn-m btn-gray2"><span>추가</span></button>
+				</div>
+				<div class="etc-kw-list">
+					<ul>
+						<li>#적재적소 <button type="button" class="btn-kw-del"><span>삭제</span></button></li>
+						<li>#누구보다빠르게 <button type="button" class="btn-kw-del"><span>삭제</span></button></li>
+						<li>#남들과는다르게 <button type="button" class="btn-kw-del"><span>삭제</span></button></li>
+						<li>#남들과는다르게 <button type="button" class="btn-kw-del"><span>삭제</span></button></li>
+					</ul>
+				</div>
+			</div>
+			<div class="etc-keyword-inp">
+				<h3 class="title-dep3">기타 Keyword 입력 - <span class="bad">보완점</span></h3>
+				<div class="inp">
+					<input type="text" name="" placeholder="#키워드를 입력하세요">
+					<button type="submit" class="btn-m btn-gray2"><span>추가</span></button>
+				</div>
+				<div class="etc-kw-list">
+					<ul>
+						<li>#적재적소 <button type="button" class="btn-kw-del"><span>삭제</span></button></li>
+						<li>#누구보다빠르게 <button type="button" class="btn-kw-del"><span>삭제</span></button></li>
+						<li>#남들과는다르게 <button type="button" class="btn-kw-del"><span>삭제</span></button></li>
+						<li>#남들과는다르게 <button type="button" class="btn-kw-del"><span>삭제</span></button></li>
+					</ul>
+				</div>
+			</div>
+			<!-- // 기타 키워드 입력 -->
+
+			<!-- 코멘트 작성 2018-04-04 수정 -->
+			<div class="inp-comment">
+				<div class="inbox">
+					<label for="inp-comment-good">장점 Comment</label>
+					<div class="inp-box">
+						<textarea name="" id="inp-comment-good" placeholder="placeholder 입니다. placeholder 에서 줄바꿈은 안됩니다. 참고해주세요." tabIndex="-1"></textarea>
+						<!-- <p class="count">100/4000</p> -->
+					</div>
+				</div>
+				<div class="inbox">
+					<label for="inp-comment-bad" class="bad">보완점 Comment</label> <!-- 2018-04-04 bad 클래스 추가 -->
+					<div class="inp-box">
+						<textarea name="" id="inp-comment-bad" placeholder="placeholder 입니다. placeholder 에서 줄바꿈은 안됩니다. 참고해주세요." tabIndex="-1"></textarea>
+						<!-- <p class="count">100/4000</p> -->
+					</div>
+				</div>
+			</div>
+			<!-- // 코멘트 작성 -->
+
+			<!-- 설문 -->
+			<div class="survey-wrap">
+				<h3 class="title-dep2">Direct Review</h3><!-- 2018-06-21 수정 -->
+				<p class="desc"><strong class="tx-blue">(Direct Review는 리더만 확인 가능하며, F/B전송 하시더라도 구성원에게는 전송되지 않습니다.)</strong></p> <!-- 2018-06-21 추가 // 2019-10-29 수정 -->
+				<div class="survey">
+					<!-- 1번 항목 -->
+					<div class="inbox">
+						<p class="q"><strong>Q.</strong>배울 점이 많고 함께 일하고 싶은 동료입니까?</p>
+						<ul>
+							<li>
+								<div class="inp-radio">
+									<input type="radio" name="radio-a1" id="a1-yes">
+									<label for="a1-yes"><span class="box"></span> 예, 꼭 함께 일하고 싶습니다.</label>
+								</div>
+								<div class="tx-box">
+									<textarea name="" rows="" cols="" placeholder="답변에 관련된 코멘트를 작성해주세요.(필수작성)"></textarea>
+								</div>
+							</li>
+							<li>
+								<div class="inp-radio">
+									<input type="radio" name="radio-a1" id="a1-no">
+									<label for="a1-no"><span class="box"></span> 개선/보완 노력이 많이 필요합니다.</label>
+								</div>
+								<div class="tx-box">
+									<textarea name="" rows="" cols="" placeholder="답변에 관련된 코멘트를 작성해주세요.(필수작성)"></textarea>
+								</div>
+							</li>
+							<li>
+								<div class="inp-radio">
+									<input type="radio" name="radio-a1" id="a1-normal">
+									<label for="a1-normal"><span class="box"></span> 무난한 동료입니다.</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- // 1번 항목 -->
+					
+					<!-- 2번 항목 -->
+					<div class="inbox">
+						<p class="q"><strong>Q.</strong>추가 기여 보상을 주고 싶을 정도로 훌륭한 성과를 창출한 동료입니까?</p>
+						<ul>
+							<li>
+								<div class="inp-radio">
+									<input type="radio" name="radio-a2" id="a2-yes">
+									<label for="a2-yes"><span class="box"></span> 예, 추가 기여 보상을 받아 마땅합니다.</label>
+								</div>
+								<div class="tx-box">
+									<textarea name="" rows="" cols="" placeholder="답변에 관련된 코멘트를 작성해주세요.(필수작성)"></textarea>
+								</div>
+							</li>
+							<li>
+								<div class="inp-radio">
+									<input type="radio" name="radio-a2" id="a2-no">
+									<label for="a2-no"><span class="box"></span> 성과 창출을 위한 노력이 많이 필요합니다.</label>
+								</div>
+								<div class="tx-box">
+									<textarea name="" rows="" cols="" placeholder="답변에 관련된 코멘트를 작성해주세요.(필수작성)"></textarea>
+								</div>
+							</li>
+							<li>
+								<div class="inp-radio">
+									<input type="radio" name="radio-a2" id="a2-normal">
+									<label for="a2-normal"><span class="box"></span> 잘 모르겠습니다. 리더의 판단이 필요합니다.</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- // 2번 항목 -->
+					
+					<!-- 3번 항목 -->
+					<div class="inbox">
+						<p class="q"><strong>Q.</strong>현재 Task를 수행하기 위한 전문성을 보유하고 실력을 잘 발휘하고 있는 동료입니까?</p>
+						<ul>
+							<li>
+								<div class="inp-radio">
+									<input type="radio" name="radio-a3" id="a3-yes">
+									<label for="a3-yes"><span class="box"></span> 예, 충분한 업무 역량을 보유하였습니다.</label>
+								</div>
+								<div class="tx-box">
+									<textarea name="" rows="" cols="" placeholder="답변에 관련된 코멘트를 작성해주세요.(필수작성)"></textarea>
+								</div>
+							</li>
+							<li>
+								<div class="inp-radio">
+									<input type="radio" name="radio-a3" id="a3-no">
+									<label for="a3-no"><span class="box"></span> 개선/보완 노력이 많이 필요합니다.</label>
+								</div>
+								<div class="tx-box">
+									<textarea name="" rows="" cols="" placeholder="답변에 관련된 코멘트를 작성해주세요.(필수작성)"></textarea>
+								</div>
+							</li>
+							<li>
+								<div class="inp-radio">
+									<input type="radio" name="radio-a3" id="a3-normal">
+									<label for="a3-normal"><span class="box"></span> 무난한 동료입니다.</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- // 3번 항목 -->
+					
+					<!-- 4번 항목 -->
+					<div class="inbox">
+						<p class="q"><strong>Q.</strong>Values/기업관/윤리의식이 올바른 동료입니까?</p>
+						<ul>
+							<li>
+								<div class="inp-radio">
+									<input type="radio" name="radio-a4" id="a4-yes">
+									<label for="a4-yes"><span class="box"></span> 예, 모범이 되는 동료입니다.</label>
+								</div>
+								<div class="tx-box">
+									<textarea name="" rows="" cols="" placeholder="답변에 관련된 코멘트를 작성해주세요.(필수작성)"></textarea>
+								</div>
+							</li>
+							<li>
+								<div class="inp-radio">
+									<input type="radio" name="radio-a4" id="a4-no">
+									<label for="a4-no"><span class="box"></span> 개선/보완 노력이 많이 필요합니다.</label>
+								</div>
+								<div class="tx-box">
+									<textarea name="" rows="" cols="" placeholder="답변에 관련된 코멘트를 작성해주세요.(필수작성)"></textarea>
+								</div>
+							</li>
+							<li>
+								<div class="inp-radio">
+									<input type="radio" name="radio-a4" id="a4-normal">
+									<label for="a4-normal"><span class="box"></span> 무난한 동료입니다.</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- // 4번 항목 -->
+				</div>
+			</div>
+			<!-- // 설문 -->
+
+			<div class="btn-group">
+				<button type="button" class="btn-xl btn-red2-outline" onclick=""><span>임시저장</span></button>
+				<button type="button" class="btn-xl btn-red2" onclick=""><span>Peer-F/B 전송</span></button>
+				<button type="button" class="btn-xl btn-white" style="margin-left:30px;"><span>F/B일괄전송(1명)</span></button> <!-- 2019-06-20 추가 -->
+			</div>
+
+		</div>
+		
+		<button type="button" class="btn-close-popup" onclick="window.close();">닫기</button>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title></title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/popup.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/jquery.mousewheel.min.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<script>
+		$(function(){
+
+			/* 2019-02-21 수정 */
+			$('.write-cmt').each(function(){
+				var $file = $(this).find('input:file'),
+				$fileTx = $(this).find('.file-name'),
+				$delBtn = $(this).find('.btn-file-del');
+				$delBtn.hide();
+
+				$file.on('change',function(){
+					var fn = $(this).val();
+					$fileTx.val(fn);
+					if(fn.length > 0) $delBtn.show();
+					else $delBtn.hide();
+				});
+
+				$delBtn.click(function(){
+					$fileTx.val('');
+					$file.val('');
+					$(this).hide();
+				});
+			});
+			/* // 2019-02-21 수정 */
+
+			$('.cmt-task-list li').each(function(){
+				var $prt = $(this),
+				$btn = $(this).find('.btn-tgl'),
+				$cnt = $(this).find('.tgl-cnt');
+
+				$btn.click(function(){
+					$cnt.toggleClass('show');
+				});
+
+				var $inp = $prt.find('input:radio'),
+				$title = $prt.parents('.cmt-task-list').siblings('.write-cmt').find('.sel-task-name');
+				$inp.click(function(){
+					$prt.siblings('li').removeClass('on');
+					if($(this).is(':checked')){
+						$prt.addClass('on');
+						var tx = $(this).siblings('label').text();
+						$title.text(tx);
+					} 
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="popup" class="pop-type3 pop-write-cmt">
+		<!-- header -->
+		<header id="pop-top">
+			<h1 class="pop-title">Comment 작성</h1>
+		</header>
+		
+		<!-- mid -->
+		<div id="pop-mid">
+			
+			<div class="tab-wrap">
+				<div class="tab-menu tab-type1">
+					<ul>
+						<li class="on"><a href="#tab-cnt1">나의 Task</a></li>
+						<li><a href="#tab-cnt2">동료 Task</a></li>
+						<li><a href="#tab-cnt3">구성원 Task</a></li>
+					</ul>
+				</div>
+
+				<!-- 나의 Task -->
+				<div class="tab-cnt" id="tab-cnt1">
+					<!-- 2019-04-15 추가 -->
+					<a href="#" class="no-data">
+						<p class="msg">comment 작성 전, Task를 먼저 등록하시기 바랍니다.</p>
+						<span class="ico-plus"></span>
+					</a>
+					<!-- // 2019-04-15 추가 -->
+					<div class="cmt-task-list mCustomScrollbar">
+						<ul>
+							<li>
+								<div class="task-list-top">
+									<div class="inp-radio">
+										<input type="radio" name="my-task" id="my-task-1">
+										<label for="my-task-1"><span class="box"></span>T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원</label>
+									</div>
+									<button type="button" class="btn-tgl"><span>열기/닫기</span></button>
+								</div>
+								<div class="tgl-cnt">
+									<strong class="title">&bull; 목표</strong>
+									<p class="tx">SKT HR평가 시스템 구축에 대하여 아래와 같은 TASK를 설정합니다. 1. TASK 입니다. SKT HR평가 시스템 구축에 대하여 아래와 같은 TASK를 설정합니다.  SKT HR평가 시스템 구축에 대하여 아래와 같은 TASK를 설정합니다. </p>
+								</div>
+							</li>
+							<li>
+								<div class="task-list-top">
+									<div class="inp-radio">
+										<input type="radio" name="my-task" id="my-task-2">
+										<label for="my-task-2"><span class="box"></span>T-Session 지원</label>
+									</div>
+									<button type="button" class="btn-tgl"><span>열기/닫기</span></button>
+								</div>
+								<div class="tgl-cnt">
+									<strong class="title">&bull; 목표</strong>
+									<p class="tx"></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="write-cmt">
+						<h2 class="title-dep2">
+							<p class="fl">&bull; Comment 입력</p>
+							<div class="fr">Task 명 : <span class="sel-task-name">T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원</span></div>
+						</h2>
+						<div class="inp-box">
+							<div class="tx-area">
+								<p class="cmt-img">
+									<img src="/images/temp_cmt.png" alt="">
+									<button type="button"><span>이미지삭제</span></button>
+								</p>
+								<div class="textarea">
+									<textarea name="" rows="" cols=""></textarea>
+								</div>
+							</div>
+							<p class="tx-count">8 / 3000</p>
+							<div class="btns">
+								<div class="inp-file">
+									<label for="add-file">파일첨부</label><!-- 파일 첨부상태일 경우 'on' 클래스 추가 -->
+									<input type="file" id="add-file">
+								</div>
+								<button type="button" class="btn-secret" title="코멘트 작성자, Task작성자, Taskmate, 승인자만 볼 수 있습니다"><span>비밀</span></button>
+								<p class="file-info">
+									<input type="text" class="file-name" value="" readonly dir="rtl">
+									<button type="button" class="btn-file-del"><span><img src="/images/ico_del.png" alt="파일 삭제"></span></button>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="btn-gruop tc">
+						<span><button type="button" class="btn-l btn-red2-outline"><span>취소</span></button></span>
+						<span><button type="button" class="btn-l btn-red2"><span>완료</span></button></span>
+					</div>
+				</div>
+				<!-- // 나의 Task -->
+				
+				<!-- 동료 Task -->
+				<div class="tab-cnt" id="tab-cnt2">
+					<div class="sch-cmt-task">
+						<h2 class="title-dep2">&bull; Task 선택</h2>
+						<div class="new-select" style="width:175px;">
+							<select name="">
+								<option value="">Task명/Task수행자</option>
+							</select>
+						</div>
+						<input type="text" name="" placeholder="검색어를 입력하세요" title="검색어">
+						<button type="submit" class="btn-tbl-sch"><span><i class="ico-btn"><img src="/images/ico_btn-sch.png" alt=""></i>조회</span></button>
+					</div>
+					<div class="cmt-task-list with mCustomScrollbar">
+						<ul>
+							<li>
+								<div class="task-list-top">
+									<div class="inp-radio">
+										<input type="radio" name="task" id="task-1">
+										<label for="task-1"><span class="box"></span>T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원 T-Session 지원</label>
+									</div>
+									<div class="mate-list">
+										<ul>
+											<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											<li class="dot">...</li>
+										</ul>
+									</div>
+									<button type="button" class="btn-tgl"><span>열기/닫기</span></button>
+								</div>
+								<div class="tgl-cnt">
+									<div class="task-tg-sel">
+										<select name="">
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+											<option value="">김미영</option>
+										</select>
+										님의 목표
+									</div>
+									<p class="tx">SKT HR평가 시스템 구축에 대하여 아래와 같은 TASK를 설정합니다. 1. TASK 입니다. SKT HR평가 시스템 구축에 대하여 아래와 같은 TASK를 설정합니다. SKT HR평가 시스템 구축에 대하여 아래와 같은 TASK를 설정합니다. </p>
+								</div>
+							</li>							
+							<li>
+								<div class="task-list-top">
+									<div class="inp-radio">
+										<input type="radio" name="task" id="task-2">
+										<label for="task-2"><span class="box"></span>T-Session 지원</label>
+									</div>
+									<div class="mate-list">
+										<ul>
+											<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+										</ul>
+									</div>
+									<button type="button" class="btn-tgl"><span>열기/닫기</span></button>
+								</div>
+								<div class="tgl-cnt">
+									<strong class="title">&bull; 목표</strong>
+									<p class="tx">SKT HR평가 시스템 구축에 대하여 아래와 같은 TASK를 설정합니다. 1. TASK 입니다. SKT HR평가 시스템 구축에 대하여 아래와 같은 TASK를 설정합니다. SKT HR평가 시스템 구축에 대하여 아래와 같은 TASK를 설정합니다. </p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="write-cmt">
+						<h2 class="title-dep2">
+							<p class="fl">&bull; Comment 입력</p>
+							<div class="fr">Task 명 : <span class="sel-task-name">T-Session 지원</span></div>
+						</h2>
+						<div class="inp-box">
+							<div class="tx-area">
+								<p class="cmt-img">
+									<img src="/images/temp_cmt.png" alt="">
+									<button type="button"><span>이미지삭제</span></button>
+								</p>
+								<div class="textarea">
+									<textarea name="" rows="" cols=""></textarea>
+								</div>
+							</div>
+							<p class="tx-count">8 / 3000</p>
+							<div class="btns">
+								<div class="inp-file">
+									<label for="add-file2">파일첨부</label><!-- 파일 첨부상태일 경우 'on' 클래스 추가 -->
+									<input type="file" id="add-file2">
+								</div>
+								<button type="button" class="btn-secret" title="코멘트 작성자, Task작성자, Taskmate, 승인자만 볼 수 있습니다"><span>비밀</span></button>
+								<p class="file-info">
+									<input type="text" class="file-name" value="" readonly dir="rtl">
+									<button type="button" class="btn-file-del"><span><img src="/images/ico_del.png" alt="파일 삭제"></span></button>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="btn-gruop tc">
+						<span><button type="button" class="btn-l btn-red2-outline"><span>취소</span></button></span>
+						<span><button type="button" class="btn-l btn-red2"><span>완료</span></button></span>
+					</div>
+				</div>
+				<!-- // 동료 Task -->
+				
+				<!-- 구성원 Task -->
+				<div class="tab-cnt" id="tab-cnt3">
+					<div class="sch-cmt-task">
+						<h2 class="title-dep2">&bull; Task 선택</h2>
+						<div class="new-select" style="width:175px;">
+							<select name="">
+								<option value="">Task명/Task수행자</option>
+							</select>
+						</div>
+						<input type="text" name="" placeholder="검색어를 입력하세요" title="검색어">
+						<button type="submit" class="btn-tbl-sch"><span><i class="ico-btn"><img src="/images/ico_btn-sch.png" alt=""></i>조회</span></button>
+					</div>
+					<div class="cmt-task-list with mCustomScrollbar">
+						<p class="no-data">검색된 내용이 없습니다.</p> <!-- 2019-02-25 추가 -->
+						</ul>
+					</div>
+					<div class="write-cmt">
+						<h2 class="title-dep2">
+							<p class="fl">&bull; Comment 입력</p>
+							<div class="fr">Task 명 : <span class="sel-task-name">T-Session 지원</span></div>
+						</h2>
+						<div class="inp-box">
+							<div class="tx-area">
+								<p class="cmt-img">
+									<img src="/images/temp_cmt.png" alt="">
+									<button type="button"><span>이미지삭제</span></button>
+								</p>
+								<div class="textarea">
+									<textarea name="" rows="" cols=""></textarea>
+								</div>
+							</div>
+							<p class="tx-count">8 / 3000</p>
+							<div class="btns">
+								<div class="inp-file">
+									<label for="add-file2">파일첨부</label><!-- 파일 첨부상태일 경우 'on' 클래스 추가 -->
+									<input type="file" id="add-file3">
+								</div>
+								<button type="button" class="btn-secret" title="코멘트 작성자, Task작성자, Taskmate, 승인자만 볼 수 있습니다"><span>비밀</span></button>
+								<p class="file-info">
+									<input type="text" class="file-name" value="" readonly dir="rtl">
+									<button type="button" class="btn-file-del"><span><img src="/images/ico_del.png" alt="파일 삭제"></span></button>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="btn-gruop tc">
+						<span><button type="button" class="btn-l btn-red2-outline"><span>취소</span></button></span>
+						<span><button type="button" class="btn-l btn-red2"><span>완료</span></button></span>
+					</div>
+				</div>
+				<!-- // 구성원 Task -->
+			</div>
+
+		</div>
+		
+		<button type="button" class="btn-close-popup" onclick="window.close();">닫기</button>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>구성원 상세 | Talent-Session</title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mousewheel.min.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<script>
+		$(function(){
+			$('.btn-tx-control').click(function(){
+				var $tx = $(this).prev('textarea');
+				if($(this).hasClass('on')){
+					$(this).empty().text('늘려 보기').removeClass('on');
+					$tx.removeClass('more');
+				} else {
+					$(this).empty().text('줄여 보기').addClass('on');
+					$tx.addClass('more');
+				}
+			});
+
+			$('.ts-target-select').find('.tbl-cnt').find('a').each(function(){
+				$(this).click(function(){
+					$(this).parent('li').addClass('on').siblings().removeClass('on');
+				});
+			});
+
+			/* 2018-10-17 추가 */
+			$('.ts-target-select').find('.tbl-cnt').each(function(){
+				var $wrap = $(this),
+				$onBtn = $wrap.find('ul li.on'),
+				scTop = $onBtn.position().top -$wrap.position().top;
+				$wrap.scrollTop(scTop);
+			});
+			/* // 2018-10-17 추가 */
+
+			/* 2019-10-15 추가 */
+			$('.level-fixed').each(function(){
+				var $radio = $(this).find('input[type=radio]'),
+				$reason = $(this).find('.inp-reason');
+
+				$reason.hide();
+
+				$radio.click(function(){
+					if($(this).hasClass('reason')){
+						$reason.show();
+					} else {
+						$reason.hide();	
+					};
+				});
+			});
+			/* // 2019-10-15 추가 */
+		});
+	</script>
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->				
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						Talent-Session – 구성원 상세
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span> 
+							<span><a href="#">Talent-Session</a></span> 
+							<strong>구성원 상세</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<!-- cnt-area -->
+					<div class="cnt-area ts-self-review ts-detail">
+
+						<!-- 2019-10-14 수정 -->
+						<div class="ts-target-select type2"> <!-- 2019-10-14 간격 조정을 위한 type2 클래스 추가 -->
+							<h3 class="title-dep2">구성원 선택</h3>
+							<div class="tbl-fixed">
+								<table class="tbl-title">
+									<caption>대상 선택 타이틀</caption>
+									<colgroup>
+										<col style="width:127px"/>
+										<col style="width:152px"/>
+										<col style="width:114px"/>
+										<col style="width:232px"/>
+										<col style="width:288px"/>
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">사번</th>
+											<th scope="col">성명</th>
+											<th scope="col">Band</th>
+											<th scope="col">리더의 Review<br><span class="normal">(Talent-Session 준비)</span></th> <!-- 2018-11-01 용어 변경 // 2018-10-23 수정 // 2019-10-14 수정-->
+											<th scope="col">종합 육성 F/B<br><span class="normal">(Talent-Session 결과 반영)</span></th> <!-- 2018-11-01 용어 변경 -->
+										</tr>
+									</thead>
+								</table>
+								
+								<div class="tbl-cnt">
+									<ul>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p> <!-- 2019-10-14 수정 -->
+											<p class="col-3">B</p>
+											<p class="col-4"><span class="tx-red">작성불가</span></p>
+											<p class="col-6">진행예정</p> <!-- 2018-11-20 수정 -->
+											<a href="#">선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4"><span class="tx-red">작성중</span></p>
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4"><span class="tx-red">작성가능</span></p> <!-- 2018-10-18 수정 -->
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4"><span class="under">완료</span></p> <!-- 2018-10-24 밑줄 - under 클래스 추가 -->
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+										<li class="on">
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-6">진행예정</p>
+											<a href="#" >선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-6">진행예정</p>
+											<a href="#" >선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-6">진행예정</p>
+											<a href="#" >선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-6">진행예정</p>
+											<a href="#" >선택</a>
+										</li>
+									</ul>
+								</div>
+								
+							</div>
+						</div>
+						<!-- // 2019-10-14 수정 -->
+
+						<div class="tab-wrap">
+
+							<!-- <h3 class="title-dep2">대상</h3> --> <!-- 2018-10-18 삭제 -->
+
+							<div class="tx-info-target">
+								<span class="inbox">
+									<i><strong>조직</strong>기업문화 DT CoE</i> <!-- 2018-10-25 추가 -->
+									<i><strong>사번</strong>123456</i>
+									<i><strong>성명</strong>홍길동</i>
+								</span>
+							</div>
+							
+							<!-- 2018-10-23 수정 -->
+							<div class="active-box-org">
+								<h3 class="title-dep2">Task / Peer-Feedback 결과 조회 및 가중치 조정</h3> <!-- 2018-10-18 추가 -->
+
+								<!-- tab-menu -->
+								<div class="tab-menu tab-type1">
+									<ul>
+										<li class="on"><a href="#tab-cnt1">Task 성과</a></li>
+										<li><a href="#tab-cnt2">Peer-F/B 결과</a></li>
+									</ul>
+								</div>
+								<!-- // tab-menu -->
+
+								<!-- tab-cnt1 -->
+								<div class="tab-cnt" id="tab-cnt1">
+									<!-- 2018-10-18 추가 -->
+									<div class="tbl-type3">
+										<table>
+											<caption>Task 성과 타이틀</caption>
+												<colgroup>
+													<!-- 2018-10-18 수정 -->
+													<col style="width:323px"/>
+													<col style="width:167px"/>
+													<!-- // 2018-10-18 수정 -->
+													<col style="width:88px"/>
+													<col style="width:84px"/>
+													<col style="width:84px"/>
+													<col style="width:110px"/>
+												</colgroup>
+											<thead>
+												<tr>
+													<th scope="col" rowspan="2">Task명</th>
+													<th scope="col" rowspan="2">수행기간</th>
+													<th scope="col" colspan="2" class="group">가중치</th>
+													<th scope="col" rowspan="2">달성도</th>
+													<th scope="col" rowspan="2">Task Review<br>결과</th> <!-- 2018-11-06 수정 -->
+												</tr>
+												<tr>
+													<th scope="col" class="line">기존</th>
+													<th scope="col">조정</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td class="tr">50%</td>
+													<td class="tr"><input type="text" name=""> %</td>
+													<td class="tr">50%</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td class="tr">50%</td>
+													<td class="tr"><input type="text" name=""> %</td>
+													<td class="tr">50%</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td class="tr">50%</td>
+													<td class="tr"><input type="text" name=""> %</td>
+													<td class="tr">50%</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td class="tr">50%</td>
+													<td class="tr"><input type="text" name=""> %</td>
+													<td class="tr">50%</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td class="tr">50%</td>
+													<td class="tr"><input type="text" name=""> %</td>
+													<td class="tr">50%</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td class="tc" colspan="6">등록된 Task가 없습니다.</td> <!-- 2018-10-18 추가 -->
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2">합계</td>
+													<td class="tr">210%</td>
+													<td class="tr"><span class="sum"></span>%</td>
+													<td class="tr">94점</td>
+													<td><button type="submit" class="btn-m btn-gray2"><span>가중치 저장</span></button></td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+									<!-- // 2018-10-18 추가 -->
+
+									<!-- 2018-10-18 삭제
+									<div class="tbl-fixed">
+										<table class="tbl-title">
+											<caption>Task 성과 타이틀</caption>
+											<colgroup>
+												2018-10-18 수정
+												<col style="width:343px"/>
+												<col style="width:179px"/>
+												// 2018-10-18 수정
+												<col style="width:89px"/>
+												<col style="width:84px"/>
+												<col style="width:84px"/>
+												<col style="width:130px"/>
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col" rowspan="2">Task명</th>
+													<th scope="col" rowspan="2">수행기간</th>
+													<th scope="col" colspan="2" class="group">가중치</th>
+													<th scope="col" rowspan="2">달성도</th>
+													<th scope="col" rowspan="2">보기</th>
+												</tr>
+												<tr>
+													<th scope="col" class="line">기존</th>
+													<th scope="col">조정</th>
+												</tr>
+											</thead>
+										</table>
+											
+										<div class="tbl-cnt">
+											<table class="tbl-cnt">
+												<caption>Task 성과 내용</caption>
+												<colgroup>
+													2018-10-18 수정
+													<col style="width:343px"/>
+													<col style="width:179px"/>
+													// 2018-10-18 수정
+													<col style="width:89px"/>
+													<col style="width:84px"/>
+													<col style="width:84px"/>
+													<col style="width:114px"/>
+												</colgroup>
+												<tbody>
+													<tr>
+														<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+														<td>'18.01.22 ~ '18.12.12</td>
+														<td class="tr">50%</td>
+														<td class="tr"><input type="text" name=""> %</td>
+														<td class="tr">50%</td>
+														<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+													</tr>
+													<tr>
+														<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+														<td>'18.01.22 ~ '18.12.12</td>
+														<td class="tr">50%</td>
+														<td class="tr"><input type="text" name=""> %</td>
+														<td class="tr">50%</td>
+														<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+													</tr>
+													<tr>
+														<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+														<td>'18.01.22 ~ '18.12.12</td>
+														<td class="tr">50%</td>
+														<td class="tr"><input type="text" name=""> %</td>
+														<td class="tr">50%</td>
+														<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+													</tr>
+													<tr>
+														<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+														<td>'18.01.22 ~ '18.12.12</td>
+														<td class="tr">50%</td>
+														<td class="tr"><input type="text" name=""> %</td>
+														<td class="tr">50%</td>
+														<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+													</tr>
+													<tr>
+														<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+														<td>'18.01.22 ~ '18.12.12</td>
+														<td class="tr">50%</td>
+														<td class="tr"><input type="text" name=""> %</td>
+														<td class="tr">50%</td>
+														<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+													</tr>
+													<tr>
+														<td class="tc" colspan="6">등록된 Task가 없습니다.</td> 2018-10-18 추가
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										
+										<table class="tbl-footer">
+											<caption>Task 성과 합계</caption>
+											<colgroup>
+												<col style="width:520px"/>
+												<col style="width:89px"/>
+												<col style="width:84px"/>
+												<col style="width:84px"/>
+												<col style="width:130px"/>
+											</colgroup>
+											<tfoot>
+												<tr>
+													<td>합계</td>
+													<td class="tr">210%</td>
+													<td class="tr"><span class="sum"></span>%</td>
+													<td class="tr">94점</td>
+													<td><button type="submit" class="btn-m btn-gray2"><span>가중치 저장</span></button></td>
+												</tr>
+											</tfoot>
+										</table>
+									</div> -->
+									<!-- 2018-11-06 추가 -->
+									<ul class="desc">
+										<li>※ 가중치를 100% 기준으로 일률 조정하였음. <span class="tx-red">필요 시 리더 판단에 따라 재조정 후 "가중치 저장" 버튼 클릭!</li>
+										<li>※ 달성도는 <span class="tx-red">CbA 80점</span>, SUPEX 100점 기준(전사공통, 관대화 엄금)</li>
+										<li class="desc-indent"><span>※</span> Feedback/달성도부여 "미완료" 건이 있는 구성원의 종합 달성도는, 추후 해당 Task 리더가 Feedback/달성도 부여를 완료한 시점에<br>Update 됩니다. 따라서, 달성도가 부여되지 않은 Task에도 개인의 연간 투입 Resource를 고려하여 반드시 가중치를 입력해 주시기 바랍니다.</li>
+									</ul>
+									<!-- // 2018-11-06 추가 -->
+									<!-- 2018-11-06 삭제 
+										<p class="desc">※ 구성원의 Task 가중치를 1년 간 성과 중요도에 따라 조정 합니다. <span class="tx-red">조정 가중치의 합계는 100%</span>가 되어야 합니다.</p>
+									<p class="desc desc-indent"><span>※</span> Feedback/달성도부여 "미완료" 건이 있는 구성원의 종합 달성도는, 추후 해당 Task 리더가 Feedback/달성도 부여를 완료한 시점에<br>Update 됩니다. 따라서, 달성도가 부여되지 않은 Task에도 개인의 연간 투입 Resource를 고려하여 반드시 가중치를 입력해 주시기 바랍니다.</p> --> <!-- 2018-10-25 추가 -->
+								</div>
+
+								<!-- tab-cnt2 -->
+								<div class="tab-cnt" id="tab-cnt2">
+									<div class="tbl-top-cnt tr"><strong>총 <span class="tx-red">11</span> 건</strong></div>
+
+									<!-- 2018-10-18 추가 -->
+									<div class="tbl-type3">
+										<table>
+											<caption>Peer-F/B 결과</caption>
+											<colgroup>
+												<col style="width:105px"/>
+												<col style="width:423px"/>
+												<col style="width:188px"/>
+												<col style="width:140px"/>
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">구분</th>
+													<th scope="col">평가내용</th> <!-- 2018-10-24 칼럼명 수정 -->
+													<th scope="col">Task/업무 수행기간</th> <!-- 2018-10-24 칼럼명 수정 -->
+													<th scope="col">Peer-F/B 결과</th> <!-- 2018-11-20 칼럼명 변경 -->
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>종합</td>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td>종합</td>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td>조직 단위</td>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td>Task</td>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td>종합</td>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td>종합</td>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td colspan="4" class="tc">Peer-F/B 결과가 없습니다.</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- // 2018-10-18 추가 -->
+
+									<!-- 2018-10-18 삭제 
+									<div class="tbl-fixed">
+										<table class="tbl-title">
+											<caption>Peer-F/B 결과 타이틀</caption>
+											<colgroup>
+												<col style="width:104px"/>
+												<col style="width:475px"/>
+												<col style="width:188px"/>
+												<col style="width:140px"/>
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">구분</th>
+													<th scope="col">Task</th>
+													<th scope="col">수행기간</th>
+													<th scope="col">상세</th>
+												</tr>
+											</thead>
+										</table>
+											
+										<div class="tbl-cnt">
+											<table class="tbl-cnt">
+												<caption>Peer-F/B 결과 내용</caption>
+												<colgroup>
+													<col style="width:104px"/>
+													<col style="width:475px"/>
+													<col style="width:188px"/>
+													<col style="width:124px"/>
+												</colgroup>
+												<tbody>
+													<tr>
+														<td>종합</td>
+														<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+														<td>'18.01.22 ~ '18.12.12</td>
+														<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+													</tr>
+													<tr>
+														<td>종합</td>
+														<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+														<td>'18.01.22 ~ '18.12.12</td>
+														<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+													</tr>
+													<tr>
+														<td>조직 단위</td>
+														<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+														<td>'18.01.22 ~ '18.12.12</td>
+														<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+													</tr>
+													<tr>
+														<td>Task</td>
+														<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+														<td>'18.01.22 ~ '18.12.12</td>
+														<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+													</tr>
+													<tr>
+														<td>종합</td>
+														<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+														<td>'18.01.22 ~ '18.12.12</td>
+														<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+													</tr>
+													<tr>
+														<td>종합</td>
+														<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+														<td>'18.01.22 ~ '18.12.12</td>
+														<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div> -->
+								</div>
+							</div>
+							<!-- 2018-10-23 수정 -->
+
+						</div>
+
+						<!-- self-keyword -->
+						<div class="self-keyword">
+							<h3 class="title-dep2">Self-Keyword : 구성원 자신이 생각하는 장점/보완점</h3> <!-- 2018-11-06 수정 -->
+							<div class="fl box">
+								<p class="title">장점</p>
+								<ul>
+									<li>적재적소</li>
+									<li>적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+								</ul>
+							</div>
+							<div class="fr box">
+								<p class="title">보완점</p>
+								<ul>
+									<li>적재적소</li>
+									<li>적재적소</li>
+									<li>적재적소</li>
+									<li>적재적소</li>
+									<li>적재적소</li>
+									<li>적재적소적재적소</li>
+									<li>적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+								</ul>
+							</div>
+						</div>
+						<!-- // self-keyword -->
+
+						<!-- self-review-read -->
+						<div class="self-review-read">
+							<h3 class="title-dep2">종합 Self-Review</h3>
+							<textarea name="" id="" readonly>2018년 종합 육성의견은 이렇습니다.</textarea>
+						</div>
+						<!-- // self-review-read -->
+
+						<!-- 사전 review -->
+						<!-- 2018-10-23 수정 -->
+						<div class="active-box-org">
+							<div class="pre-review">
+								<h3 class="title-dep2">리더의 Review (Talent-Session 준비) </span></h3> <!-- 2018-11-06 추가 // 2018-11-01 용어 변경 // 2019-10-14 수정 -->
+								<div class="box-like-tbl">
+									<p class="title">추천항목<br><span class="desc">(복수 선택 가능)</span></p> <!-- 2019-10-14 수정 -->
+									<div class="cnt">
+										<p class="list-chk-desc">아래 항목은 임원 화면으로 전송되어 Talent-Session에서 논의하실 수 있습니다.</p>
+										<ul class="list-chk-button">
+											<li class="inp-check">
+												<input type="checkbox" name="" id="recom-chk-1">
+												<label for="recom-chk-1">(IB)추가 기여 보상 대상추천 <span class="box"></span></label>
+											</li>
+											<li class="inp-check">
+												<input type="checkbox" name="" id="recom-chk-2">
+												<label for="recom-chk-2">(MI)추가 기여 보상 대상추천 <span class="box"></span></label>
+											</li>
+											<li class="inp-check">
+												<input type="checkbox" name="" id="recom-chk-3">
+												<label for="recom-chk-3">(IB)조직 성과 보상 제한 <span class="box"></span></label>
+											</li>
+											<li class="inp-check">
+												<input type="checkbox" name="" id="recom-chk-4">
+												<label for="recom-chk-4">(MI)조직 성과 보상 제한 <span class="box"></span></label>
+											</li>
+											<li class="inp-check">
+												<input type="checkbox" name="" id="recom-chk-5">
+												<label for="recom-chk-5">Unsatisfactory 대상 <span class="box"></span></label>
+											</li>
+										</ul>
+										
+										<p class="list-chk-desc">아래 항목은 임원 화면으로 전송되지 않으며, 사업부/센터 HR 담당자에게 공유되는 ‘리더의 Memo’ 항목입니다.</p>
+										<ul class="list-chk-button">
+											<li class="inp-check tx-gray"> <!-- 2019-10-22 색상 관련 클래스 추가 -->
+												<input type="checkbox" name="" id="recom-chk-6">
+												<label for="recom-chk-6">A밴드 승진 추천 <span class="box"></span></label>
+											</li>
+											<li class="inp-check">
+												<input type="checkbox" name="" id="recom-chk-7">
+												<label for="recom-chk-7">리더 보임 추천 <span class="box"></span></label>
+											</li>
+											<li class="inp-check">
+												<input type="checkbox" name="" id="recom-chk-8">
+												<label for="recom-chk-8">이동 필요 <span class="box"></span></label>
+											</li>
+											<li class="inp-check">
+												<input type="checkbox" name="" id="recom-chk-9">
+												<label for="recom-chk-9">Values 이슈 <span class="box"></span></label>
+											</li>
+										</ul>
+										<!-- 2018-10-15 수정 -->
+										<p class="pre-note">
+											<label for="">비고</label>
+											<input type="text" name="" placeholder="조직 별 가이드에 따라 필요한 경우에만 활용 하십시오."> <!-- 2018-11-02 placeholder 문구 추가 -->
+										</p>
+										<!-- // 2018-10-15 수정 -->
+									</div>
+								</div>
+								<div class="box-like-tbl">
+									<p class="title">실력 등급 판단<br><span class="desc">(임원 화면으로 전송)</span></p> <!-- 2019-10-14 수정 -->
+									<div class="cnt level-fixed">
+										<p class="prev-level">※ 이전 년도 결과 :  회사 TOP / 기업문화DT CoE </p>
+										<ul class="list-radio-ver">
+											<li class="inp-radio">
+												<input type="radio" name="level-select" id="level-1" class="reason"> <!-- 2019-10-15 클래스 추가 -->
+												<label for="level-1"><span class="box"></span>MARKET TOP</label>
+											</li>
+											<li class="inp-radio">
+												<input type="radio" name="level-select" id="level-2" class="reason"> <!-- 2019-10-15 클래스 추가 -->
+												<label for="level-2"><span class="box"></span>회사 TOP</label>
+											</li>
+											<li class="inp-radio">
+												<input type="radio" name="level-select" id="level-3">
+												<label for="level-3"><span class="box"></span>전문가</label>
+											</li>
+											<li class="inp-radio">
+												<input type="radio" name="level-select" id="level-4">
+												<label for="level-4"><span class="box"></span>INTERMEDIATE</label>
+											</li>
+											<li class="inp-radio">
+												<input type="radio" name="level-select" id="level-5">
+												<label for="level-5"><span class="box"></span>ENTRY</label>
+											</li>
+											<li class="inp-radio">
+												<input type="radio" name="level-select" id="level-6">
+												<label for="level-6"><span class="box"></span>절대미흡</label>
+											</li>
+										</ul>
+										
+										<!-- 2019-10-14 추가 -->
+										<div class="inp-reason">
+											<strong class="tit">‘MARKET TOP’ 혹은 ‘회사 TOP’ 부여 시, 판단 근거를 반드시 작성 하셔야 합니다.</strong>
+											<p class="desc">※ Vision 제시, 변화/혁신 선도, 신규 창출 성과, 선제적 Issue 대응, Task 리딩, 지도/육성 경험, Market 혹은 전사 Impact 내용 등</p>
+											<textarea name="" rows="" cols=""></textarea>
+										</div>
+										<!-- // 2019-10-14 추가 -->
+									</div>
+								</div>
+								<p class="active-notice">※ 종합 육성 F/B은 조직별 Talent-Session(성과/보상 Review) 결과를 반영하여 추후 작성합니다.</p><!-- 2019-10-14 추가 -->
+							</div>
+						</div>						
+						<!-- // 2018-10-23 수정 -->
+						<!-- // 사전 review -->
+
+						<div class="btn-group">
+							<a href="#" class="btn-l btn-red2-outline">Talent-Session 메인</a>
+							<button type="submit" class="btn-l btn-red2"><span>임시 저장</span></button>
+							<button type="submit" class="btn-l btn-red2"><span>완료</span></button>
+						</div>
+						
+					</div>
+					<!-- // cnt-area -->
+
+				</div>
+		
+		<!--#include file="include-footer.html"-->
+	</div>
+
+</body>
+</html>

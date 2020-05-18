@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title></title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<!-- 달력기능 css / js -->
+	<link rel="stylesheet" href="/css/calendar-ui.css" media="screen, print" />
+	<script src="/js/calendar.js"></script>
+	<!-- // 달력기능 css / js -->
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						Task 등록
+						<!-- 2018-02-26 - 직책자 등록 시 -->
+						<div class="balloon-wrap">
+							<button type="button" class="btn-balloon" data-top="5" data-left="-5"><span>페이지 안내</span></button> <!-- 2018-02-02 수정 -->
+							<div class="cnt-balloon">
+								<div class="cnt">
+									직책자의 과제는 별도 승인절차 없이 등록/수정 가능합니다. 
+								</div>
+							</div>
+						</div>
+						<span class="desc">직책자 참고 사항</span>
+						<!-- // 직책자 등록 시 -->
+
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span>
+							<span>Task 관리</span>
+							<span><a href="#">나의 Task</a></span>
+							<strong>Task 등록</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<!-- cnt-area - 나의 Task 등록 -->
+					<div class="cnt-area task-detail-wrap task-reg">
+
+						<div class="task-kind-choice">
+							<div class="fl">
+								<strong class="title">구분</strong>
+								<div class="inp-radio">
+									<input type="radio" name="kind-task" id="task-alone" checked>
+									<label for="task-alone"><span class="box"></span> 개인Task</label>
+								</div>
+								<div class="inp-radio">
+									<input type="radio" name="kind-task" id="task-with">
+									<label for="task-with"><span class="box"></span> 협업Task</label>
+								</div>
+							</div>
+						</div>
+
+						<!-- Task set =============================================================== -->
+						<!-- 상세 내용 -->
+						<div class="detail-wrap">
+							<div class="detail-top">
+								<h3 class="title-dep2">Task 정보</h3>
+								<div class="fr">
+									<a href="#" class="btn-guide"><span class="ico-btn">작성 Manual</span></a> <!-- 2019-01-28 버튼 수정 -->
+									<a href="#" class="btn-m"><span class="ico-btn"><img src="/images/ico_btn-sch.png" alt=""></span>나의 조직 Task조회</a> <!-- 2018-01-24 버튼 수정 -->
+								</div>
+							</div>
+
+							<!-- task 상세 -->
+							<div class="detail-task">
+								<table>
+									<caption>Task 정보</caption>
+									<colgroup>
+										<col style="width:16%"/>
+										<col style="width:auto;"/>
+										<col style="width:12%"/>
+										<col style="width:22%"/>
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">비공개</th>
+											<!-- 2018-02-26 수정 -->
+											<td colspan="3">
+												<div class="inp-check">
+													<input type="checkbox" name="" id="secret1">
+													<label for="secret1"><span class="box"></span> ※ 나의 조직 Task 조회'를 통해 등록한 Task를 확인할 수 있습니다. <br>(체크 시 팀원에게 공개되지 않습니다.)  </label>
+												</div>
+											</td>
+											<!-- // 2018-02-26 수정 -->
+										</tr>
+										<!-- 2018-01-17 task 명 길이조절 -->
+										<tr>
+											<th scope="row">Task명</th>
+											<td colspan="3">
+												<input type="text" name="" placeholder="">
+											</td>
+										</tr>
+										<!-- // 2018-01-17 task 명 길이조절 -->
+										<tr>
+											<th scope="row"><label for="task-goal">목표</label></th>
+											<td colspan="3">
+												<textarea name="" rows="" cols="" id="task-goal"></textarea>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">기간</th>
+											<td>
+												<div class="inp-cal">
+													<span><input type="text" class="" id="bSDate" readonly></span><i>~</i><span><input type="text" class="" id="bEDate"></span>
+													<button type="button" class="btn-cal" onclick="ViewCalendar(this,document.all.bSDate,document.all.bEDate,'yyyy-mm-dd','ClickRight1','I',0,0);" style="cursor:hand;"><img src="/images/ico_date.png"></button>
+												</div>
+											</td>
+											<th scope="row">가중치</th>
+											<td class="tr"><input type="text" name="" value="" style="width:70px; margin-right:5px; text-align:right"> <strong>%</strong></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- // task 상세 -->
+						</div>
+						<!-- // 상세 내용 -->
+
+						<!-- 리더/동료 설정 등록 -->
+						<div class="comment-wrap">
+							<h3 class="title-dep2">
+								리더/동료 설정
+								<div class="fr"><a href="#" class="btn-m"><span class="ico-btn"><img src="/images/ico_people.png" alt=""></span> 조직도</a></div>
+							</h3>
+
+							<div class="side-member-list">
+								<h3 class="title-dep3">
+									Supporter <span class="tx-red">11</span>
+									<!-- 2019-03-13 수정 -->
+									<div class="balloon-wrap">
+										<button type="button" class="btn-balloon small" data-top="10" data-left="-118"><span>안내</span></button>
+										<div class="cnt-balloon dgray">
+											Task명 수정 시 모든 <span class="tx-yellow">Taskmate</span>에게 동일하게 적용 됩니다. <!-- 2019-03-25 텍스트 색상 수정 -->
+										</div>
+									</div>
+									<!-- // 2019-03-13 수정 -->
+								</h3>
+								<div class="box">
+									<a href="#" class="btn-add-member"><span>구성원 정보를 등록하세요.</span></a> <!-- 2018-01-29 구성원 추가 버튼 -->
+									<!-- <ul>
+										<li>
+											<span class="num">1</span>
+											<span class="img"><img src="/images/temp-user.png" alt=""></span>
+											<span class="name">홍길동</span>
+											<span class="team">UX디자인팀</span>
+										</li>
+										<li>
+											<span class="num">2</span>
+											<span class="img"><img src="/images/temp-user.png" alt=""></span>
+											<span class="name">홍길동</span>
+											<span class="team">UX디자인팀</span>
+										</li>
+										<li>
+											<span class="num">3</span>
+											<span class="img"><img src="/images/temp-user.png" alt=""></span>
+											<span class="name">홍길동</span>
+											<span class="team">UX디자인팀</span>
+										</li>
+										팀 전체 case
+										<li>
+											<span class="num">4</span>
+											<span class="img"><img src="/images/ico_team-all.png" alt=""></span>
+											<strong class="team">UX디자인팀 전체</strong>
+										</li>
+										// 팀 전체 case
+									</ul> -->
+								</div>
+							</div>
+
+							<div class="side-member-list approval">
+								<h3 class="title-dep3">Task리더</h3>
+								<div class="box">									
+									<a href="#" class="btn-add-member"><span>구성원 정보를 등록하세요.</span></a> <!-- 2018-01-29 구성원 추가 버튼 -->
+									<!-- <span class="img"><img src="/images/temp-user.png" alt=""></span>
+									<span class="name">홍길동</span>
+									<span class="team">UX디자인팀</span> -->
+								</div>
+							</div>
+						</div>
+						<!-- // Coaching &amp; F/B 등록 -->
+						<!-- // Task set =============================================================== -->
+
+						<!-- Task 추가/삭제 -->
+						<div class="task-divide">
+							<button type="button" onclick=""><span><i class="icon"><img src="/images/ico_task-del.png" alt=""></i>Task 삭제</span></button>
+						</div>
+						<!-- // Task 추가/삭제 -->
+
+						<!-- Task set =============================================================== -->
+						<!-- 상세 내용 -->
+						<div class="detail-wrap">
+							<div class="detail-top">
+								<h3 class="title-dep2">Task 정보</h3>
+								<div class="fr">
+									<a href="#" class="btn-m"><span class="ico-btn"><img src="/images/ico_btn-sch.png" alt=""></span>나의 조직 Task조회</a> <!-- 2018-01-24 버튼 수정 -->
+								</div>
+							</div>
+
+							<!-- task 상세 -->
+							<div class="detail-task">
+								<table>
+									<caption>Task 정보</caption>
+									<colgroup>
+										<col style="width:16%"/>
+										<col style="width:auto;"/>
+										<col style="width:12%"/>
+										<col style="width:22%"/>
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">비공개</th>
+											<td>
+												<div class="inp-check">
+													<input type="checkbox" name="" id="secret2">
+													<label for="secret2"><span class="box"></span> ※ 체크 시 팀원에게 공개 되지 않습니다.</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">Task명</th>
+											<td>
+												<input type="text" name="" placeholder="">
+											</td>
+											<th scope="row">직무</th>
+											<td>
+												<div class="inp-select">
+													<button type="button" class="btn-select" title="직무 선택"><span>선택하세요.</span></button>
+													<ul class="select-list">
+														<li><button type="button" class="btn-sel">개발</button></li>
+														<li><button type="button" class="btn-sel">기획</button></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><label for="task-goal">목표</label></th>
+											<td colspan="3">
+												<textarea name="" rows="" cols="" id="task-goal"></textarea>		
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">기간</th>
+											<td>
+												<div class="inp-cal">
+													<span><input type="text" class="" id="bSDate2"></span><i>~</i><span><input type="text" class="" id="bEDate2"></span>
+													<button type="button" class="btn-cal" onclick="ViewCalendar(this,document.all.bSDate2,document.all.bEDate2,'yyyy-mm-dd','ClickRight1','I',0,0);" style="cursor:hand;"><img src="/images/ico_date.png"></button>
+												</div>
+											</td>
+											<th scope="row">가중치</th>
+											<td class="tr"><input type="text" name="" value="" style="width:70px; margin-right:5px; text-align:right"> <strong>%</strong></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- // task 상세 -->
+						</div>
+						<!-- // 상세 내용 -->
+
+						<!-- 리더/동료 설정 등록 -->
+						<div class="comment-wrap">
+							<h3 class="title-dep2">
+								리더/동료 설정
+								<div class="fr"><a href="#" class="btn-m"><span class="ico-btn"><img src="/images/ico_people.png" alt=""></span> 조직도</a></div>
+							</h3>
+
+							<div class="side-member-list small">
+								<h3 class="title-dep3">
+									Taskmate <span class="tx-red">11</span>									
+									<!-- 2019-03-13 수정 -->
+									<div class="balloon-wrap">
+										<button type="button" class="btn-balloon small" data-top="10" data-left="-118"><span>안내</span></button>
+										<div class="cnt-balloon dgray">
+											Task명 수정 시 모든 Taskmate에게 동일하게 적용 됩니다.
+										</div>
+									</div>
+									<!-- // 2019-03-13 수정 -->
+								</h3>
+								<div class="box">
+									<a href="#" class="btn-add-member mate"><span>Taskmate를 등록하면 <i>협업 Task</i>,<br> 등록하지 않으면 <i>개인 Task</i> 가 됩니다.</span></a> <!-- 2019-02-25  taskmate 용 수정 -->
+									<!-- <ul>
+										<li>
+											<span class="num">1</span>
+											<span class="img"><img src="/images/temp-user.png" alt=""></span>
+											<span class="name">홍길동</span>
+											<span class="team">UX디자인팀</span>
+										</li>
+										<li>
+											<span class="num">2</span>
+											<span class="img"><img src="/images/temp-user.png" alt=""></span>
+											<span class="name">홍길동</span>
+											<span class="team">UX디자인팀</span>
+										</li>
+										<li>
+											<span class="num">3</span>
+											<span class="img"><img src="/images/temp-user.png" alt=""></span>
+											<span class="name">홍길동</span>
+											<span class="team">UX디자인팀</span>
+										</li>
+										<li>
+											<span class="num">3</span>
+											<span class="img"><img src="/images/temp-user.png" alt=""></span>
+											<span class="name">홍길동</span>
+											<span class="team">UX디자인팀</span>
+										</li>
+									</ul> -->
+								</div>
+							</div>
+
+							<div class="side-member-list small">
+								<h3 class="title-dep3">Supporter <span class="tx-red">11</span></h3>
+								<div class="box">
+									<ul>
+										<li>
+											<span class="num">1</span>
+											<span class="img"><img src="/images/temp-user.png" alt=""></span>
+											<span class="name">홍길동</span>
+											<span class="team">UX디자인팀</span>
+										</li>
+										<li>
+											<span class="num">2</span>
+											<span class="img"><img src="/images/temp-user.png" alt=""></span>
+											<span class="name">홍길동</span>
+											<span class="team">UX디자인팀</span>
+										</li>
+										<li>
+											<span class="num">3</span>
+											<span class="img"><img src="/images/temp-user.png" alt=""></span>
+											<span class="name">홍길동</span>
+											<span class="team">UX디자인팀</span>
+										</li>
+										<li>
+											<span class="num">3</span>
+											<span class="img"><img src="/images/temp-user.png" alt=""></span>
+											<span class="name">홍길동</span>
+											<span class="team">UX디자인팀</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="side-member-list approval">
+								<h3 class="title-dep3">Task리더</h3>
+								<div class="box">
+									<span class="img"><img src="/images/temp-user.png" alt=""></span>
+									<span class="name">홍길동</span>
+									<span class="team">UX디자인팀</span>
+								</div>
+							</div>
+						</div>
+						<!-- // Coaching &amp; F/B 등록 -->
+						<!-- // Task set =============================================================== -->
+
+						<!-- Task 추가/삭제 -->
+						<div class="task-divide">
+							<button type="button" onclick=""><span><i class="icon"><img src="/images/ico_task-add.png" alt=""></i>Task 추가</span></button>
+						</div>
+						<!-- // Task 추가/삭제 -->
+
+
+						<div class="btn-group tc">
+							<a href="#" class="btn-l btn-red2-outline">목록</a>
+							<a href="#" class="btn-l btn-red2-outline">임시저장</a>
+							<a href="#" class="btn-l btn-red2">승인요청</a>
+						</div>
+
+					</div>
+					<!-- // cnt-area - 나의 Task 등록 -->
+
+				</div>
+
+		<!--#include file="include-footer.html"-->
+	</div>
+
+</body>
+</html>

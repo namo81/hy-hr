@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>구성원 상세 | Talent-Session</title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mousewheel.min.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<script>
+		$(function(){
+			$('.btn-tx-control').click(function(){
+				var $tx = $(this).prev('textarea');
+				if($(this).hasClass('on')){
+					$(this).empty().text('늘려 보기').removeClass('on');
+					$tx.removeClass('more');
+				} else {
+					$(this).empty().text('줄여 보기').addClass('on');
+					$tx.addClass('more');
+				}
+			});
+
+			$('.ts-target-select').find('.tbl-cnt').find('a').each(function(){
+				$(this).click(function(){
+					$(this).parent('li').addClass('on').siblings().removeClass('on');
+				});
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->				
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						Talent-Session – 구성원 상세
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span> 
+							<span><a href="#">Talent-Session</a></span> 
+							<strong>구성원 상세</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<!-- cnt-area -->
+					<div class="cnt-area ts-self-review ts-detail not"> <!-- 작성불가일 경우 'not' 클래스 추가 -->
+
+						<div class="ts-target-select">
+							<h3 class="title-dep2">구성원 선택</h3> <!-- 2018-10-23 수정 -->
+							<div class="tbl-fixed">
+								<table class="tbl-title">
+									<caption>구성원 선택 타이틀</caption> <!-- 2018-10-23 수정 -->
+									<colgroup>
+										<!-- 2018-11-20 추가 및 수정 -->
+										<col style="width:127px"/>
+										<col style="width:152px"/>
+										<col style="width:114px"/>
+										<col style="width:182px"/>
+										<col style="width:114px"/>
+										<col style="width:220px"/>
+										<!-- // 2018-11-20 추가 및 수정 -->
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">사번</th>
+											<th scope="col">성명</th>
+											<th scope="col">Band</th>
+											<th scope="col">1차 Review<br><span class="normal">(Talent-Session용)</span></th> <!-- 2018-11-01 용어 변경 --> <!-- 2018-10-23 수정 -->
+											<th scope="col">추가기여<br>보상 대상</th> <!-- 2018-11-20 추가 -->
+											<th scope="col">종합 육성 F/B<br><span class="normal">(Talent-Session 결과 반영)</span></th> <!-- 2018-11-01 용어 변경 -->
+										</tr>
+									</thead>
+								</table>
+								
+								<div class="tbl-cnt">
+									<ul>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2">홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4"><span class="tx-red">작성불가</span></p>
+											<p class="col-5">O</p> <!-- 2018-11-20 추가 -->
+											<p class="col-6">진행예정</p> <!-- 2018-11-20 수정 -->
+											<a href="#">선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2">홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4"><span class="tx-red">작성중</span></p>
+											<p class="col-5"></p>
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2">홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-5"></p>
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+										<li class="on">
+											<p class="col-1">123456</p>
+											<p class="col-2">홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-5"></p>
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+										<li>
+											<p class="col-1">123456</p>
+											<p class="col-2">홍길동</p>
+											<p class="col-3">B</p>
+											<p class="col-4">완료</p>
+											<p class="col-5"></p>
+											<p class="col-6">진행예정</p>
+											<a href="#">선택</a>
+										</li>
+									</ul>
+								</div>
+								
+							</div>
+						</div>
+
+						<div class="tab-wrap">
+
+							<!-- 2018-10-23 삭제 <h3 class="title-dep2">대상</h3> -->
+							<div class="tx-info-target">
+								<span class="inbox">
+									<i><strong>사번</strong>123456</i>
+									<i><strong>성명</strong>홍길동</i>
+								</span>
+							</div>
+
+							<!-- 작성불가 문구 -->
+							<p class="not-ment"><i class="ico-btn"><img src="/images/ico_import.png" alt=""></i>사전 Review를 위해 완료 되어야 하는 항목 중 미완료 건이 있어 작성 불가 상태입니다. <br>나의 구성원 진행 현황의 미완료 건을 모두 완료 후에 작성 가능합니다. </p>
+						</div>
+
+							<!-- tab-menu
+							<div class="tab-menu tab-type1">
+								<ul>
+									<li class="on"><a href="#tab-cnt1">Task 성과</a></li>
+									<li><a href="#tab-cnt2">Peer-F/B 결과</a></li>
+								</ul>
+							</div>
+							// tab-menu
+							
+							tab-cnt1
+							<div class="tab-cnt" id="tab-cnt1">
+								<div class="tbl-fixed">
+									<table class="tbl-title">
+										<caption>Task 성과 타이틀</caption>
+										<colgroup>
+											<col style="width:342px"/>
+											<col style="width:178px"/>
+											<col style="width:89px"/>
+											<col style="width:84px"/>
+											<col style="width:84px"/>
+											<col style="width:130px"/>
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="2">Task명</th>
+												<th scope="col" rowspan="2">수행기간</th>
+												<th scope="col" colspan="2" class="group">가중치</th>
+												<th scope="col" rowspan="2">달성도</th>
+												<th scope="col" rowspan="2">보기</th>
+											</tr>
+											<tr>
+												<th scope="col" class="line">기존</th>
+												<th scope="col">조정</th>
+											</tr>
+										</thead>
+									</table>
+										
+									<div class="tbl-cnt">
+										<table class="tbl-cnt">
+											<caption>Task 성과 내용</caption>
+											<colgroup>
+												<col style="width:342px"/>
+												<col style="width:178px"/>
+												<col style="width:89px"/>
+												<col style="width:84px"/>
+												<col style="width:84px"/>
+												<col style="width:114px"/>
+											</colgroup>
+											<tbody>
+												<tr>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td class="tr">50%</td>
+													<td class="tr"><input type="text" name=""> %</td>
+													<td class="tr">50%</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td class="tr">50%</td>
+													<td class="tr"><input type="text" name=""> %</td>
+													<td class="tr">50%</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td class="tr">50%</td>
+													<td class="tr"><input type="text" name=""> %</td>
+													<td class="tr">50%</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td class="tr">50%</td>
+													<td class="tr"><input type="text" name=""> %</td>
+													<td class="tr">50%</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td class="tr">50%</td>
+													<td class="tr"><input type="text" name=""> %</td>
+													<td class="tr">50%</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<table class="tbl-footer">
+										<caption>Task 성과 합계</caption>
+										<colgroup>
+											<col style="width:520px"/>
+											<col style="width:89px"/>
+											<col style="width:84px"/>
+											<col style="width:84px"/>
+											<col style="width:130px"/>
+										</colgroup>
+										<tfoot>
+											<tr>
+												<td>합계</td>
+												<td class="tr">210%</td>
+												<td class="tr"><span class="sum"></span>%</td>
+												<td class="tr">94점</td>
+												<td><button type="submit" class="btn-m btn-gray2"><span>가중치 저장</span></button></td>
+											</tr>
+										</tfoot>
+									</table>
+									
+								</div>
+								<p class="desc">※ 구성원의 Task 가중치를 1년 간 성과 중요도에 따라 조정 합니다. <span class="tx-red">조정 가중치의 합계는 100%</span>가 되어야 합니다.</p>
+							</div>
+							
+							tab-cnt2
+							<div class="tab-cnt" id="tab-cnt2">
+								<div class="tbl-top-cnt tr"><strong>총 <span class="tx-red">11</span> 건</strong></div>
+								<div class="tbl-fixed">
+									<table class="tbl-title">
+										<caption>Peer-F/B 결과 타이틀</caption>
+										<colgroup>
+											<col style="width:104px"/>
+											<col style="width:475px"/>
+											<col style="width:188px"/>
+											<col style="width:140px"/>
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">구분</th>
+												<th scope="col">Task</th>
+												<th scope="col">수행기간</th>
+												<th scope="col">상세</th>
+											</tr>
+										</thead>
+									</table>
+										
+									<div class="tbl-cnt">
+										<table class="tbl-cnt">
+											<caption>Peer-F/B 결과 내용</caption>
+											<colgroup>
+												<col style="width:104px"/>
+												<col style="width:475px"/>
+												<col style="width:188px"/>
+												<col style="width:124px"/>
+											</colgroup>
+											<tbody>
+												<tr>
+													<td>종합</td>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td>종합</td>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td>조직 단위</td>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td>Task</td>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td>종합</td>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+												<tr>
+													<td>종합</td>
+													<td class="tl">Keyword 개선 등 상호 F/B 및 Admin</td>
+													<td>'18.01.22 ~ '18.12.12</td>
+													<td><button type="button" class="btn-s btn-red3-outline"><span><i class="ico-btn"></i>상세보기</span></button></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							
+													</div>
+							
+													self-keyword
+													<div class="self-keyword">
+							<h3 class="title-dep2">Self-keyword</h3>
+							<div class="fl box">
+								<p class="title">장점</p>
+								<ul>
+									<li>적재적소</li>
+									<li>적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+								</ul>
+							</div>
+							<div class="fr box">
+								<p class="title">보완점</p>
+								<ul>
+									<li>적재적소</li>
+									<li>적재적소</li>
+									<li>적재적소</li>
+									<li>적재적소</li>
+									<li>적재적소</li>
+									<li>적재적소적재적소</li>
+									<li>적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+									<li class="etc">#적재적소</li>
+								</ul>
+							</div>
+													</div>
+													// self-keyword
+							
+													self-review-read
+													<div class="self-review-read">
+							<h3 class="title-dep2">종합 Self-Review</h3>
+							<textarea name="" id="" readonly>2018년 종합 육성의견은 이렇습니다.</textarea>
+													</div>
+													// self-review-read
+							
+													사전 review
+													<div class="pre-review">
+							<h3 class="title-dep2">사전 review (T-Session용)</h3>
+							<div class="box-like-tbl">
+								<p class="title">추천항목<br>(복수 선택 가능)</p>
+								<div class="cnt">
+									<ul class="list-chk-button">
+										<li class="inp-check">
+											<input type="checkbox" name="" id="recom-chk-1">
+											<label for="recom-chk-1">(IB)추가 기여 보상 대상추천 <span class="box"></span></label>
+										</li>
+										<li class="inp-check">
+											<input type="checkbox" name="" id="recom-chk-2">
+											<label for="recom-chk-2">(MI)추가 기여 보상 대상추천 <span class="box"></span></label>
+										</li>
+										<li class="inp-check">
+											<input type="checkbox" name="" id="recom-chk-3">
+											<label for="recom-chk-3">승진(보임) 추천 <span class="box"></span></label>
+										</li>
+										<li class="inp-check">
+											<input type="checkbox" name="" id="recom-chk-4">
+											<label for="recom-chk-4">Unsatisfactory 대상 <span class="box"></span></label>
+										</li>
+										<li class="inp-check">
+											<input type="checkbox" name="" id="recom-chk-5">
+											<label for="recom-chk-5">조직 성과 보상 제한 <span class="box"></span></label>
+										</li>
+										<li class="inp-check">
+											<input type="checkbox" name="" id="recom-chk-6">
+											<label for="recom-chk-6">이동 필요 <span class="box"></span></label>
+										</li>
+										<li class="inp-check">
+											<input type="checkbox" name="" id="recom-chk-7">
+											<label for="recom-chk-7">Values 이슈 <span class="box"></span></label>
+										</li>
+									</ul>
+									<textarea name="" id="" class="recom-txarea"></textarea>
+								</div>
+							</div>
+							<div class="box-like-tbl">
+								<p class="title">실력 등급 확정</p>
+								<div class="cnt level-fixed">
+									<p class="prev-level">※ 이전 년도 결과 :  회사 TOP / 기업문화DT CoE </p>
+									<ul class="list-radio-ver">
+										<li class="inp-radio">
+											<input type="radio" name="level-select" id="level-1">
+											<label for="level-1"><span class="box"></span>MARKET TOP</label>
+										</li>
+										<li class="inp-radio">
+											<input type="radio" name="level-select" id="level-2">
+											<label for="level-2"><span class="box"></span>회사 TOP</label>
+										</li>
+										<li class="inp-radio">
+											<input type="radio" name="level-select" id="level-3">
+											<label for="level-3"><span class="box"></span>전문가</label>
+										</li>
+										<li class="inp-radio">
+											<input type="radio" name="level-select" id="level-4">
+											<label for="level-4"><span class="box"></span>INTERMEDIATE</label>
+										</li>
+										<li class="inp-radio">
+											<input type="radio" name="level-select" id="level-5">
+											<label for="level-5"><span class="box"></span>ENTRY</label>
+										</li>
+										<li class="inp-radio">
+											<input type="radio" name="level-select" id="level-6">
+											<label for="level-6"><span class="box"></span>절대미흡</label>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						// 사전 review -->
+
+						<!-- 2018-10-17 수정 -->
+						<div class="btn-group">
+							<a href="#" class="btn-l btn-red2-outline">Talent-Session 메인</a>
+							<a href="#" class="btn-l btn-red2">작성불가 사유보기</a>
+						</div>
+						<!-- // 2018-10-17 수정 -->
+						
+					</div>
+					<!-- // cnt-area -->
+
+				</div>
+		
+		<!--#include file="include-footer.html"-->
+	</div>
+
+</body>
+</html>

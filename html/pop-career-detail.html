@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>Task Peer-F/B 확인</title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/popup.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/layerpop_func.js"></script>
+	<script src="/js/common.js"></script>
+	<script>
+		$(function(){
+			/* 2018-04-26 textarea focus 관련 버그 임시수정 */
+			$('.tab-wrap, .survey-wrap').on('mouseover',function(){
+				$('textarea').each(function(){
+					$(this).blur();
+				});
+			});
+			/* // 2018-04-26 textarea focus 관련 버그 임시수정 */
+
+			/* 2019-07-29 팝업 수정 */
+			$('.open-layer').click(function(e){
+				e.preventDefault();
+				layerOpenBtn($(this)); // position 설정 제거
+			});
+			$('.close-layer').click(function(){
+				layerClose();
+			});
+		});
+	</script>
+	<link rel="stylesheet" href="/css/notosanskr.css" media="screen, print" />
+	<style type="text/css">
+		.career-profile *, .career-resume * { font-family:'Noto Sans KR','Nanum Gothic','맑은 고딕',Dotum,AppleGothic,sans-serif; }
+	</style>
+</head>
+<body>
+	<div id="popup" class="pop-type2 pop-career-detail">
+		<!-- header -->
+		<header id="pop-top">
+			<h1 class="pop-title"><span class="under">동료에게 보여지는</span> 「my Career」 (My Profile &amp; My Resume)</h1> <!-- 2019-09-10 수정 -->
+		</header>
+
+		<!-- mid -->
+		<div id="pop-mid">
+			<div class="tab-wrap">
+				<!-- 탭 메뉴 -->
+				<div class="tab-menu tab-type2">
+					<ul>
+						<li class="on"><a href="#tab-cnt1">My Profile</a></li>
+						<li>
+							<a href="#tab-cnt2">My Resume</a>
+							<p class="tooltip">구성원 본인이 직접 작성</p>
+						</li>
+					</ul>
+				</div>
+				<!-- // 탭 메뉴 -->
+
+				<!-- My Profile -->
+				<div class="tab-cnt career-profile" id="tab-cnt1">
+					<div class="btn-wrap">
+						<button type="button" class="btn-pdf" onclick=""><span><em>PDF</em> 다운로드</span></button>
+					</div>
+
+					<!-- 인적사항 2019-08-13 수정 -->
+					<div class="profile-box">
+						<div class="photo-area">
+							<div class="wrap-photo">
+								<img src="/images/temp_profile-1.jpg" alt="">
+							</div>
+							<strong class="name" title="홍길동홍길">홍길동홍길</strong>
+							<span class="id-num">201210085</span>
+						</div>
+						<div class="info-area">
+							<table class="profile-info-table">
+								<caption></caption>
+								<colgroup>
+									<col style="width:17%;">
+									<col style="width:37%;">
+									<col style="width:16%;">
+									<col style="width:auto;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row"><span>입사/재직 구분</span></th>
+										<td>경력채용/재직자</td>
+										<th scope="row"><span>Band</span></th>
+										<td>A</td>
+									</tr>
+									<tr>
+										<th scope="row"><span>직책</span></th>
+										<td></td>
+										<th scope="row"><span>소속</span></th>
+										<td>기업문화AI/DT팀</td>
+									</tr>
+									<tr>
+										<th scope="row"><span>생년월일</span></th>
+										<td>1980. 05. 06 (00세)</td>
+										<th scope="row"><span>현부서배치일</span></th>
+										<td>2012. 07. 12</td>
+									</tr>
+									<tr>
+										<th scope="row"><span>입사일</span></th>
+										<td>2012. 07. 12 (6년)</td>
+										<th scope="row"><span>그룹입사일</span></th>
+										<td>2012. 07. 12 (6년 1개일)</td>
+									</tr>
+									<tr>
+										<th scope="row"><span>담당업무</span></th>
+										<td colspan="3">인공지능, 알고리즘, 데이터 구조, 네트워크 프로그래밍, 객체지향 프로그래밍, 인공지능, 알고리즘, 데이터 구조</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- // 인적사항 -->
+					
+					<!-- 인적사항 type2 - 2019-08-13 추가 -->
+					<div class="profile-box">
+						<div class="photo-area">
+							<div class="wrap-photo">
+								<img src="/images/temp_profile-1.jpg" alt="">
+							</div>
+							<strong class="name" title="홍길동홍길">홍길동홍길</strong>
+							<span class="id-num">201210085</span>
+						</div>
+						<div class="info-area" style="margin-top:20px;"> <!-- 2019-08-27 추가 -->
+							<table class="profile-info-table">
+								<caption></caption>
+								<colgroup>
+									<col style="width:17%;">
+									<col style="width:37%;">
+									<col style="width:16%;">
+									<col style="width:auto;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row"><span>입사/재직 구분</span></th>
+										<td>경력채용/재직자</td>
+										<th scope="row"><span>소속</span></th>
+										<td>기업문화AI/DT팀</td>
+									</tr>
+									<tr>
+										<th scope="row"><span>생년월일</span></th>
+										<td>1980. 05. 06 (00세)</td>
+										<th scope="row"><span>현부서배치일</span></th>
+										<td>2012. 07. 12</td>
+									</tr>
+									<tr>
+										<th scope="row"><span>입사일</span></th>
+										<td>2012. 07. 12 (6년)</td>
+										<th scope="row"><span>그룹입사일</span></th>
+										<td>2012. 07. 12 (6년 1개일)</td>
+									</tr>
+									<tr>
+										<th scope="row"><span>담당업무</span></th>
+										<td colspan="3">인공지능, 알고리즘, 데이터 구조, 네트워크 프로그래밍, 객체지향 프로그래밍, 인공지능, 알고리즘, 데이터 구조</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- // 인적사항 -->
+					
+					<!-- Experience -->
+					<div class="section">
+						<h2 class="sec-tit">Experience</h2>
+						<h3 class="tbl-tit">Task</h3>
+						<div class="tbl-wrap tbl-type1 td-dot"> <!-- 2019-07-30 td-dot 클래스 추가 -->
+							<table>
+								<caption>task</caption>
+								<colgroup>
+									<col style="width:24%">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">기간</th>
+										<th scope="col"><span>Task</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											2019. 01 ~ 2019. 07<br>
+											(0년7개월)
+										</td>
+										<td class="tl">
+											<span class="t-step step4">Task수행중</span>
+											<a href="#" title=" ’18년 기업문화DT CoE - 상반기">’18년 기업문화DT CoE - 상반기 ’18년 기업문화DT CoE - 상반기 ’18년 기업문화DT CoE - 상반기 ’18년 기업문화DT CoE - 상반기 ’18년 기업문화DT CoE - 상반기</a> <!-- 2019-08-13 tx-line 클래스 삭제 -->
+										</td><!-- 2019-07-30 툴팁 예시 - a 나 td 태그에 title 추가 -->
+									</tr>
+									<tr>
+										<td rowspan="2">
+											2019. 01 ~ 2019. 07<br>
+											(0년7개월)
+										</td>
+										<td class="tl" title=" ’18년 기업문화DT CoE - 상반기">’18년 기업문화DT CoE - 상반기 ’18년 기업문화DT CoE - 상반기 ’18년 기업문화DT CoE - 상반기 ’18년 기업문화DT CoE - 상반기 ’18년 기업문화DT CoE - 상반기 ’18년 기업문화DT CoE - 상반기 ’18년 기업문화DT CoE - 상반기</td><!-- 2019-07-30 툴팁 예시 - a 나 td 태그에 title 추가 -->
+									</tr>
+									<tr>
+										<td class="tl">
+											<a href="#">’18년 기업문화DT CoE - 상반기</a> <!-- 2019-08-13 tx-line 클래스 삭제 -->
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<h3 class="tbl-tit appoint">발령 내역</h3>
+						<div class="tbl-top-cnt tr">
+							<div class="inp-check">
+								<input type="checkbox" name="" id="check1">
+								<label for="check1"><span class="box"></span> 상세이력조회</label>
+							</div>
+						</div>
+						<div class="tbl-wrap tbl-type1">
+							<table>
+								<caption>발령 내역</caption>
+								<colgroup>
+									<col style="width:15%">
+									<col style="width:16%">
+									<col style="width:auto">
+									<col style="width:25%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">발령일자</th>
+										<th scope="col"><span>구분</span></th>
+										<th scope="col"><span>내용</span></th>
+										<th scope="col"><span>비고</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2019. 01. 07</td>
+										<td>경력채용</td>
+										<td class="tl">성장기술원 Data Teck.Lab</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<h3 class="tbl-tit">입사 전 경력</h3>
+						<div class="tbl-wrap tbl-type1">
+							<table>
+								<caption>입사 전 경력</caption>
+								<colgroup>
+									<col style="width:auto">
+									<col style="width:33%">
+									<col style="width:30%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">회사명</th>
+										<th scope="col"><span>기간</span></th>
+										<th scope="col"><span>최종직위</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>A회사</td>
+										<td>YYYY. MM. DD (N년N개월)</td>
+										<td>대리</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- // Experience -->
+
+					<!-- Performance -->
+					<div class="section">
+						<h2 class="sec-tit">Performance</h2>
+
+						<!-- 2019-08-26 수정 - 성과/보상 탭 -->
+						<div class="sub-tab-wrap">
+							<!-- 탭 메뉴 -->
+							<div class="tab-menu-sub">
+								<ul>
+									<li class="on"><a href="#tab-review1">성과 Review</a></li>
+									<li>
+										<a href="#tab-review2">보상 Review</a>										
+										<p class="tooltip"><span class="under">소속 임원/리더</span>에게만 제공되는 정보로서, <br>구성원 본인에게는 제공되지 않습니다.</p> <!-- 2019-09-05 추가 -->
+									</li>
+								</ul>
+							</div>
+							<!-- // 탭 메뉴 -->
+							<!-- tab1 - 성과 Review -->
+							<div class="tab-sub-cnt" id="tab-review1">
+								<div class="tbl-wrap tbl-type1">
+									<table>
+										<caption>성과 Review</caption>
+										<colgroup>
+											<col style="width:16%">
+											<col style="width:30%">
+											<col style="width:auto">
+											<col style="width:18%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">연도</th>
+												<th scope="col"><span>결과</span></th>
+												<th scope="col"><span>소속조직</span></th>
+												<th scope="col"><span>밴드</span></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>2018</td>
+												<td>( INTERMEDIATE, Unsatisfactory )</td>
+												<td>기업문화AI/DT팀</td>
+												<td>A</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							
+							<!-- tab2 - 보상 Review -->
+							<div class="tab-sub-cnt" id="tab-review2">
+								<h4 class="tbl-stit">&middot; IB(Incentive Bonus) &amp; MI(Merit Increase)</h3>
+								<div class="tbl-wrap tbl-type1">
+									<table>
+										<caption>IB &amp; MI</caption>
+										<colgroup>
+											<col style="width:12%">
+											<col style="width:22%">
+											<col style="width:22%">
+											<col style="width:22%">
+											<col style="width:22%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">연도</th>
+												<th scope="col"><span>[IB] 조직성과 보상</span></th>
+												<th scope="col"><span>[IB] 추가기여 보상</span></th>
+												<th scope="col"><span>[MI] 조직성과 보상</span></th>
+												<th scope="col"><span>[MI] 추가기여 보상</span></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>2018</td>
+												<td>90%</td>
+												<td>30%</td>
+												<td class="l-line">20%</td> <!-- 2019-08-29 클래스 추가 -->
+												<td>10%</td>
+											</tr>
+											<tr>
+												<td>2018</td>
+												<td>90%</td>
+												<td>30%</td>
+												<td class="l-line">20%</td> <!-- 2019-08-29 클래스 추가 -->
+												<td>10%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<h4 class="tbl-stit">&middot; 기본급</h3>
+								<div class="tbl-wrap tbl-type1">
+									<table>
+										<caption>IB &amp; MI</caption>
+										<colgroup>
+											<col style="width:30%">
+											<col style="width:35%">
+											<col style="width:35%">
+										</colgroup>
+										<thead>
+											<!-- 2019-09-05 수정 -->
+											<tr>
+												<th scope="col">전사 <i class="tx-red">A Band</i> 평균 대비</th> <!-- 2019-09-03 수정 -->
+												<th scope="col"><span>사업부/센터 <i class="tx-red">A Band</i> 평균 대비</span></th>
+												<th scope="col"><span>실/본부 <i class="tx-red">A Band</i> 평균 대비</span></th>
+											</tr>
+											<!-- // 2019-09-05 수정 -->
+										</thead>
+										<tbody>
+											<tr>
+												<td>98.9%</td>
+												<td>101.9%</td>
+												<td>96.9%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+						</div>
+						<!-- // 2019-08-26 수정 - 성과/보상 탭 -->
+
+						<!-- 탭 -->
+						<div class="sub-tab-wrap sr"> <!-- 2019-08-26 'sr' 클래스 추가 -->
+							<!-- 탭 메뉴 -->
+							<div class="tab-menu-sub">
+								<ul>
+									<li class="on"><a href="#tab-sub1">종합 육성 Feedback</a></li>
+									<li><a href="#tab-sub2">종합 Self-Review</a></li>
+								</ul>
+							</div>
+							<!-- // 탭 메뉴 -->
+							<div class="tab-sub-cnt" id="tab-sub1">
+								<div class="tbl-wrap tbl-type1">
+									<table>
+										<caption>종합 육성 Feedback</caption>
+										<colgroup>
+											<col style="width:20%">
+											<col style="width:auto">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">평가자</th>
+												<th scope="col"><span>내용</span></th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- 2019-07-18 수정 -->
+											<tr>
+												<td rowspan="2" class="tc"> <!-- 2019-09-03 수정 -->
+													2018년 평가자 :
+													<span class="name">
+														팀장 박팀장<br>
+														(1234567)
+													</span>
+												</td>
+												<td>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</td>
+											</tr>
+											<tr>
+												<td>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</td>
+											</tr>
+											<!-- // 2019-07-18 수정 -->
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="tab-sub-cnt" id="tab-sub2">
+								<div class="tbl-wrap tbl-type1">
+									<table>
+										<caption>종합 육성 Feedback</caption>
+										<colgroup>
+											<col style="width:20%">
+											<col style="width:auto">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">평가자</th>
+												<th scope="col"><span>내용</span></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td rowspan="2" class="tc"> <!-- 2019-09-03 수정 -->
+													2018년 평가자 :
+													<span class="name">
+														팀장 박팀장<br>
+														(1234567)
+													</span>
+												</td>
+												<td>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</td>
+											</tr>
+											<tr>
+												<td>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<h3 class="tbl-tit peer-feedback">Peer-Feedback</h3>
+						<div class="tbl-wrap tbl-type1">
+							<table>
+								<caption>Peer-Feedback</caption>
+								<colgroup>
+									<col style="width:16%">
+									<col style="width:38%">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">연도</th>
+										<th scope="col"><span>장점 키워드</span></th>
+										<th scope="col"><span>함께 일한 동료</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2018</td>
+										<td class="tc">
+											<a href="#" class="tx-line open-layer" data-target="layerpop-task-detail">분석적 사고, 수평/평등, 변화 추구, HumanHuman Human</a> <!-- 2019-07-24 현재위치 예시 -->
+										</td>
+										<td class="tc">
+											<a href="#" class="tx-line">김팀원, 박팀원, 최팀원, 안팀원, 황팀원, 이팀원, 황팀원, 이팀원</a>
+										</td>
+									</tr>
+									<tr>
+										<td>2017</td>
+										<td class="tc">
+											<a href="#" class="tx-line">분석적 사고, 수평/평등, 변화 추구, HumanHuman Human</a>
+										</td>
+										<td class="tc">
+											<a href="#" class="tx-line">김팀원, 박팀원, 최팀원, 안팀원, 황팀원, 이팀원, 저팀원</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<h3 class="tbl-tit">상벌사항</h3>
+						<div class="tbl-wrap tbl-type1">
+							<table>
+								<caption>상벌사항</caption>
+								<colgroup>
+									<col style="width:12%">
+									<col style="width:15%">
+									<col style="width:15%">
+									<col style="width:auto">
+									<col style="width:21%">
+									<col style="width:15%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">구분</th>
+										<th scope="col"><span>시행일시</span></th>
+										<th scope="col"><span>상벌유형</span></th>
+										<th scope="col"><span>사유</span></th>
+										<th scope="col"><span>시행기관</span></th>
+										<th scope="col"><span>비고</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- // Performance -->
+
+					<!-- Competency &amp; Learning -->
+					<div class="section">
+						<h2 class="sec-tit">Competency &amp; Learning</h2>
+						<h3 class="tbl-tit">학력</h3>
+						<div class="tbl-wrap tbl-type1">
+							<table>
+								<caption>학력</caption>
+								<colgroup>
+									<col style="width:20%">
+									<col style="width:27%">
+									<col style="width:28%">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">기간</th>
+										<th scope="col"><span>학교 전공</span></th>
+										<th scope="col"><span>소재지</span></th>
+										<th scope="col"><span>비고</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											YYYY. MM ~ YYYY. MM<br>
+											대학교 졸업
+										</td>
+										<td>한국대학교 한국어학</td>
+										<td>서울, 한국</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<h3 class="tbl-tit">어학</h3>
+						<div class="tbl-wrap tbl-type1">
+							<table>
+								<caption>어학</caption>
+								<colgroup>
+									<col style="width:16%">
+									<col style="width:auto">
+									<col style="width:14%">
+									<col style="width:26%">
+									<col style="width:21%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">종류</th>
+										<th scope="col"><span>시험명</span></th>
+										<th scope="col"><span>취득일자</span></th>
+										<th scope="col"><span>점수/등급</span></th>
+										<th scope="col"><span>시험기관</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<h3 class="tbl-tit peer-feedback">해외 경험</h3>
+						<div class="tbl-wrap tbl-type1">
+							<table>
+								<caption>해외 경험</caption>
+								<colgroup>
+									<col style="width:20%">
+									<col style="width:27%">
+									<col style="width:17%">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">국가</th>
+										<th scope="col"><span>기간</span></th>
+										<th scope="col"><span>개월수</span></th>
+										<th scope="col"><span>목적</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<p class="tx-info">※ 스스로 작성한(미검증) 내용입니다.</p>
+						<h3 class="tbl-tit">자격/특허</h3>
+						<div class="tbl-wrap tbl-type1">
+							<table>
+								<caption>자격/특허</caption>
+								<colgroup>
+									<col style="width:20%">
+									<col style="width:12%">
+									<col style="width:13%">
+									<col style="width:13%">
+									<col style="width:16.5%">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">종류</th>
+										<th scope="col"><span>등급</span></th>
+										<th scope="col"><span>취득일</span></th>
+										<th scope="col"><span>만료일</span></th>
+										<th scope="col"><span>자격번호</span></th>
+										<th scope="col"><span>발행처</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>정보처리기사</td>
+										<td>기사1급</td>
+										<td>YYYY. MM. DD</td>
+										<td>만료일 없음</td>
+										<td>123456678</td>
+										<td>산업인력관리공단</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- // Competency &amp; Learning -->
+				</div>
+				<!-- // My Profile -->
+
+				<!-- My Resume -->
+				<div class="tab-cnt career-resume" id="tab-cnt2">
+
+					<!-- 미작성 상태 -->
+					<div class="no-data">
+						<p class="ment">작성된 내용이 없습니다. <br>작성 버튼을 클릭하여 My Resume를 작성해주시기 바랍니다.</p>						
+						<div class="btn-wrap">
+							<button type="button" class="btn-modi btn-white" onclick=""><span>작성 가이드</span></button> <!-- 2019-07-29 추가 -->
+							<button type="button" class="btn-modi" onclick=""><span>작성</span></button>
+						</div>
+					</div>
+					<!-- // 미작성 상태 -->
+
+					<!-- 작성 상태 -->
+					<div class="btn-wrap">
+						<button type="button" class="btn-pdf" onclick=""><span><em>PDF</em> 다운로드</span></button>
+						<button type="button" class="btn-modi" onclick=""><span>수정</span></button>
+					</div>
+					<div class="summary-area">
+						<strong class="name">홍길동</strong>
+						<ul class="info-list">
+							<li><span>기업문화AI/DT팀</span><span>A밴드</span><span>YYYY년생</span></li>
+							<li><span>입사일 : YYYY.MM.DD</span><span>그룹입사일 : YYYY.MM.DD</span><span>입사구분 : 경력</span></li>
+						</ul>
+						<ul class="desc-list">
+							<li>신규 쇼핑액의 iOS 개발을 맡아 상품 정보 및 결제 등 주요 기능을 개발</li>
+							<li>100만 다운로드 및 앱스토어 피처드 다수 선정, 앱스토어 출시 관리 및 장애 이슈 대응 경험</li>
+							<li>내용내용 내용내용 내용내용 내용내용 내용내용 내용내용 내용내용 내용내용</li>
+						</ul>
+					</div>
+					<div class="resume-area">
+						<div class="section">
+							<em class="cate">경험(사내)</em>
+							<div class="cont">
+								<ul class="section-list">
+									<li>
+										<strong class="title">ATask명Task명Task명Task명Task명</strong>
+										<div class="info">
+											<strong class="period">2013.03.05 ~ 2013.09.30</strong>
+											<span class="team">기업문화AI/DT팀</span>
+										</div>
+										<!-- 2019-07-22 수정 -->
+										<pre>- 프로젝트 PL 및 Architect 역할 수행
+  프로젝트 PL 및 Architect 역할 수행
+- HPE 의 CloudFoundry 기반의 PaaS 개발 및 운영</pre>
+										<!-- // 2019-07-22 수정 -->
+									</li>
+									<li>
+										<strong class="title">AESTAR</strong>
+										<div class="info">
+											<strong class="period">2013.03.05 ~ 2013.09.30</strong>
+											<span class="team">기업문화AI/DT팀</span>
+										</div>
+										<pre>- 프로젝트 PL 및 Architect 역할 수행</pre>
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="section">
+							<em class="cate">경험(사외)</em>
+							<div class="cont">
+								<ul class="section-list"> <!-- 2019-07-30 클래스 추가 -->
+									<li>
+										<strong class="title">OpenStack 기반의 Private Cloud 구축 OpenStack 기반의 Private Cloud 구축</strong>
+										<div class="info">
+											<strong class="period">2013.03.05 ~ 2013.09.30</strong>
+											<span class="team">기업문화AI/DT팀</span>
+										</div>
+										<pre>- 프로젝트 PL 및 Architect 역할 수행</pre>
+									</li>
+								</ul>
+							</div>
+						</div>						
+						
+						<div class="section">
+							<em class="cate">경험(해외)</em>
+							<div class="cont">
+								<ul class="section-list"> <!-- 2019-07-30 클래스 추가 -->
+									<li>-</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="section">
+							<em class="cate">역량/Skill</em>
+							<div class="cont">
+								<ul class="list-item">
+									<li>
+										<dl>
+											<dt>Kubernetes</dt>
+												<dd>Container Orchestraor 의 de facto standard 로 컨테이너를 관리하는 Open Source</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>OpenStack</dt>
+												<dd>Open Source Cloud System</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>Java</dt>
+												<dd>Java language </dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>	Python</dt>
+												<dd>Python language</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>JPA</dt>
+												<dd>도메인 모델링 구현 툴인 Java Persistance API </dd>
+										</dl>
+									</li>
+								</ul>								
+							</div>
+						</div>
+
+						<div class="section">
+							<em class="cate">Tech.Profile</em>
+							<div class="cont">
+								<ul class="tech-list">
+									<li>
+										<strong>Biz Domain</strong>
+										<div class="item-wrap">
+											<span>Cloud</span>
+										</div>
+									</li>
+									<li>
+										<strong>Tech Domain</strong>
+										<div class="item-wrap">
+											<span>Cloud</span>
+											<span>CI/CD</span>
+											<span>AI Computiing</span>
+										</div>
+									</li>
+									<li>
+										<div class="item-wrap">
+											<strong>Function&Role</strong>
+											<span>DevOps</span>
+											<span>Software Fngineering</span>
+											<span>Software Architect</span>
+										</div>
+									</li>
+									<li class="skill">
+										<strong>Skill set</strong>
+										<ul class="skill-list">
+											<li>
+												<em class="tit">[Language]</em>
+												<div class="item-wrap">
+													<span>Javascript (고급)</span>
+													<span>SQL (고급)</span>
+													<span>C (고급)</span>
+													<span>Golang (중급)</span>
+													<span>JSP (고급)</span>
+													<span>Java (고급)</span>
+													<span>Python (고급)</span>
+												</div>
+											</li>
+											<li>
+												<em class="tit">[OS]</em>
+												<div class="item-wrap">
+													<span>Linux (고급)</span>
+													<span>IOS (고급)</span>
+												</div>
+											</li>
+											<li>
+												<em class="tit">[Algorithm]</em>
+												<div class="item-wrap">
+													<span>Logistic Regression (중급)</span>
+													<span>Linear Regression (중급)</span>
+													<span>CNN (초급)</span>
+												</div>
+											</li>
+											<li>
+												<em class="tit">[Framework]</em>
+												<div class="item-wrap">
+													<span>Maria DB (중급)</span>
+													<span>MySQL (중급)</span>
+													<span>TensorFlow (초급)</span>
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="section">
+							<em class="cate">수상/어학 및 <br>기타</em>
+							<div class="cont">
+								<ul class="list-item">
+									<li>
+										<dl>
+											<dt>영어</dt>
+												<dd>Opic IH</dd>
+										</dl>
+									</li>
+								</ul>								
+							</div>
+						</div>
+						<div class="section">
+							<em class="cate">대표<br>Keyword</em>
+							<div class="cont">
+								<!-- 2019-07-25 수정 -->
+								<div class="keyword-wrap">
+									<pre>#키워드1  #키워드1  #키워드1  #키워드1  #키워드1  #키워드1  #키워 드1  #키워드1  #키워드1  #키 워드1  #키워 드1  #키워드1  #키워드1  #키워드1  #키워드1  #키워드1</pre>
+								</div>
+								<!-- // 2019-07-25 수정 -->
+							</div>
+						</div>
+					</div>
+					<!-- // 작성 상태 -->
+				</div>
+				<!-- // My Resume -->
+			</div>
+
+			<div class="btn-group">
+				<button type="button" class="btn-xl btn-red2" onclick=""><span>확인</span></button>
+			</div>
+
+			<a href="#popup" class="btn-pop-top">top</a>
+
+		</div>
+
+		<button type="button" class="btn-close-popup" onclick="window.close();">닫기</button>
+	</div>
+
+	
+<!-- 레이어팝업 -->
+<div class="layer-pop" id="layerpop-task-detail">
+	<div class="layer-bg"></div>
+	<div class="layer-cnt" style="position:fixed;"> <!-- 2019-07-29 style 추가 -->
+		<div class="layer-top">
+			<h2 class="title-dep2">Task 상세정보</h2>
+		</div>
+		<div class="layer-mid">
+			<div class="task-detail-cont">
+				<div class="tbl-type4">
+					<table>
+						<caption>task 상세정보</caption>
+						<colgroup>
+							<col style="width:20%;">
+							<col style="width:auto;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">Task명</th>
+								<td>Atask명task명task명task명</td>
+							</tr>
+							<tr>
+								<th scope="row">Task 목표</th>
+								<td>
+									목표내용내용<br>
+									목표내용내용<br>
+									목표내용내용
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">Self-Review</th>
+								<td>
+									Self-Review 내용 Self-Review 내용 Self-Review 내용 Self-Review 내용 Self-Review 내용 Self-Review 내용 Self-Review 내용 Self-Review 내용 Self-Review 내용
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">리더 Feedback</th>
+								<td>
+									Feedback 내용 Feedback 내용 Feedback 내용 Feedback 내용 Feedback 내용 Feedback 내용 Feedback 내용 Feedback 내용 Feedback 내용 Feedback 내용 Feedback 내용 Feedback 내용 Feedback 내용
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">목표달성도</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Task 리더</th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="btn-group">
+				<button type="button" class="btn-l btn-red2"><span>닫기</span></button>
+			</div>
+		</div>
+		<button type="button" class="btn-close close-layer">닫기</button>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title></title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/layerpop.js"></script> <!-- layerpop 기능 -->
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<!-- 달력기능 css / js -->
+	<link rel="stylesheet" href="/css/calendar-ui.css" media="screen, print" />
+	<script src="/js/calendar.js"></script>
+	<!-- // 달력기능 css / js -->
+
+	<script>
+		/* 2018-03-07 특정 td 에 tr 클릭 기능 제거할 경우 td 에 'unclick' 클래스 추가 */
+		$(function(){
+			$('td.unclick').click(function(e){
+				e.stopPropagation();
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						코칭 &amp; F/B
+						<!-- 2018-02-01 - 말풍선 영역 -->
+						<div class="balloon-wrap">
+							<button type="button" class="btn-balloon" data-top="5" data-left="-5"><span>페이지 안내</span></button> <!-- 2018-02-02 수정 -->
+							<div class="cnt-balloon">
+								<div class="cnt">
+									구성원이 과제 등록 시 나를 승인자로 지정하여 지속적으로 승인/관리해야하는 Task입니다.
+								</div>
+							</div>
+						</div>
+						<!-- // 말풍선 영역 -->
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span>
+							<span>TASK 관리</span>
+							<strong>코칭 &amp; F/B</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<!-- cnt-area - 구성원 TASK -->
+					<div class="cnt-area task-list">
+
+						<!-- tab 메뉴 -->
+						<div class="tab-menu tab-type1">
+							<ul>
+								<li class="on"><a href="#">코칭 &amp; F/B</a></li>
+								<li><a href="#">TASK 현황 리더용</a></li>
+								<li><a href="#">TASK 현황 임원용</a></li>
+							</ul>
+						</div>
+						<!-- // tab 메뉴 -->						
+
+						<!-- task 현황판 2018-02-01 수정 -->
+						<div class="task-board"> 
+							<ul class="task-list">
+								<li style="width:17.66%" class="on">	 <!-- 선택된 상태 - on 클래스 추가 -->
+									<a href="#">
+										<span class="title total">전체</span>
+										<span class="count">1,000</span>
+									</a>
+								</li>
+								<!-- 2018-01-15 반려 추가 -->
+								<li style="width:14.66%">
+									<a href="#">
+										<span class="t-step step3">step3.</span> <!-- 2018-01-25 상태표기 블릿 추가 -->
+										<span class="title">반려</span>
+										<span class="count">000</span>
+									</a>
+								</li>
+								<!-- // 2018-01-15 반려 추가 -->
+								<li style="width:14.66%">
+									<a href="#">
+										<span class="t-step step2">step2.</span> <!-- 2018-01-25 상태표기 블릿 추가 -->
+										<span class="title">승인요청</span>
+										<span class="count">251</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="t-step step4">step4.</span> <!-- 2018-01-25 상태표기 블릿 추가 -->
+										<span class="title">Task수행중</span>
+										<span class="count">502</span>
+									</a>
+								</li>
+								<li style="width:17.66%">
+									<a href="#">
+										<span class="t-step step5">step5.</span> <!-- 2018-01-25 상태표기 블릿 추가 -->
+										<span class="title">Feedback요청</span><!-- 2018-01-24 텍스트 수정 -->
+										<span class="count zero">105</span> <!-- 진행중인 건이 없을 경우 zero 클래스 추가 -->
+									</a>
+								</li>
+								<li style="width:17.66%">
+									<a href="#">
+										<span class="t-step step6">step6.</span> <!-- 2018-01-25 상태표기 블릿 추가 -->
+										<span class="title">Feedback완료</span>
+										<span class="count">012</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- // task 현황판 2018-02-01 수정 -->		
+
+						<!-- 2018-02-01 연도검색 위치이동 -->
+						<div class="tbl-top-cnt"> 
+							<div class="inp-select">
+								<button type="button" class="btn-select" title="연도 선택"><span>2018</span></button>
+								<ul class="select-list">
+									<li><button type="button" class="btn-sel">2018</button></li>
+									<li><button type="button" class="btn-sel">2017</button></li>
+									<li><button type="button" class="btn-sel">2016</button></li>
+								</ul>
+							</div>
+							<div class="inp-select" style="width:130px;">
+								<button type="button" class="btn-select" title="구성원 선택"><span>구성원 전체</span></button>
+								<ul class="select-list">
+									<li><button type="button" class="btn-sel">구성원 전체</button></li>
+									<li><button type="button" class="btn-sel">최사원</button></li>
+									<li><button type="button" class="btn-sel">김사원</button></li>
+								</ul>
+							</div>
+							<!-- 2018-01-24 수정 - 텍스트 수정 및 width 값 -->
+							<div class="inp-select" style="width:140px;">
+								<button type="button" class="btn-select" title="상태 선택"><span>전체</span></button>
+								<ul class="select-list">
+									<li><button type="button" class="btn-sel">전체</button></li>
+									<li><button type="button" class="btn-sel">Task작성</button></li>
+									<li><button type="button" class="btn-sel">승인요청</button></li>
+									<li><button type="button" class="btn-sel">Task수행중</button></li>
+									<li><button type="button" class="btn-sel">Feedback요청</button></li> <!-- 2018-01-24 텍스트 수정 -->
+									<li><button type="button" class="btn-sel">평가중</button></li>
+									<li><button type="button" class="btn-sel">Feedback완료</button></li>
+								</ul>
+							</div>
+							<!-- 2019-04-24 추가 -->
+							<div class="inp-check type2">
+								<input type="checkbox" name="" id="show-end">
+								<label for="show-end"><span class="box"></span> 수행기간 종료 건 보기 : Self-Review &amp; 리더 F/B 필요</label>
+							</div>
+							<!-- //2019-04-24 추가 -->
+						</div>
+						<!-- // 2018-02-01 연도검색 위치이동 -->
+
+						<!-- sort 기준 변경 -->
+						<div class="page-sort-choice">
+							<div class="inp-radio">
+								<input type="radio" name="type-choice" id="type-me" checked="">
+								<label for="type-me" class="on"><span class="box"></span> Task별로 보기</label>
+							</div>
+							<div class="inp-radio">
+								<input type="radio" name="type-choice" id="type-team">
+								<label for="type-team"><span class="box"></span> 구성원별로 보기</label>
+							</div>
+						</div>
+						<!-- // sort 기준 변경 -->
+						
+						<!-- task 구분표기 안내 - 2018-01-25 검색 위치 이동 -->
+						<div class="tbl-top-cnt tr">
+							<a href="#" class="btn-l btn-red2 open-layer" data-target="" style="margin-right:15px;">Self-Review 독려</a> <!-- 2019-08-30 수정 -->
+							<strong>총 <span class="tx-red">11</span>건</strong>
+						</div>
+
+						<!-- Task 승인/관리 리스트 -->
+						<div class="tbl-wrap tbl-type1">
+							<table>
+								<caption>Task 승인/관리 리스트</caption>
+								<colgroup>
+									<col style="width:12%"/>
+									<col style="width:auto"/>
+									<col style="width:17%"/>
+									<col style="width:10%"/>
+									<col style="width:10%"/>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col"><span>상태</span></th>
+										<th scope="col"><span>Task</span></th>
+										<th scope="col"><span>진행기간</span></th>
+										<th scope="col"><span>유형</span></th>
+										<th scope="col"><span>Task 수행자</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr onclick="testF();">
+										<td><span class="t-step step1">Task작성</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span><i class="flag blue">종료예정</i><i class="flag">수정됨</i>SK텔레콤 전사 HR평가 시스템 구축 프로젝트 시스템 구축 프로젝트</span> 외 213건</a> <span class="comment">5423</span></td> <!-- 2019-07-08 수정 -->
+										<td>18.01.22 ~ 18.12.12</td>
+										<td class="kind"><span class="kind-task">나의 Task</span></td>
+										<td>
+											<ul class="mate-list">
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td><span class="t-step step1">Task작성</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a> <span class="comment">5</span></td>
+										<td>18.01.22 ~ 18.12.12</td>
+										<td class="kind"><span class="kind-task with">협업 12명</span></td>
+										<td>
+											<ul class="mate-list">
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td><span class="t-step step2">승인요청</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a> <span class="comment">5</span></td>
+										<td>18.01.22 ~ 18.12.12</td>
+										<td class="kind"><span class="kind-task">나의 Task</span></td>
+										<td>
+											<ul class="mate-list">
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td><span class="t-step step1">Task작성</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a> <span class="comment">5</span></td>
+										<td>18.01.22 ~ 18.12.12</td>
+										<td class="kind"><span class="kind-task">나의 Task</span></td>
+										<td>
+											<ul class="mate-list">
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- // Task 승인/관리 리스트 -->
+						
+						<div class="btn-group tr">
+							<a href="#" class="btn-l btn-red2">Self-Review 독려</a> <!-- 2019-06-24 버튼 수정 -->
+						</div>
+
+					</div>
+					<!-- // cnt-area - 구성원 Task -->
+
+				</div>
+
+		<!--#include file="include-footer.html"-->
+	</div>
+
+
+<!-- 레이어팝업 - Task Peer-Feedback 진행현황 -->
+<div class="layer-pop" id="layer-peerFB-state">
+	<div class="layer-bg"></div>
+	<div class="layer-cnt">
+		<div class="layer-top">
+			<h2 class="title-dep2">Task Peer-Feedback 진행현황</h2>
+		</div>
+		<div class="layer-mid">
+			<!-- 수정 내역 -->
+			<div class="peerFB-list">
+				<ul>
+					<li>
+						<span class="num">1</span>
+						<span class="name">정사원</span>
+						<span class="state">미완료</span>
+						<span><button type="button" class="btn-m"><span><i class="ico-btn"><img src="/images/ico_timer.png" alt=""></i>독려</span></button></span>
+					</li>
+					<li>
+						<span class="num">2</span>
+						<span class="name">정사원</span>
+						<span class="state">미완료</span>
+						<span><button type="button" class="btn-m"><span><i class="ico-btn"><img src="/images/ico_timer.png" alt=""></i>독려</span></button></span>
+					</li>
+					<li>
+						<span class="num">3</span>
+						<span class="name">정사원</span>
+						<span class="state">미완료</span>
+						<span><button type="button" class="btn-m"><span><i class="ico-btn"><img src="/images/ico_timer.png" alt=""></i>독려</span></button></span>
+					</li>
+					<li>
+						<span class="num">4</span>
+						<span class="name">정사원</span>
+						<span class="state">미완료</span>
+						<span><button type="button" class="btn-m"><span><i class="ico-btn"><img src="/images/ico_timer.png" alt=""></i>독려</span></button></span>
+					</li>
+					<li>
+						<span class="num">5</span>
+						<span class="name">정사원</span>
+						<span class="state comp">완료</span>
+						<span></span>
+					</li>
+					<li>
+						<span class="num">6</span>
+						<span class="name">정사원</span>
+						<span class="state comp">완료</span>
+						<span></span>
+					</li>
+				</ul>
+			</div>
+			<div class="btn-group tr">
+				<button type="button" class="btn-m"><span><i class="ico-btn"><img src="/images/ico_timer.png" alt=""></i> 미완료자 전체 독려</span></button>
+			</div>
+			<!-- // 수정 내역 -->
+
+			<div class="btn-group tc">
+				<a href="#" class="btn-l btn-red2">확인</a>
+			</div>
+
+		</div>
+		<button type="button" class="btn-close close-layer">닫기</button>
+	</div>
+</div>
+</body>
+</html>

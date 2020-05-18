@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - snamo" >
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+	<title>Hynix HR평가 시스템</title>
+	<link rel="stylesheet" href="http://10.125.203.37:2000/guide/list-guide.css" media="screen, print" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://10.125.203.37:2000/guide/list-guide.js"></script>
+</head>
+<body>
+<div id="work-list">
+	<div class="title">
+		<h1 class="project-title">Hynix HR평가 시스템 - Front</h1>
+		<p class="project-info">
+			<span>&bull; 작업일자 : 2019-10 ~ </span>
+			<span>&bull; 담당자 : 서남호M</span>
+			<span>&bull; 개발 : 황근민M</span>
+		</p>
+	</div>
+	<div class="menu">
+		<ul>
+			<li><a href="index.html" class="view">Front</a></li>
+			<li><a href="html/guide.html">Guide</a></li>
+		</ul>
+	</div>
+	<div class="function">
+		<div class="text-finder func-wrap">
+			<span class="tit">text 검색</span>
+			<!-- <input type="text" name="find-tx" id="find-tx-id" placeholder="검색 영역 ID"" title="검색 영역 ID"> -->
+			<input type="text" name="find-tx" id="find-tx" placeholder="text" title="검색 class">
+			<button type="button" class="btn-find-tx">검색</button>
+			<!-- <div class="temp"></div> -->
+			<input type="hidden" class="temp">
+		</div>
+		<div class="func-wrap">
+			<span class="tit">미리보기</span>
+			<span class="check">
+				<input type="checkbox" name="" id="view-chk">
+				<label for="view-chk">미리보기</label>
+			</span>
+		</div>
+	</div>
+	<div class="list">
+		<div class="tbl-wrap">
+			<table>
+				<caption>프로젝트 리스트</caption>
+				<colgroup>
+					<col style="width:5%"/>
+					<col style="width:10%"/>
+					<col style="width:10%"/>
+					<col style="width:10%"/>
+					<col style="width:10%"/>
+					<col style="width:8%"/>
+					<col style="width:17%"/>
+					<col style="width:8%"/>
+					<col style="width:auto"/>
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">No.</th>
+						<th scope="col">depth1</th>
+						<th scope="col">depth2</th>
+						<th scope="col">depth3</th>
+						<th scope="col">depth4</th>
+						<th scope="col">진행상태</th>
+						<th scope="col">링크</th>
+						<th scope="col">완료일자</th>
+						<th scope="col">수정 및 참고</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1">메인</td>
+						<td class="depth2">Dashboard</td>
+						<td class="depth3">구성원용</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="html/dashboard.html" target="_blank">dashboard</a></td>
+						<td class="end-date">2017-12-21</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">2020 버전</td>
+						<td class="state"></td>
+						<td class="link"><a href="html/dashboard_2020.html" target="_blank">dashboard_2020</a></td>
+						<td class="end-date">2020-01-03</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">임원용</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="html/dashboard-executives.html" target="_blank">dashboard-executives</a></td>
+						<td class="end-date">2017-12-21</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">임원용 - new</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="html/dashboard-ex-new.html" target="_blank">dashboard-ex-new</a></td>
+						<td class="end-date">2019-08-21</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">리더용</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="html/dashboard-leader-new.html" target="_blank">dashboard-leader-new</a></td>
+						<td class="end-date">2018-07-24</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">[팝업]</td>
+						<td class="depth3">Commitmemt 설명</td>
+						<td class="depth4">리더</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-commitment.html" target="_blank">pop-ts-commitment</a></td>
+						<td class="end-date">2018-10-08</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">임원</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-commitment-ex.html" target="_blank">pop-ts-commitment-ex</a></td>
+						<td class="end-date">2018-10-08</td>
+						<td class="modify"></td>
+					</tr>
+
+					<!-- 인력 프로파일 -->
+					<tr>
+						<td class="no"></td>
+						<td class="depth1">인력프로파일</td>
+						<td class="depth2">리스트</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/profile-list.html" target="_blank">profile-list</a></td>
+						<td class="end-date">2019-07-22</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">상세</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-career-detail.html" target="_blank">pop-career-detail</a></td>
+						<td class="end-date">2019-07-22</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">레이어 팝업</td>
+						<td class="depth3">my Career 관련 설문</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-survey.html" target="_blank">layerpop-survey</a></td>
+						<td class="end-date">2019-07-22</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">Task 상세정보</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-task-detail.html" target="_blank">layerpop-task-detail</a></td>
+						<td class="end-date">2019-07-22</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">peer-feedback</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-peer-feedback.html" target="_blank">layerpop-peer-feedback</a></td>
+						<td class="end-date">2019-07-22</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">구성원용</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-peer-feedback-type2.html" target="_blank">layerpop-peer-feedback-type2</a></td>
+						<td class="end-date">2019-08-13</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">2017년도</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-peer-feedback-2017.html" target="_blank">layerpop-peer-feedback-2017</a></td>
+						<td class="end-date">2019-07-22</td>
+						<td class="modify"></td>
+					</tr>
+
+					<!-- 나의 TASK -->
+					<tr>
+						<td class="no"></td>
+						<td class="depth1">TASK 관리</td>
+						<td class="depth2">나의 TASK</td>
+						<td class="depth3">리스트</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/my-task.html" target="_blank">my-task</a></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">TASK 등록</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/my-task-reg.html" target="_blank">my-task-reg</a></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">상세</td>
+						<td class="depth4">승인요청</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/my-task-detail-step2.html" target="_blank">my-task-detail-step2</a></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">진행중</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/my-task-detail.html" target="_blank">my-task-detail</a></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">반려</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/my-task-detail-return.html" target="_blank">my-task-detail-return</a></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">동료 TASK</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/colleague-task.html" target="_blank">colleague-task</a></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">상세</td>
+						<td class="depth4">개인 TASK</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/colleague-task-detail.html" target="_blank">colleague-task-detail</a></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">공통 TASK</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/colleague-task-detail-with.html" target="_blank">colleague-task-detail-with</a></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">코칭&amp;F/B</td>
+						<td class="depth3">리스트</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/task-approval.html" target="_blank">task-approval</a></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">[레이어팝업]</td>
+						<td class="depth4">Task Peer-F/B 현황</td>
+						<td class="state"></td>
+						<td class="link"><!-- <a href="/html/layerpop-peerFB-state.html" target="_blank">layerpop-peerFB-state</a> --></td>
+						<td class="end-date">2018-02-19</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">상세</td>
+						<td class="depth4">진행중</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/task-approval-detail.html" target="_blank">task-approval-detail</a></td>
+						<td class="end-date">2018-01-11</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">승인요청</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/task-approval-detail-step2.html" target="_blank">task-approval-detail-step2</a></td>
+						<td class="end-date">2018-02-21</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">Review완료</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/task-approval-detail-step4.html" target="_blank">task-approval-detail-step4</a></td>
+						<td class="end-date">2018-02-21</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">TASK 현황 리더용</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/task-member.html" target="_blank">task-member</a></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">상세</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><!-- <a href="/html/task-member-detail.html" target="_blank">task-member-detail</a> --></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">TASK 현황 임원용</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/task-organization.html" target="_blank">task-organization</a></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">상세</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/task-organization-detail.html" target="_blank">task-organization-detail</a></td>
+						<td class="end-date">2018-01-04</td>
+						<td class="modify"></td>
+					</tr>
+					<tr class="del">
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">Task Peer-F/B</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/task-peerFB.html" target="_blank">task-peerFB</a></td>
+						<td class="end-date">2018-02-19</td>
+						<td class="modify"></td>
+					</tr>
+					<tr class="del">
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">상세</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/task-peerFB-detail.html" target="_blank">task-peerFB-detail</a></td>
+						<td class="end-date">2018-02-21</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">Task현황 파트장용</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/task-part-leader.html" target="_blank">task-part-leader</a></td>
+						<td class="end-date">2020-02-13</td>
+						<td class="modify"></td>
+					</tr>
+
+					<!-- Peer F/B -->
+					<tr>
+						<td class="no"></td>
+						<td class="depth1">Peer F/B</td>
+						<td class="depth2">Peer-F/B 발의, 결과</td>
+						<td class="depth3">리스트</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peerFB-list.html" target="_blank">peerFB-list</a></td>
+						<td class="end-date">2018-03-21</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">상세</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peerFB-detail.html" target="_blank">peerFB-detail</a></td>
+						<td class="end-date">2018-03-21</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">독려</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peerFB-detail-urge.html" target="_blank">peerFB-detail-urge</a></td>
+						<td class="end-date">2018-03-21</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">확인</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peerFB-detail-check.html" target="_blank">peerFB-detail-check</a></td>
+						<td class="end-date">2018-03-21</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">Peer-F/B 작성</td>
+						<td class="depth3">리스트</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peerFB-write-list.html" target="_blank">peerFB-write-list</a></td>
+						<td class="end-date">2018-03-22</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">renewal</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peerFB-write-list_new.html" target="_blank">peerFB-write-list_new</a></td>
+						<td class="end-date">2019-05-14</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">상세</td>
+						<td class="depth4">Task</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peerFB-write-detail.html" target="_blank">peerFB-write-detail</a></td>
+						<td class="end-date">2018-03-22</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">조직</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peerFB-write-detail-org.html" target="_blank">peerFB-write-detail-org</a></td>
+						<td class="end-date">2018-05-17</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">나의 Peer-F/B 결과</td>
+						<td class="depth3">리스트</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peerFB-my-list.html" target="_blank">peerFB-my-list</a></td>
+						<td class="end-date">2018-03-22</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">상세</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peerFB-my-detail.html" target="_blank">peerFB-my-detail</a></td>
+						<td class="end-date">2018-03-22</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">Peer 지정/관리</td>
+						<td class="depth3">리스트</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peer-assign-list.html" target="_blank">peer-assign-list</a></td>
+						<td class="end-date">2018-04-09</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">상세</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peer-assign-detail.html" target="_blank">peer-assign-detail</a></td>
+						<td class="end-date">2018-04-09</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">조직</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peer-assign-detail-org.html" target="_blank">peer-assign-detail-org</a></td>
+						<td class="end-date">2018-05-17</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">진행중</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/peer-assign-detail-ing.html" target="_blank">peer-assign-detail-ing</a></td>
+						<td class="end-date">2018-08-13</td>
+						<td class="modify"></td>
+					</tr>
+
+					<!-- T-session -->
+					<tr>
+						<td class="no"></td>
+						<td class="depth1">T-session</td>
+						<td class="depth2">구성원</td>
+						<td class="depth3">메인</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-main.html" target="_blank">ts-main</a></td>
+						<td class="end-date">2018-09-07</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">나의 리더 Review</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-my-leader-review.html" target="_blank">ts-my-leader-review</a></td>
+						<td class="end-date">2018-09-20</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">종합 Self-Review</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-self-review.html" target="_blank">ts-self-review</a></td>
+						<td class="end-date">2018-09-13</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">결과조회</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-result.html" target="_blank">ts-result</a></td>
+						<td class="end-date">2018-09-11</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">[시스템 팝업]</td>
+						<td class="depth4">꼭 확인하세요</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-notice.html" target="_blank">pop-ts-notice</a></td>
+						<td class="end-date">2018-09-12</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">개선 survey</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-survey.html" target="_blank">pop-ts-survey</a></td>
+						<td class="end-date">2018-09-12</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">Task 성과</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-task-result.html" target="_blank">pop-ts-task-result</a></td>
+						<td class="end-date">2018-09-12</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">peer-F/B 결과</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-peerFB-result.html" target="_blank">pop-ts-peerFB-result</a></td>
+						<td class="end-date">2018-09-12</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">Self-Keyword</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-self-keyword.html" target="_blank">pop-ts-self-keyword</a></td>
+						<td class="end-date">2018-09-12</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">종합 Self-Review Tips</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-self-review-tips.html" target="_blank">pop-ts-self-review-tips</a></td>
+						<td class="end-date">2018-09-12</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">보상재원의 이해</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-understand.html" target="_blank">pop-ts-understand</a></td>
+						<td class="end-date">2018-09-12</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">재심의 요청</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-ask-re.html" target="_blank">pop-ts-ask-re</a></td>
+						<td class="end-date">2018-09-12</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">종합육성의견 작성 Tips</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-advice-write-tip.html" target="_blank">pop-ts-advice-write-tip</a></td>
+						<td class="end-date">2018-10-10</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">리더</td>
+						<td class="depth3">메인</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-leader-main.html" target="_blank">ts-leader-main</a></td>
+						<td class="end-date">2018-09-18</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">구성원 상세</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-leader-detail.html" target="_blank">ts-leader-detail</a></td>
+						<td class="end-date">2018-09-19</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">작성불가</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-leader-detail-not.html" target="_blank">ts-leader-detail-not</a></td>
+						<td class="end-date">2018-09-19</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">종합육성의견 확정 추가</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-leader-detail-advice.html" target="_blank">ts-leader-detail-advice</a></td>
+						<td class="end-date">2018-09-19</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">[시스템 팝업]</td>
+						<td class="depth4">peer-F/B 미완료</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-none-peer.html" target="_blank">pop-ts-none-peer</a></td>
+						<td class="end-date">2018-09-20</td>
+						<td class="modify"></td>
+					</tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">task F/B 미완료</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-none-task.html" target="_blank">pop-ts-none-task</a></td>
+						<td class="end-date">2018-09-20</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">나의 구성원<br> 진행현황</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-my-member-state.html" target="_blank">pop-ts-my-member-state</a></td>
+						<td class="end-date">2018-10-10</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">임원</td>
+						<td class="depth3">메인</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-ex-main.html" target="_blank">ts-ex-main</a></td>
+						<td class="end-date">2018-09-28</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">보상설정</td>
+						<td class="depth4">IB</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-ex-reward-ib.html" target="_blank">ts-ex-reward-ib</a></td>
+						<td class="end-date">2018-09-14</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">M I</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-ex-reward-mi.html" target="_blank">ts-ex-reward-mi</a></td>
+						<td class="end-date">2018-09-17</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">성과 Review</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-ex-reward-review.html" target="_blank">ts-ex-reward-review</a></td>
+						<td class="end-date">2019-10-11</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">구성원 상세</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/ts-ex-detail.html" target="_blank">ts-ex-detail</a></td>
+						<td class="end-date">2018-09-19</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">[시스템 팝업]</td>
+						<td class="depth4">peer-F/B 결과(direct review 포함)</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-peerFB-result-full.html" target="_blank">pop-ts-peerFB-result-full</a></td>
+						<td class="end-date">2018-09-17</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">Task성과 + peer-F/B 결과</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-task-peer.html" target="_blank">pop-ts-task-peer</a></td>
+						<td class="end-date">2018-09-18</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">Task성과 + peer-F/B 결과<br> (내용없음)</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-task-peer-blank.html" target="_blank">pop-ts-task-peer-blank</a></td>
+						<td class="end-date">2018-10-12</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">보상배분 팁</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-rewrad-tip.html" target="_blank">pop-ts-rewrad-tip</a></td>
+						<td class="end-date">2018-09-20</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">특이사항</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-uniqe.html" target="_blank">pop-ts-uniqe</a></td>
+						<td class="end-date">2018-09-20</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">엑셀업로드</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-excel-upload.html" target="_blank">pop-ts-excel-upload</a></td>
+						<td class="end-date"></td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">보상확정 comment 팁</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-tip-comment.html" target="_blank">pop-ts-tip-comment</a></td>
+						<td class="end-date">2018-10-08</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">보상배분 가이드 - IB</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-reward-guide-ib.html" target="_blank">pop-ts-reward-guide-ib</a></td>
+						<td class="end-date">2018-10-15</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">보상배분 가이드 - MI</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-ts-reward-guide-mi.html" target="_blank">pop-ts-reward-guide-mi</a></td>
+						<td class="end-date">2018-10-15</td>
+						<td class="modify"></td>
+					</tr>
+
+					<!-- 1 on 1 -->
+					<tr>
+						<td class="no"></td>
+						<td class="depth1">1 on 1</td>
+						<td class="depth2">나의 1on1 note</td>
+						<td class="depth3">나의 Coachee</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/1on1-myNote.html" target="_blank">1on1-myNote</a></td>
+						<td class="end-date"></td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">신규 1on1 note</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/1on1-write.html" target="_blank">1on1-write</a></td>
+						<td class="end-date"></td>
+						<td class="modify"></td>
+					</tr>
+
+					<!-- 공통 -->
+					<tr>
+						<td class="no"></td>
+						<td class="depth1">공통</td>
+						<td class="depth2">레이어팝업</td>
+						<td class="depth3">리더 TASK 조회</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-sch-leader-task.html" target="_blank">layerpop-sch-leader-task</a></td>
+						<td class="end-date">2018-01-08</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">리더가 복수일 경우</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-sch-leader-task-type2.html" target="_blank">layerpop-sch-leader-task-type2</a></td>
+						<td class="end-date">2018-02-28</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">등록된 TASK가 없습니다.</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-sch-leader-task-none.html" target="_blank">layerpop-sch-leader-task-none</a></td>
+						<td class="end-date">2018-01-17</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">진행 History</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-modify-history.html" target="_blank">layerpop-modify-history</a></td>
+						<td class="end-date">2018-01-08</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">반려사유입력</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-inp-return.html" target="_blank">layerpop-inp-return</a></td>
+						<td class="end-date">2018-01-08</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">리더 Review</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-inp-review.html" target="_blank">layerpop-inp-review</a></td>
+						<td class="end-date">2018-03-12</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">조직 Peer등록</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-org-peer-reg.html" target="_blank">layerpop-org-peer-reg</a></td>
+						<td class="end-date">2018-06-14</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">구성원 독력(임원 대시보드)</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-urge-ex.html" target="_blank">layerpop-urge-ex</a></td>
+						<td class="end-date">2018-08-13</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">reviewer 삭제</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-reviewer-del.html" target="_blank">layerpop-reviewer-del</a></td>
+						<td class="end-date">2018-08-13</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">Task 삭제 안내</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-task-del-reason.html" target="_blank">layerpop-task-del-reason</a></td>
+						<td class="end-date">2019-03-11</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">Task 수정 안내</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-task-modify-reason.html" target="_blank">layerpop-task-modify-reason</a></td>
+						<td class="end-date">2019-03-11</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">리더용</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-task-modify-leader.html" target="_blank">layerpop-task-modify-leader</a></td>
+						<td class="end-date">2019-03-13</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">비밀글 받는사람 지정</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-secret-comment.html" target="_blank">layerpop-secret-comment</a></td>
+						<td class="end-date">2019-03-29</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">좋아요 한 사람</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-like-list.html" target="_blank">layerpop-like-list</a></td>
+						<td class="end-date">2019-04-23</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">알럿/컨펌 용</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-alert.html" target="_blank">layerpop-alert</a></td>
+						<td class="end-date">2019-04-30</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">Self-Review 독려</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/layerpop-urge-sr.html" target="_blank">layerpop-urge-sr</a></td>
+						<td class="end-date">2019-06-24</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">일반 팝업</td> <!-- 일반팝업 -->
+						<td class="depth3">공지사항</td>
+						<td class="depth4">리스트</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-notice-list.html" target="_blank">pop-notice-list</a></td>
+						<td class="end-date">2018-01-08</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">상세</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-notice-detail.html" target="_blank">pop-notice-detail</a></td>
+						<td class="end-date">2018-01-08</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">리더 대시보드 팝업형</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-dashboard-leader.html" target="_blank">pop-dashboard-leader</a></td>
+						<td class="end-date">2018-10-01</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">구성원조회</td>
+						<td class="depth4">나의 TASK</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-organization.html" target="_blank">pop-organization</a></td>
+						<td class="end-date">2018-01-08</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">공통 TASK</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-organization-together.html" target="_blank">pop-organization-together</a></td>
+						<td class="end-date">2018-01-08</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">Peer-F/B</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-organization-peer.html" target="_blank">pop-organization-peer</a></td>
+						<td class="end-date">2018-03-12</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">코멘트 전체보기</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-comment.html" target="_blank">pop-comment</a></td>
+						<td class="end-date">2018-01-26</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">Task Peer-F/B</td>
+						<td class="depth4">작성</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-peerFB-write.html" target="_blank">pop-peerFB-write</a></td>
+						<td class="end-date">2018-02-19</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">확인</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-peerFB-detail.html" target="_blank">pop-peerFB-detail</a></td>
+						<td class="end-date">2018-02-19</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">확인 - new</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-peerFB-detail-new.html" target="_blank">pop-peerFB-detail-new</a></td>
+						<td class="end-date">2018-08-22</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">메인 공지팝업</td>
+						<td class="depth4">통 이미지형</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-news.html" target="_blank">pop-news</a></td>
+						<td class="end-date">2018-03-12</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">통 이미지형2</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-news-img.html" target="_blank">pop-news-img</a></td>
+						<td class="end-date">2018-02-26</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">editor 용</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-news-editor.html" target="_blank">pop-news-editor</a></td>
+						<td class="end-date">2018-08-01</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">Tips</td>
+						<td class="depth4">리더리뷰</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-tips-leader.html" target="_blank">pop-tips-leader</a></td>
+						<td class="end-date">2018-04-19</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3"></td>
+						<td class="depth4">셀프리뷰</td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-tips-self.html" target="_blank">pop-tips-self</a></td>
+						<td class="end-date">2018-04-19</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">시스템 문의</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-system-q.html" target="_blank">pop-system-q</a></td>
+						<td class="end-date">2018-07-10</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">나의 조직 Self-design</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-org-self-design.html" target="_blank">pop-org-self-design</a></td>
+						<td class="end-date">2019-01-28</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">Comment 작성</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-write-comment.html" target="_blank">pop-write-comment</a></td>
+						<td class="end-date">2019-02-25</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">이미지 보기</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/pop-imgs.html" target="_blank">pop-imgs</a></td>
+						<td class="end-date">2020-03-06</td>
+						<td class="modify"></td>
+					</tr>
+
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">etc</td>
+						<td class="depth3">시스템 오류</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/etc-error.html" target="_blank">etc-error</a></td>
+						<td class="end-date">2018-01-23</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">로딩</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/loading.html" target="_blank">loading</a></td>
+						<td class="end-date">2018-01-25</td>
+						<td class="modify"></td>
+					</tr>
+
+					<!-- em -->
+					<tr>
+						<td class="no"></td>
+						<td class="depth1">EM</td>
+						<td class="depth2">기본</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/em-basic.html" target="_blank">em-basic</a></td>
+						<td class="end-date">2018-02-23</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">시스템문의</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/em-system-q.html" target="_blank">em-system-q</a></td>
+						<td class="end-date">2018-07-23</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">답변</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/em-system-answer.html" target="_blank">em-system-answer</a></td>
+						<td class="end-date">2018-08-01</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">재심의 요청</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/em-ask-re.html" target="_blank">em-ask-re</a></td>
+						<td class="end-date">2018-11-15</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">데일리</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/em-daily.html" target="_blank">em-daily</a></td>
+						<td class="end-date">2019-03-28</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">독려 메일</td>
+						<td class="depth3">Self-Review</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/em-urge-sr.html" target="_blank">em-urge-sr</a></td>
+						<td class="end-date">2019-05-23</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2"></td>
+						<td class="depth3">feedback</td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/em-urge-fb.html" target="_blank">em-urge-fb</a></td>
+						<td class="end-date">2019-05-23</td>
+						<td class="modify"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="depth1"></td>
+						<td class="depth2">1 on 1</td>
+						<td class="depth3"></td>
+						<td class="depth4"></td>
+						<td class="state"></td>
+						<td class="link"><a href="/html/em-1on1.html" target="_blank">em-1on1</a></td>
+						<td class="end-date">2019-05-23</td>
+						<td class="modify"></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="iframe">
+		<iframe src="" frameborder="0" scrollbars="yes"></iframe>
+		<button type="button" class="btn-frame-close">닫기</button>
+	</div>
+</div>
+</body>
+</html>

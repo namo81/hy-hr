@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>Peer 지정/관리 상세</title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<script>
+		$(function(){
+			
+			/* 2019-09-17 모달 말풍선 추가 */
+			$('.open-modal').each(function(){
+				var $btn = $(this),
+					$modal = $('.modal'),
+					$close = $modal.find('.close');
+
+				$btn.click(function(){
+					var thisT = $(this).offset().top + $(this).height() + 15,
+						thisL = $(this).offset().left - ($modal.width() - $(this).outerWidth()),
+						tg = $('#'+$(this).data('target'));
+
+					// 추가 기능 실행 영역
+
+					tg.css({
+						'top': thisT + 'px',
+						'left': thisL +'px'
+					}).addClass('on').find('a, button, input, textarea').first().focus();
+				});
+
+				$close.click(function(){
+					$modal.css({'top':'','left':''}).removeClass('on');
+				});
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						Peer 지정/관리 상세
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span>
+							<span><a href="#">Peer-Feedback</a></span>
+							<strong>Peer 지정/관리 상세</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<!-- cnt-area - Peer 지정/관리 상세 -->
+					<div class="cnt-area peer-assign-wrap">
+
+						<!-- Tips -->
+						<div class="page-top-notice">
+							<h3 class="title">참고하세요!</h3>
+							<ul>
+								<li>Peer-F/B 대상자 개별로 F/B을 시행할 Peer(Reviewer)를 지정해주세요.</li>
+								<li>Peer-F/B 대상자는 개별 제외 가능합니다.</li>
+								<li>업무 관련성 및 상호 협업 수준 등을 고려하여 최소 5명 이상으로 지정을 권장드립니다.</li>
+								<li>조직 내 구성원이 기본으로 지정되어 있으나 ‘추가하기’를 통해 변경이 가능합니다.</li>
+								<li>Peer-F/B 대상자 별 설정(대상, 제외 설정 및 Reviewer 추가, 삭제)은 실시간으로 저장됩니다.</li> <!-- 2018-06-19 추가 -->
+							</ul>
+						</div>
+						<!-- // Tips -->
+						
+						<!-- 2018-05-17 peer-F/B 대상 정보 -->
+						<div class="detail-top-peer">							
+							<div class="tbl-detail-peer">
+								<table>
+									<caption>Peer-F/B 대상 정보</caption>
+									<colgroup>
+										<col style="width:15%"/>
+										<col style="width:30%"/>
+										<col style="width:15%"/>
+										<col style="width:auto"/>
+										<col style="width:12%"/>
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">제목</th>
+											<td colspan="4">2018년 기업문화 DT CoE</td>
+										</tr>
+										<tr>
+											<th scope="row">Peer-F/B대상자</th>
+											<td>기업문화DT CoE</td>
+											<th scope="row">업무 수행기간</th>
+											<td>2018.01.02 ~ 2018.01.02</td>
+											<td class="tr"><a href="#" class="btn-m btn-white">제목/기간수정</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- // 2018-05-17 peer-F/B 대상 정보 -->
+
+						<!-- Peer 관리 -->
+						<div class="peer-assign-list">
+						
+							<!-- peer -->
+							<div class="side-member-list target on-off">
+								<h3 class="title-dep3">Peer-F/B 대상자 <span class="tx-red">99</span>명<span class="desc">(피드백 받는 사람)</span></h3> <!-- 2019-10-21 수정 -->
+								<div class="box">
+									<ul>
+										<li class="on">
+											<div class="check-tgl">
+												<input type="checkbox" name="" id="peer-tg1" disabled checked>
+												<label for="peer-tg1"><span class="round"></span><i class="tx-on">대상</i><i class="tx-off">제외</i></label>
+											</div>
+											<a href="#">
+												<p class="info">
+													<span class="img"><img src="/images/temp-user.png" alt=""></span>
+													<span class="name">홍길동</span>
+												</p>
+												<p class="state">기본지정</p>
+											</a>
+										</li>
+										<li>
+											<div class="check-tgl">
+												<input type="checkbox" name="" id="peer-tg2" checked>
+												<label for="peer-tg2"><span class="round"></span><i class="tx-on">대상</i><i class="tx-off">제외</i></label>
+											</div>
+											<a href="#">
+												<p class="info">
+													<span class="img"><img src="/images/temp-user.png" alt=""></span>
+													<span class="name">홍길동</span>
+												</p>
+												<p class="state">수정</p>
+											</a>
+										</li>
+										<li>
+											<div class="check-tgl disabled"> <!-- 2018-06-15 수정불가 상태일 경우 disabled 클래스 추가 -->
+												<input type="checkbox" name="" id="peer-tg3">
+												<label for="peer-tg3"><span class="round"></span><i class="tx-on">대상</i><i class="tx-off">제외</i></label>
+											</div>
+											<a href="#">
+												<p class="info">
+													<span class="img"><img src="/images/temp-user.png" alt=""></span>
+													<span class="name">홍길동</span>
+												</p>
+												<p class="state">기본지정</p>
+											</a>
+										</li>
+										<li>
+											<div class="check-tgl disabled"> <!-- 2018-06-15 수정불가 상태일 경우 disabled 클래스 추가 -->
+												<input type="checkbox" name="" id="peer-tg4" checked>
+												<label for="peer-tg4"><span class="round"></span><i class="tx-on">대상</i><i class="tx-off">제외</i></label>
+											</div>
+											<a href="#">
+												<p class="info">
+													<span class="img"><img src="/images/temp-user.png" alt=""></span>
+													<span class="name">홍길동</span>
+												</p>
+												<p class="state">기본지정</p>
+											</a>
+										</li>
+										<li>
+											<div class="check-tgl">
+												<input type="checkbox" name="" id="peer-tg5" checked>
+												<label for="peer-tg5"><span class="round"></span><i class="tx-on">대상</i><i class="tx-off">제외</i></label>
+											</div>
+											<a href="#">
+												<p class="info">
+													<span class="img"><img src="/images/temp-user.png" alt=""></span>
+													<span class="name">홍길동</span>
+												</p>
+												<p class="state">기본지정</p>
+											</a>
+										</li>
+										<li>
+											<div class="check-tgl">
+												<input type="checkbox" name="" id="peer-tg5" checked>
+												<label for="peer-tg5"><span class="round"></span><i class="tx-on">대상</i><i class="tx-off">제외</i></label>
+											</div>
+											<a href="#">
+												<p class="info">
+													<span class="img"><img src="/images/temp-user.png" alt=""></span>
+													<span class="name">홍길동</span>
+												</p>
+												<p class="state">기본지정</p>
+											</a>
+										</li>
+										<li>
+											<div class="check-tgl">
+												<input type="checkbox" name="" id="peer-tg5" checked>
+												<label for="peer-tg5"><span class="round"></span><i class="tx-on">대상</i><i class="tx-off">제외</i></label>
+											</div>
+											<a href="#">
+												<p class="info">
+													<span class="img"><img src="/images/temp-user.png" alt=""></span>
+													<span class="name">홍길동</span>
+												</p>
+												<p class="state">기본지정</p>
+											</a>
+										</li>
+										<li>
+											<div class="check-tgl">
+												<input type="checkbox" name="" id="peer-tg5" checked>
+												<label for="peer-tg5"><span class="round"></span><i class="tx-on">대상</i><i class="tx-off">제외</i></label>
+											</div>
+											<a href="#">
+												<p class="info">
+													<span class="img"><img src="/images/temp-user.png" alt=""></span>
+													<span class="name">홍길동</span>
+												</p>
+												<p class="state">기본지정</p>
+											</a>
+										</li>
+										<li>
+											<div class="check-tgl">
+												<input type="checkbox" name="" id="peer-tg6" checked>
+												<label for="peer-tg6"><span class="round"></span><i class="tx-on">대상</i><i class="tx-off">제외</i></label>
+											</div>
+											<a href="#">
+												<p class="info">
+													<span class="img"><img src="/images/temp-user.png" alt=""></span>
+													<span class="name">홍길동</span>
+												</p>
+												<p class="state">기본지정</p>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- // peer -->
+							<!-- peer -->
+							<div class="side-member-list">
+								<!-- 2019-10-21 수정 -->
+								<h3 class="title-dep3">
+									<span class="tg-name">홍길동홍길동</span>님의 Reviewer <span class="tx-red">99</span>명<i class="desc">(피드백 하는 사람)</i> <!-- 2018-04-26 문구 추가 -->
+									<div class="fr">
+										<a href="#" class="btn-m"><span class="ico-btn"><img src="/images/ico_people.png" alt=""></span> 추가/제외</a>
+										<!-- <a href="#" class="btn-m"><span class="ico-btn"><img src="/images/ico_people-del.png" alt=""></span> 제외</a> -->
+									</div>
+								</h3>
+								<!-- // 2019-10-21 수정 -->
+								<!-- 2018-06-19 수정 -->
+								<div class="box">
+									<ul>
+										<li>
+											<div class="info">
+												<!-- <div class="inp-check type2 non-tx">
+													<input type="checkbox" name="" id="check1">
+													<label for="check1"><span class="box"></span> 체크박스</label>
+												</div> 2019-10-21 삭제 -->
+												<span class="peer-type recom">Reviewer 추천</span> <!-- 2019-09-11 리뷰어 추천 추가 -->
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="team">UX디자인팀</span>
+											</div>
+											<p class="state">완료</p>
+										</li>
+										<li>
+											<div class="info">												
+												<!-- <div class="inp-check type2 non-tx">
+													<input type="checkbox" name="" id="check2">
+													<label for="check2"><span class="box"></span> 체크박스</label>
+												</div> -->
+												<span class="peer-type recom">Reviewer 추천</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="position">Cell 리더</span>
+												<span class="team">UX디자인팀</span>
+											</div>
+											<p class="state">완료</p>
+										</li>
+										<li>
+											<div class="info">												
+												<!-- <div class="inp-check type2 non-tx">
+													<input type="checkbox" name="" id="check2">
+													<label for="check2"><span class="box"></span> 체크박스</label>
+												</div> -->
+												<span class="peer-type recom">Reviewer 추천</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="position">Cell 리더</span>
+												<span class="team">UX디자인팀</span>
+											</div>
+											<p class="state">완료</p>
+										</li>
+										<li>
+											<div class="info">												
+												<!-- <div class="inp-check type2 non-tx">
+													<input type="checkbox" name="" id="check2">
+													<label for="check2"><span class="box"></span> 체크박스</label>
+												</div> -->
+												<span class="peer-type recom">Reviewer 추천</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="position">Cell 리더</span>
+												<span class="team">UX디자인팀</span>
+											</div>
+											<p class="state">완료</p>
+										</li>
+										<li>
+											<div class="info">												
+												<!-- <div class="inp-check type2 non-tx">
+													<input type="checkbox" name="" id="check2">
+													<label for="check2"><span class="box"></span> 체크박스</label>
+												</div> -->
+												<span class="peer-type"></span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="position">Cell 리더</span>
+												<span class="team">UX디자인팀</span>
+											</div>
+											<p class="state">완료</p>
+										</li>
+										<li>
+											<div class="info">												
+												<!-- <div class="inp-check type2 non-tx">
+													<input type="checkbox" name="" id="check2">
+													<label for="check2"><span class="box"></span> 체크박스</label>
+												</div> -->
+												<span class="peer-type"></span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="position">Cell 리더</span>
+												<span class="team">UX디자인팀</span>
+											</div>
+											<p class="state">완료</p>
+										</li>
+										<li>
+											<div class="info">												
+												<!-- <div class="inp-check type2 non-tx">
+													<input type="checkbox" name="" id="check2">
+													<label for="check2"><span class="box"></span> 체크박스</label>
+												</div> -->
+												<span class="peer-type"></span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="position">Cell 리더</span>
+												<span class="team">UX디자인팀</span>
+											</div>
+											<p class="state">완료</p>
+										</li>
+										<li>
+											<div class="info">												
+												<!-- <div class="inp-check type2 non-tx">
+													<input type="checkbox" name="" id="check2">
+													<label for="check2"><span class="box"></span> 체크박스</label>
+												</div> -->
+												<span class="peer-type"></span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="position">Cell 리더</span>
+												<span class="team">UX디자인팀</span>
+											</div>
+											<p class="state">완료</p>
+										</li>
+										<li>
+											<div class="info">												
+												<!-- <div class="inp-check type2 non-tx">
+													<input type="checkbox" name="" id="check2">
+													<label for="check2"><span class="box"></span> 체크박스</label>
+												</div> -->
+												<span class="peer-type recom">Reviewer 추천</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="position">Cell 리더</span>
+												<span class="team">UX디자인팀</span>
+											</div>
+											<p class="state">
+												<span class="tx"><button type="button" class="open-modal" data-target="can-skip"><span>Skipped</span></button></span> <!-- 2019-09-17 추가 -->
+												<button type="button" class="btn-xs btn-red4"><span>독려</span></button>
+											</p>
+										</li>
+										<li>
+											<div class="info">												
+												<!-- <div class="inp-check type2 non-tx">
+													<input type="checkbox" name="" id="check2">
+													<label for="check2"><span class="box"></span> 체크박스</label>
+												</div> -->
+												<span class="peer-type recom">Reviewer 추천</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="position">Cell 리더</span>
+												<span class="team">UX디자인팀</span>
+											</div>
+											<p class="state">완료</p>
+										</li>
+										<li>
+											<div class="info">												
+												<!-- <div class="inp-check type2 non-tx">
+													<input type="checkbox" name="" id="check3">
+													<label for="check3"><span class="box"></span> 체크박스</label>
+												</div> -->
+												<span class="peer-type recom">Reviewer 추천</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="team">UX디자인</span>
+											</div>
+											<p class="state"><button type="button" class="btn-xs"><span>독려</span></button></p>
+										</li>
+										<li>
+											<div class="info">
+												<!-- <div class="inp-check type2 non-tx">
+													<input type="checkbox" name="" id="check4">
+													<label for="check4"><span class="box"></span> 체크박스</label>
+												</div> -->
+												<span class="peer-type"></span> <!--2018-04-18 추가 리뷰어 클래스 추가 -->
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="team">UX디자인팀</span>
+											</div>
+											<p class="state"><button type="button" class="btn-xs"><span>독려</span></button></p>
+										</li>
+									</ul>
+								</div>
+								<!-- // 2018-06-19 수정 -->
+								<div class="peer-type-info">
+									<span><i class="peer-type recom"></i>Reviewer로 추천하는 동료 입니다.</span> <!-- 2019-09-11 추가 -->
+									<!-- <a href="#" class="btn-m">선택 삭제</a> 2019-10-21 삭제 -->
+								</div>
+							</div>
+							<!-- // peer -->
+							<p class="under-desc"><span>※ 전체 F/B대상자별 Reviewer를 모두 설정하신 다음에 F/B을 요청해주시기 바랍니다. (설정하신 내용은 실시간으로 자동 저장됩니다.) <br>최근 입사나 휴직, 복귀 등으로 동료들의 F/B이 어려운 경우 ‘대상’ 버튼을 Click하여 대상자에서 ‘제외’처리 하시기 바랍니다.</span></p>  <!--2018-06-25 수정 -->
+						</div>
+						<!-- // Peer 관리 -->
+						
+						<div class="cnt-btn-middle tc">
+							<div class="inp-check type2">
+								<input type="checkbox" name="" id="chk-reviewer">
+								<label for="chk-reviewer"><span class="box"></span> <strong>Peer-F/B 대상자 <span class="tx-red">4</span>명에 대해 Reviewer를 모두 확인하였습니다.</strong></label> <!-- 2019-07-29 수정(strong 태그 추가) -->
+							</div>
+						</div>
+
+						<div class="btn-group">
+							<a href="#" class="btn-l btn-red2-outline">목록</a>
+							<a href="#" class="btn-l btn-red2">Peer-F/B 대상자 전체에 대한 Reviewer 독려(4명)</a>
+							<a href="#" class="btn-l btn-red2">삭제</a>
+						</div>
+
+					</div>
+					<!-- // cnt-area - Task Peer-F/B 상세 -->
+
+				</div>
+
+		<!--#include file="include-footer.html"-->
+	</div>
+
+	<div class="modal modal_peer-skip" id="can-skip">
+		<textarea name="" id="" disabled="">사유가 들어갑니다. 내용내용</textarea>
+		<div class="btn-group">
+			<button type="button" class="btn-xs"><span><strong>완료/Skip</strong></span></button>
+			<button type="button" class="btn-xs close"><span>취소</span></button>
+		</div>
+	</div>
+
+</body>
+</html>

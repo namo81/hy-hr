@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title></title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mousewheel.min.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<!-- 2019-08-13 말줄임 -->
+	<script src="/js/jquery.dotdotdot-1.5.9.min.js"></script>
+	<script>
+		$(function(){
+			$('.org').dotdotdot();
+			$('.pf-pos > span').dotdotdot();
+		});
+	</script>
+
+	<script>
+		$(function(){
+			/* 2019-02-20 수정 */
+			$('.comment-tx').each(function(){
+				var $tx = $(this).find('.tx-cnt'),
+				$btn = $(this).find('.btn-tx-more');
+
+				if($tx.height() > 91) $btn.show(); // 2019-04-10 수정
+				else $btn.hide();
+
+				$btn.click(function(){
+					$tx.css({'max-height':'none'});
+					$(this).hide();
+				});
+			});			
+			/* // 2019-02-20 수정 */
+
+			$('.btn-like').click(function(){
+				$(this).toggleClass('on');
+			});
+
+			$('.btn-favorite').click(function(){
+				$(this).toggleClass('on');
+			});
+
+			$('.btn-reply-view').click(function(){
+				$(this).parent().toggleClass('show');
+			});
+
+			/*$('.cmt-dashboard').mCustomScrollbar({
+				mouseWheelPixels : 300
+			});*/
+
+			/* 2019-08-27 - 카드 내 클릭 기능 제한 */
+			$('.profile-list').find('li').find('a').click(function(e){
+				e.stopPropagation();
+			});
+
+			/* 2019-09-11 화면 스크롤 시 가장 마지막 카드 이하로 스크롤일 경우 이벤트 발생 */
+			$(window).scroll(function(){
+				var wt = $(this).scrollTop();
+				if(wt > ($('.profile-list').children('li').last().offset().top - 600)) {
+					// 이벤트 발생 영역!!
+				}
+			});
+
+		});
+	</script>
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->				
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1 no-line">
+						<img src="/images/ico_profile-sch.png" alt=""> Career Search
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span> 
+							<strong>Career Search</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<div class="profile-sch">
+						<p class="tooltip">전사 구성원 검색이 가능합니다.</p> <!-- 2019-08-13 추가 -->
+						<p class="sch-inp"><input type="text" name="" placeholder="이름, Task/업무, 전화번호, 조직, 사번으로 검색" title="이름,검색"></p> <!-- 2019-07-29 수정 -->
+						<button type="button" class="btn-sch"><span>조회</span></button>
+						<button type="button" class="btn-plz-shair"><span><i class="ico-btn"><img src="/images/icon_gold.png" alt=""></i>동료와의 헙업을 위해 <i class="name">홍길동</i>님의 일과 경험을 공유해주세요. <i class="ico"></i></span></button> <!-- 2019-09-24 수정 -->
+					</div>
+
+					<div class="profile-wrap">
+						<!-- 2019-07-23 추가
+						<div class="no-data">
+							<p>'홍길동' 에 대한 검색 결과가 없습니다.</p>
+						</div>
+						// 2019-07-23 추가 -->
+						<div class="tbl-top-cnt tr">
+							<p class="result">총 <span class="tx-red">35</span>명</p>
+						</div>
+						<!-- 2019-08-20 수정 -->
+						<ul class="profile-list">
+							<li tabindex="0" onclick=";" class="none"> <!-- 비공개일 경우 'none' 클래스 추가 -->
+								<div class="pf-info">
+									<p class="hit">Hit : 1</p> <!-- 2019-09-06 Hit 추가 -->
+									<p class="img"><img src="/images/temp_profile-1.jpg" alt=""></p> <!-- 사진 -->
+									<p class="name"><!-- 이름 및 사번 -->
+										<strong title="홍길동">홍길동</strong> 
+										201200000
+									</p>
+									<p class="team"> <!-- 직책 및 소속 -->
+										<span>팀장</span>
+										<a href="#" class="tx" title="기업문화 AI/DT팀">기업문화 AI/DT팀</a>
+									</p>
+									<!-- 2019-09-06 시간영역 수정 -->
+									<p class="work-time">
+										<a href="#" title="10:00 ~ 13:00&#10;13:00 ~ 19:30&#10;19:30 ~ 21:00">
+											<span class="state">휴가</span> <!-- 휴가/휴직 상태 - 기본 휴가 / half : 반차 / off : 휴직 -->
+											<span class="time">10:30 ~ 13:00(계속)</span>
+										</a>
+									</p>
+									<!-- // 2019-09-06 시간영역 수정 -->
+									<p class="phone"><strong>010-0000-0000</strong></p> <!-- 휴대폰번호 -->
+									<p class="org" title="ICT개발그룹 | 서비스기획 Unit | 기업문화AI | 서비스기획BU | 기업문화">ICT개발그룹 | 서비스기획 Unit | 기업문화AI | 서비스기획BU | 기업문화</p> <!-- 소속 -->
+								</div>
+								<p class="pf-pos" title="Data Scientist, 빅테이터 Data Scientist, 빅테이터 Data Scientist, 빅테이터 Data Scientist, 빅테이터"><span>Data Scientist, 빅테이터 Data Scientist, 빅테이터 Data Scientist, 빅테이터 Data Scientist, 빅테이터</span></p> <!-- 담당업무 -->
+							</li>
+							<li tabindex="0" onclick="" class="yet">  <!-- Open 대기중 경우 'yet' 클래스 추가 -->
+								<div class="pf-info">
+									<p class="hit">Hit : 4,975</p> <!-- 2019-09-06 Hit 추가 -->
+									<p class="img"><img src="/images/temp_profile-2.jpg" alt=""></p> <!-- 사진 -->
+									<p class="name"><!-- 이름 및 사번 -->
+										<strong title="홍길동">홍길동</strong> 
+										201200000
+									</p>
+									<p class="team"> <!-- 직책 및 소속 -->
+										<span>팀장</span>
+										<a href="#" class="tx" title="기업문화 AI/DT팀">기업문화 AI/DT팀</a>
+									</p>
+									<!-- 2019-09-06 시간영역 수정 -->
+									<p class="work-time">
+										<a href="#" title="10:00 ~ 13:00&#10;13:00 ~ 19:30&#10;19:30 ~ 21:00">
+											<span class="state half">반차</span> <!-- 휴가/휴직 상태 - 기본 휴가 / half : 반차 / off : 휴직 -->
+											<span class="time">10:30 ~ 13:00(계속)</span>
+										</a>
+									</p>
+									<!-- // 2019-09-06 시간영역 수정 -->
+									<p class="phone"><strong>010-0000-0000</strong></p> <!-- 휴대폰번호 -->
+									<p class="org" title="ICT개발그룹 | 서비스기획 Unit | 기업문화AI | 서비스기획BU | 기업문화">ICT개발그룹 | 서비스기획 Unit | 기업문화AI | 서비스기획BU | 기업문화</p> <!-- 소속 -->
+								</div>
+								<p class="pf-pos" title="Data Scientist, 빅테이터"><span>Data Scientist, 빅테이터</span></p> <!-- 담당업무 -->
+							</li>
+							<li tabindex="0" onclick=""class="none">
+								<div class="pf-info">
+									<p class="hit">Hit : 4,975</p> <!-- 2019-09-06 Hit 추가 -->
+									<p class="img"><img src="/images/temp_profile-1.jpg" alt=""></p> <!-- 사진 -->
+									<p class="name"><!-- 이름 및 사번 -->
+										<strong title="홍길동">홍길동</strong> 
+										201200000
+									</p>
+									<p class="team"> <!-- 직책 및 소속 -->
+										<span>팀장</span>
+										<a href="#" class="tx" title="기업문화 AI/DT팀">기업문화 AI/DT팀</a>
+									</p>
+									<!-- 2019-09-06 시간영역 수정 -->
+									<p class="work-time blank">
+										<a href="#" title="10:00 ~ 13:00&#10;13:00 ~ 19:30&#10;19:30 ~ 21:00">
+											<span class="state off">휴직</span> <!-- 휴가/휴직 상태 - 기본 휴가 / half : 반차 / off : 휴직 -->
+											<span class="time">10:30 ~ 13:00(계속)</span>
+										</a>
+									</p>
+									<!-- // 2019-09-06 시간영역 수정 -->
+									<p class="phone"><strong>010-0000-0000</strong></p> <!-- 휴대폰번호 -->
+									<p class="org" title="ICT개발그룹 | 서비스기획 Unit | 기업문화AI | 서비스기획BU | 기업문화">ICT개발그룹 | 서비스기획 Unit | 기업문화AI | 서비스기획BU | 기업문화</p> <!-- 소속 -->
+								</div>
+								<p class="pf-pos" title="Data Scientist, 빅테이터 Data Scientist, 빅테이터 Data Scientist, 빅테이터 Data Scientist, 빅테이터"><span>Data Scientist, 빅테이터 Data Scientist, 빅테이터 Data Scientist, 빅테이터 Data Scientist, 빅테이터</span></p> <!-- 담당업무 -->
+							</li>
+							<li tabindex="0" onclick="">
+								<div class="pf-info">
+									<p class="hit">Hit : 975</p> <!-- 2019-09-06 Hit 추가 -->
+									<p class="img"><img src="/images/temp_profile-1.jpg" alt=""></p> <!-- 사진 -->
+									<p class="name"><!-- 이름 및 사번 -->
+										<strong title="홍길동">홍길동</strong> 
+										201200000
+									</p>
+									<p class="team"> <!-- 직책 및 소속 -->
+										<span>팀장</span>
+										<a href="#" class="tx" title="기업문화 AI/DT팀">기업문화 AI/DT팀</a>
+									</p>
+									<!-- 2019-09-06 시간영역 수정 -->
+									<p class="work-time">										
+										<a href="#" title="10:00 ~ 13:00&#10;13:00 ~ 19:30&#10;19:30 ~ 21:00">
+											<span class="state">휴가</span> <!-- 휴가/휴직 상태 - 기본 휴가 / half : 반차 / off : 휴직 -->
+											<span class="time">10:30 ~ 13:00(계속)</span>
+										</a>
+									</p>
+									<!-- // 2019-09-06 시간영역 수정 -->
+									<p class="phone"><strong>010-0000-0000</strong></p> <!-- 휴대폰번호 -->
+									<p class="org" title="ICT개발그룹 | 서비스기획 Unit | 기업문화AI | 서비스기획BU | 기업문화">ICT개발그룹 | 서비스기획 Unit | 기업문화AI | 서비스기획BU | 기업문화</p> <!-- 소속 -->
+								</div>
+								<p class="pf-pos" title="Data Scientist, 빅테이터"><span>Data Scientist, 빅테이터</span></p> <!-- 담당업무 -->
+							</li>
+							<li tabindex="0" onclick="">
+								<div class="pf-info">
+									<p class="hit">Hit : 975</p> <!-- 2019-09-06 Hit 추가 -->
+									<p class="img"><img src="/images/temp_profile-1.jpg" alt=""></p> <!-- 사진 -->
+									<p class="name"><!-- 이름 및 사번 -->
+										<strong title="홍길동">홍길동</strong> 
+										201200000
+									</p>
+									<p class="team"> <!-- 직책 및 소속 -->
+										<span>팀장</span>
+										<a href="#" class="tx" title="기업문화 AI/DT팀">기업문화 AI/DT팀</a>
+									</p>
+									<!-- 2019-09-06 시간영역 수정 -->
+									<p class="work-time">										
+										<a href="#" title="10:00 ~ 13:00&#10;13:00 ~ 19:30&#10;19:30 ~ 21:00">
+											<span class="state">휴가</span> <!-- 휴가/휴직 상태 - 기본 휴가 / half : 반차 / off : 휴직 -->
+											<span class="time">10:30 ~ 13:00(계속)</span>
+										</a>
+									</p>
+									<!-- // 2019-09-06 시간영역 수정 -->
+									<p class="phone"><strong>010-0000-0000</strong></p> <!-- 휴대폰번호 -->
+									<p class="org" title="ICT개발그룹 | 서비스기획 Unit | 기업문화AI | 서비스기획BU | 기업문화">ICT개발그룹 | 서비스기획 Unit | 기업문화AI | 서비스기획BU | 기업문화</p> <!-- 소속 -->
+								</div>
+								<p class="pf-pos" title="Data Scientist, 빅테이터"><span>Data Scientist, 빅테이터</span></p> <!-- 담당업무 -->
+							</li>
+							<li tabindex="0" onclick="">
+								<div class="pf-info">
+									<p class="hit">Hit : 975</p> <!-- 2019-09-06 Hit 추가 -->
+									<p class="img"><img src="/images/temp_profile-1.jpg" alt=""></p> <!-- 사진 -->
+									<p class="name"><!-- 이름 및 사번 -->
+										<strong title="홍길동">홍길동</strong> 
+										201200000
+									</p>
+									<p class="team"> <!-- 직책 및 소속 -->
+										<span>팀장</span>
+										<a href="#" class="tx" title="기업문화 AI/DT팀">기업문화 AI/DT팀</a>
+									</p>
+									<!-- 2019-09-06 시간영역 수정 -->
+									<p class="work-time">										
+										<a href="#" title="10:00 ~ 13:00&#10;13:00 ~ 19:30&#10;19:30 ~ 21:00">
+											<span class="state">휴가</span> <!-- 휴가/휴직 상태 - 기본 휴가 / half : 반차 / off : 휴직 -->
+											<span class="time">10:30 ~ 13:00(계속)</span>
+										</a>
+									</p>
+									<!-- // 2019-09-06 시간영역 수정 -->
+									<p class="phone"><strong>010-0000-0000</strong></p> <!-- 휴대폰번호 -->
+									<p class="org" title="ICT개발그룹 | 서비스기획 Unit | 기업문화AI | 서비스기획BU | 기업문화">ICT개발그룹 | 서비스기획 Unit | 기업문화AI | 서비스기획BU | 기업문화</p> <!-- 소속 -->
+								</div>
+								<p class="pf-pos" title="Data Scientist, 빅테이터"><span>Data Scientist, 빅테이터</span></p> <!-- 담당업무 -->
+							</li>
+						</ul>
+						<!-- // 2019-08-20 수정 -->
+					</div>
+
+					<a href="#wrap" class="btn-top">top</a>
+
+				</div>
+		
+		<!--#include file="include-footer.html"-->
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>나의 1on1 노트 | HR평가 시스템</title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/layerpop_func.js"></script> <!-- 2020-01-15 변경 -->
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<!-- 달력기능 css / js -->
+	<link rel="stylesheet" href="/css/calendar-ui.css" media="screen, print" />
+	<script src="/js/calendar.js"></script> <!-- 2020-01-10 재 변경 -->
+	<!-- // 달력기능 css / js -->
+
+	<script>
+		$(function(){
+			$('.inp-file-type2').each(function(){
+				fileSet($(this));
+			});
+
+			// 2020-01-15 추가
+			$('.open-layer').click(function(){
+				layerOpenBtn($(this));
+			});
+			$('.close-layer').click(function(){
+				layerClose();
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						나의 1on1 note
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span>
+							<span>TASK 관리</span>
+							<strong>동료 TASK</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<!-- cnt-area - 나의 1on1 note -->
+					<div class="cnt-area one-write">
+
+						<div class="page-sort-choice">
+							<div class="inp-radio">
+								<input type="radio" name="toWho" id="toCoachee" checked="">
+								<label for="toCoachee" class="on"><span class="box"></span> Coachee에게 작성</span></label>
+							</div>
+							<div class="inp-radio">
+								<input type="radio" name="toWho" id="toCoach">
+								<label for="toCoach"><span class="box"></span> Coach에게 작성</span></label>
+							</div>
+						</div>
+
+						<div class="tbl-wrap tbl-type5 tbl-1on1-write">
+							<table>
+								<caption></caption>
+								<colgroup>
+									<col style="width:22%"/>
+									<col style="width:28%"/>
+									<col style="width:22%"/>
+									<col style="width:28%"/>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">Coach</th>
+										<td class="tc"><span class="img"><img src="/images/temp-user.png" alt=""></span> 김팀장</td>
+										<th scope="row">Coachee</th>
+										<td class="tl"> <!-- 2020-01-15 좌정렬 - tl -->
+											<button type="submit" class="btn-tbl-sch"><span><i class="ico-btn"><img src="/images/ico_btn-sch.png" alt=""></i>조회</span></button>
+											<span class="img"><img src="/images/temp-user.png" alt=""></span> 김팀장
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">1on1 시행일자</th>
+										<td class="tc">
+											<!-- 2020-01-10 -->
+											<input type="text" class="cal" id="dSDate" readonly onfocus="ViewCalendar(this,document.all.dSDate,'none','yyyy-mm-dd','ClickRight1','S',0,0);">
+											<button type="button" class="btn-cal" onclick="ViewCalendar(this,document.all.dSDate,'none','yyyy-mm-dd','ClickRight1','S',0,0);" style="cursor:hand;"><img src="../images/ico_date.png"></button>
+											<!-- // 2020-01-10 -->
+										</td>
+										<th scope="row">진행상태</th>
+										<td class="tc">123</td> <!-- 2020-01-15 중앙정렬 - tc -->
+									</tr>
+									<tr>
+										<th scope="row">1on1<br>Comment</th>
+										<td colspan="3">
+											<div class="comment-dual">
+												<div class="fl">
+													<p class="title">Coach</p>
+													<textarea name="" id=""></textarea>
+												</div>
+												<div class="fl">
+													<p class="title">Coachee</p>
+													<textarea name="" id="" readonly></textarea>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">첨부파일<br>(선택입력)</th>
+										<td colspan="3">
+											<div class="file-choose">
+												<div class="info">
+													<p class="tx">Coach, Coachee 모두 파일 첨부 할 수 있으며, 첨부된 파일은 서로 확인 가능합니다. <br>파일 삭제는 등록한 본인만 가능합니다.</p>
+													<div class="inp-file-type2">
+														<input type="file" id="file-upload">
+														<label for="file-upload" class="btn-m"><i class="ico-btn"><img src="../images/ico_file3.png" alt=""></i>파일첨부</span></label>
+													</div>
+												</div>
+												<ul class="file-list">
+													<li><strong class="name">김팀장 / T-Session_일정가이드.ppt</strong> <button type="button" class="btn-file-del"><span>삭제</span></button></li>
+													<li><strong class="name">김팀장 / T-Session_일정가이드.ppt</strong> <button type="button" class="btn-file-del"><span>삭제</span></button></li>
+													<li><strong class="name">김팀장 / T-Session_일정가이드.ppt</strong> <button type="button" class="btn-file-del"><span>삭제</span></button></li>
+												</ul>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="task-check">
+							<div class="inp-check">
+								<input type="checkbox" name="" id="task-chk">
+								<label for="task-chk"><span class="box"></span> 1on1 時, Task 관련 Coaching을 진행한 경우에 체크 후 아래 Task Coaching 내용을 작성해 주시기 바랍니다.</span></label>
+							</div>
+							<p class="desc">Task Coaching 내용은 확인 요청 후 완료 되면, 해당 Task의 Comment에 내용이 등록되며,<br>내용은 Coach와 Coachee만 볼 수 있습니다.</p>
+						</div>
+
+						<div class="tbl-wrap tbl-type5 tbl-1on1-write">
+							<table>
+								<caption></caption>
+								<colgroup>
+									<col style="width:11%"/>
+									<col style="width:11%"/>
+									<col style="width:28%"/>
+									<col style="width:22%"/>
+									<col style="width:28%"/>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" rowspan="4">Task<br>Coaching<br>(선택입력)</th>
+										<th scope="row">Coaching<br>대상 Task</th>
+										<td colspan="3">
+											<a href="#layerpop-task-list" class="btn-m open-layer" data-target="layerpop-task-list" data-layerset="fixed">Task 선택</a> <!-- 2020-01-15 data-layerset // data-target 속성 추가 -->
+											<!-- 2020-01-10 수정 -->
+											<span class="t-step step4">Task 수행중</span><span class="name">A Task명Task명Task명Task명Task명Task명Task A Task명Task명Task명Task명Task명Task명Task A Task명Task명Task명Task명Task명Task명Task</span>
+											<span class="kind-task with">협업12명</span>
+											<!-- // 2020-01-10 수정 -->
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">Comment</th>
+										<td colspan="3">
+											<div class="comment-dual">
+												<div class="fl">
+													<p class="title">Coach</p>
+													<textarea name="" id=""></textarea>
+												</div>
+												<div class="fl">
+													<p class="title">Coachee</p>
+													<textarea name="" id="" readonly></textarea>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">첨부파일<br>(선택입력)</th>
+										<td colspan="3">
+											<div class="file-choose">
+												<div class="info">
+													<p class="tx">Coach, Coachee 모두 파일 첨부 할 수 있으며, 첨부된 파일은 서로 확인 가능합니다. <br>파일 삭제는 등록한 본인만 가능합니다.</p>
+													<div class="inp-file-type2">
+														<input type="file" id="file-upload">
+														<label for="file-upload" class="btn-m"><i class="ico-btn"><img src="../images/ico_file3.png" alt=""></i>파일첨부</span></label>
+													</div>
+												</div>
+												<ul class="file-list">
+													<li><strong class="name">김팀장 /  T-Session_일정가이드.ppt</strong> <button type="button" class="btn-file-del"><span>삭제</span></button></li>
+													<li><strong class="name">김팀장 /  T-Session_일정가이드.ppt</strong> <button type="button" class="btn-file-del"><span>삭제</span></button></li>
+													<li><strong class="name">김팀장 /  T-Session_일정가이드.ppt</strong> <button type="button" class="btn-file-del"><span>삭제</span></button></li>
+												</ul>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="task-divide">
+							<button type="button" onclick=""><span><i class="icon"><img src="/images/ico_task-del.png" alt=""></i>Task Coaching 삭제</span></button>
+						</div>
+
+						<div class="tbl-wrap tbl-type5 tbl-1on1-write">
+							<table>
+								<caption></caption>
+								<colgroup>
+									<col style="width:11%"/>
+									<col style="width:11%"/>
+									<col style="width:28%"/>
+									<col style="width:22%"/>
+									<col style="width:28%"/>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" rowspan="4">Task<br>Coaching<br>(선택입력)</th>
+										<th scope="row">Coaching<br>대상 Task</th>
+										<td colspan="3">
+											<button type="button" class="btn-m"><span>Task 선택</span></button>
+											<!-- 2020-01-10 수정 -->
+											<span class="t-step step4">Task 수행중</span><span class="name">A Task명Task명Task명Task명Task명Task명Task</span>
+											<span class="kind-task">개인</span>
+											<!-- // 2020-01-10 수정 -->
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">Comment</th>
+										<td colspan="3">
+											<div class="comment-dual">
+												<div class="fl">
+													<p class="title">Coach</p>
+													<textarea name="" id=""></textarea>
+												</div>
+												<div class="fl">
+													<p class="title">Coachee</p>
+													<textarea name="" id="" readonly></textarea>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">첨부파일<br>(선택입력)</th>
+										<td colspan="3">
+											<div class="file-choose">
+												<div class="info">
+													<p class="tx">Coach, Coachee 모두 파일 첨부 할 수 있으며, 첨부된 파일은 서로 확인 가능합니다. <br>파일 삭제는 등록한 본인만 가능합니다.</p>
+													<div class="inp-file-type2">
+														<input type="file" id="file-upload">
+														<label for="file-upload" class="btn-m"><i class="ico-btn"><img src="../images/ico_file3.png" alt=""></i>파일첨부</span></label>
+													</div>
+												</div>
+												<ul class="file-list">
+													<li><strong class="name">김팀장 /  T-Session_일정가이드.ppt</strong> <button type="button" class="btn-file-del"><span>삭제</span></button></li>
+													<li><strong class="name">김팀장 /  T-Session_일정가이드.ppt</strong> <button type="button" class="btn-file-del"><span>삭제</span></button></li>
+													<li><strong class="name">김팀장 /  T-Session_일정가이드.ppt</strong> <button type="button" class="btn-file-del"><span>삭제</span></button></li>
+												</ul>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="task-divide">
+							<button type="button" onclick=""><span><i class="icon"><img src="/images/ico_task-add.png" alt=""></i>Task Coaching 추가</span></button>
+						</div>
+						
+						<div class="btn-group">
+							<a href="#" class="btn-l btn-red2-outline">취소</a>
+							<a href="#" class="btn-l btn-red2-outline">저장</a>
+							<a href="#" class="btn-l btn-red2">Coachee에게 확인요청</a>
+						</div>
+
+					</div>
+					<!-- // cnt-area - 나의 1on1 note  -->
+
+				</div>
+
+		<!--#include file="include-footer.html"-->
+	</div>
+
+<!-- 2020-01-08 레이어팝업 추가 -->
+<div class="layer-pop" id="layerpop-task-list">
+	<div class="layer-bg"></div>
+	<div class="layer-cnt" tabindex="0">
+		<div class="layer-top">
+			<h2 class="title-dep2">Coaching 대상 Task 선택</h2>
+		</div>
+		<div class="layer-mid">
+			<div class="task-sel-list">
+				<ul>
+					<!-- 검색결과 있음 -->
+					<li>
+						<div class="inp-radio type2">
+							<input type="radio" name="task-select" id="task-01">
+							<label for="task-01"><span class="box"></span> <span class="t-step step4">Task 수행중</span> <span class="name">A Task명Task명Task명Task명Task명Task명Task명Task명Task명Task명Task</span></span></label>
+						</div>
+						<span class="kind-task">개인</span> <!-- 2020-01-10 추가 -->
+					</li>
+					<li>
+						<div class="inp-radio type2">
+							<input type="radio" name="task-select" id="task-02">
+							<label for="task-02"><span class="box"></span> <span class="t-step step4">Task 수행중</span><span class="name">A Task명Task명Task명Task명Task명Task명Task</span></label>
+						</div>
+						<span class="kind-task">협업10명</span>
+					</li>
+					<li>
+						<div class="inp-radio type2">
+							<input type="radio" name="task-select" id="task-03">
+							<label for="task-03"><span class="box"></span> <span class="t-step step4">Task 수행중</span><span class="name">A Task명Task명Task명Task명Task명Task명Task</span></label>
+						</div>
+						<span class="kind-task">개인</span>
+					</li>
+					<li>
+						<div class="inp-radio type2">
+							<input type="radio" name="task-select" id="task-04">
+							<label for="task-04"><span class="box"></span> <span class="t-step step4">Task 수행중</span><span class="name">A Task명Task명Task명Task명Task명Task명Task</span></label>
+						</div>
+						<span class="kind-task">개인</span>
+					</li>
+					<li>
+						<div class="inp-radio type2">
+							<input type="radio" name="task-select" id="task-04">
+							<label for="task-04"><span class="box"></span> <span class="t-step step4">Task 수행중</span><span class="name">A Task명Task명Task명Task명Task명Task명Task</span></label>
+						</div>
+						<span class="kind-task">개인</span>
+					</li>
+					<li>
+						<div class="inp-radio type2">
+							<input type="radio" name="task-select" id="task-04">
+							<label for="task-04"><span class="box"></span> <span class="t-step step4">Task 수행중</span><span class="name">A Task명Task명Task명Task명Task명Task명Task</span></label>
+						</div>
+						<span class="kind-task">개인</span>
+					</li>
+					<li>
+						<div class="inp-radio type2">
+							<input type="radio" name="task-select" id="task-04">
+							<label for="task-04"><span class="box"></span> <span class="t-step step4">Task 수행중</span><span class="name">A Task명Task명Task명Task명Task명Task명Task</span></label>
+						</div>
+						<span class="kind-task">개인</span>
+					</li>
+					<li>
+						<div class="inp-radio type2">
+							<input type="radio" name="task-select" id="task-04">
+							<label for="task-04"><span class="box"></span> <span class="t-step step4">Task 수행중</span><span class="name">A Task명Task명Task명Task명Task명Task명Task</span></label>
+						</div>
+						<span class="kind-task">개인</span>
+					</li>
+					<!-- // 검색결과 있음 -->
+					<!-- 검색결과 없음 -->
+					<li class="no-result">검색된 내용이 없습니다.</li>
+					<!-- // 검색결과 없음 -->
+				</ul>
+			</div>
+
+			<div class="btn-group tc">
+				<a href="#" class="btn-l btn-red2-outline">취소</a>
+				<a href="#" class="btn-l btn-red2">선택완료</a>
+			</div>
+
+		</div>
+		<button type="button" class="btn-close close-layer">닫기</button>
+	</div>
+</div>
+</body>
+</html>

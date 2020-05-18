@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title></title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/layerpop.js"></script> <!-- layerpop 기능 -->
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<!-- 달력기능 css / js -->
+	<link rel="stylesheet" href="/css/calendar-ui.css" media="screen, print" />
+	<script src="/js/calendar.js"></script>
+	<!-- // 달력기능 css / js -->
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->				
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						나의 Task 상세
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span>
+							<span><a href="#">나의 Task</a></span>
+							<strong>나의 Task 상세</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->					
+
+					<!-- cnt-area - 나의 Task 상세 -->
+					<div class="cnt-area task-detail-wrap">
+						<!-- 상세 내용 -->
+						<div class="detail-wrap">
+							<div class="detail-top">
+								<h3 class="title-dep2">Task 정보 
+									<span class="kind-task with">공통Task</span> <!-- 공통 task 일 경우 'width' 클래스 추가 -->
+									<span class="t-step step3">Task 수행중</span>
+								</h3>
+								<div class="fr"><a href="#layer-modify-history" class="btn-m open-layer-top" data-layerset="fixed">진행 History</a></div>
+							</div>
+							
+						</div>
+						<!-- // 상세 내용 -->
+					</div>
+					<!-- // cnt-area - 나의 Task 상세 -->
+
+				</div>
+		
+		<!--#include file="include-footer.html"-->
+	</div>
+
+<!-- 레이어팝업 -->
+<div class="layer-pop" id="layer-modify-history">
+	<div class="layer-bg"></div>
+	<div class="layer-cnt">
+		<div class="layer-top">
+			<h2 class="title-dep2">진행 History</h2>
+		</div>
+		<div class="layer-mid">
+			<!-- 수정 내역 -->
+			<div class="tgl-wrap modify-list">
+				<ul>
+					<li>
+						<!-- 2018-01-23 순서변경 -->
+						<button type="button" class="btn-tgl">
+							<span class="t-step step2">승인요청</span>
+							<span class="date"><strong>수정일</strong> 2017.12.27 17:20</span>
+							<span class="user"><strong>수정자</strong> 김팀장</span>
+						</button>
+						<!-- // 2018-01-23 순서변경 -->
+						<div class="tgl-cnt">
+							<div class="task-view">
+								<table>
+									<caption>진행 History</caption>
+									<colgroup>
+										<col style="width:15%">
+										<col style="width:auto;">
+										<col style="width:15%">
+										<col style="width:20%">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="col">• 기간</th>
+											<td>2018.01.01 ~ 2018.10.10</td>
+											<th scope="col">• 가중치</th>
+											<td class="modify">30%</td> <!-- 2018-01-23 이전 내용과 비교 시 수정되었을 경우 modify 클래스 추가 -->
+										</tr>
+										<tr>
+											<th scope="col" colspan="4">• 목표</th>
+										</tr>
+										<tr>
+											<td colspan="4">SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. 1. Task 입니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.<br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.<br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.<br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="btn-tgl">
+							<span class="t-step step2">승인요청</span>
+							<span class="date"><strong>수정일</strong> 2017.12.27 17:20</span>
+							<span class="user"><strong>수정자</strong> 김팀장</span>
+						</button>
+						<div class="tgl-cnt">
+							<div class="task-view">
+								<table>
+									<caption>수정 히스토리</caption>
+									<colgroup>
+										<col style="width:15%">
+										<col style="width:auto;">
+										<col style="width:15%">
+										<col style="width:20%">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="col">• 기간</th>
+											<td>2018.01.01 ~ 2018.10.10</td>
+											<th scope="col">• 가중치</th>
+											<td>30%</td>
+										</tr>
+										<tr>
+											<th scope="col" colspan="4">• 목표</th>
+										</tr>
+										<tr>
+											<td colspan="4">SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. 1. Task 입니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.<br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.<br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.<br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="btn-tgl">
+							<span class="t-step step2">승인요청</span>
+							<span class="date"><strong>수정일</strong> 2017.12.27 17:20</span>
+							<span class="user"><strong>수정자</strong> 김팀장</span>
+						</button>
+						<div class="tgl-cnt">
+							<div class="task-view">
+								<table>
+									<caption>수정 히스토리</caption>
+									<colgroup>
+										<col style="width:15%">
+										<col style="width:auto;">
+										<col style="width:15%">
+										<col style="width:20%">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="col">• 기간</th>
+											<td>2018.01.01 ~ 2018.10.10</td>
+											<th scope="col">• 가중치</th>
+											<td>30%</td>
+										</tr>
+										<tr>
+											<th scope="col" colspan="4">• 목표</th>
+										</tr>
+										<tr>
+											<td colspan="4">SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. 1. Task 입니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.<br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.<br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.<br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="btn-tgl">
+							<span class="t-step step2">승인요청</span>
+							<span class="date"><strong>수정일</strong> 2017.12.27 17:20</span>
+							<span class="user"><strong>수정자</strong> 김팀장</span>
+						</button>
+						<div class="tgl-cnt">
+							<div class="task-view">
+								<table>
+									<caption>수정 히스토리</caption>
+									<colgroup>
+										<col style="width:15%">
+										<col style="width:auto;">
+										<col style="width:15%">
+										<col style="width:20%">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="col">• 기간</th>
+											<td>2018.01.01 ~ 2018.10.10</td>
+											<th scope="col">• 가중치</th>
+											<td>30%</td>
+										</tr>
+										<tr>
+											<th scope="col" colspan="4">• 목표</th>
+										</tr>
+										<tr>
+											<td colspan="4">SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. 1. Task 입니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.<br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.<br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.<br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- // 수정 내역 -->
+
+			<div class="btn-group tc">
+				<a href="#" class="btn-l btn-red2">목록</a>
+			</div>
+
+		</div>
+		<button type="button" class="btn-close close-layer">닫기</button>
+	</div>
+</div>
+</body>
+</html>

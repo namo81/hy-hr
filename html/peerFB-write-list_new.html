@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>Peer-F/B 작성 | HR평가 시스템</title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<script>
+		/* 2019-05-13 추가 */
+		$(function(){
+			$('.tbl-depth').find('tr').each(function(){
+				if($(this).find('td').eq(0).text().length > 0) $(this).addClass('divide');
+			});
+
+			/* 2019-09-17 모달 말풍선 추가 */
+			$('.open-modal').each(function(){
+				var $btn = $(this),
+					$modal = $('.modal'),
+					$close = $modal.find('.close');
+
+				$btn.click(function(){
+					var thisT = $(this).offset().top + $(this).height() + 15,
+						thisL = $(this).offset().left - ($modal.width() - $(this).outerWidth() + 13),
+						tg = $('#'+$(this).data('target'));
+
+					// 추가 기능 실행 영역
+
+					tg.css({
+						'top': thisT + 'px',
+						'left': thisL +'px'
+					}).addClass('on').find('a, button, input, textarea').first().focus();
+				});
+
+				$close.click(function(){
+					$modal.css({'top':'','left':''}).removeClass('on');
+				});
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						Peer-F/B 작성
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span>
+							<span>Peer-Feedback</span>
+							<strong>Peer-F/B 작성</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<!-- cnt-area - Task Peer-F/B -->
+					<div class="cnt-area task-list">
+
+						<!-- 2019-05-20 수정 -->
+						<div class="page-top-notice">
+							<p class="title"><strong>꼭 확인하세요!</strong></p>
+							<!-- 2019-05-29 수정 - underline 클래스 삭제 -->
+							<ul>
+								<li>Peer-F/B은 연 2회 시행하는 ‘조직(팀) 단위’ Peer-F/B과 협업 Task 종료 시점에 시행하는 ‘Task 단위’ Peer-F/B으로 구분됩니다.</li>
+								<li>(종류와 무관하게) Peer-F/B <span class="tx-red">대상자별</span> 상반기/하반기 <span class="tx-red">각 1회</span>는 반드시 작성해야 하며, 그 외 <span class="tx-red">‘중복’</span>의 관점에서 불필요하다고 판단될 경우에는 <span class="tx-red">‘Skip’</span> 하실 수 있습니다.</li>
+								<li>Peer-F/B의 선택과 집중이 가능한만큼, <span class="tx-red">진정성</span> 있는 상호 조언 및 Feedback의 계기로 삼아 주시기 바랍니다.</li>
+							</ul>
+							<!-- // 2019-05-29 수정 - underline 클래스 삭제 -->
+						</div>
+						<!-- // 2019-05-20 수정 -->
+
+						<!-- 2019-05-14 수정 -->
+						<div class="tbl-top-cnt">
+							<div class="new-select" style="width:100px">
+								<select name="" id="">
+									<option value="">2018</option>
+									<option value="">2017</option>
+									<option value="">2016</option>
+								</select>
+							</div>
+							<div class="new-select" style="width:120px">
+								<select name="" id="">
+									<option value="">구분전체</option>
+									<option value="">Task</option>
+									<option value="">조직</option>
+								</select>
+							</div>
+							<input type="text" name="" placeholder="이름 또는 조직명을 입력하세요." style="width:200px; vertical-align:top;">
+							<button type="submit" class="btn-tbl-sch"><span><i class="ico-btn"><img src="/images/ico_btn-sch.png" alt=""></i>조회</span></button>
+						</div>
+
+						<div class="tbl-top-cnt fb-write-state">
+							<div class="fl">
+								<ul class="result-list">
+									<li>&bull;작성대상 : <strong>2명</strong></li>
+									<li>&bull;작성완료 : <strong>2명</strong></li>
+								</ul>
+							</div>
+							<div class="fr"><strong>총 <span class="tx-red">11</span>명</strong></div>
+						</div>
+						<!-- // 2019-05-14 수정 -->
+
+						<!-- Peer-F/B 리스트 2019-05-14 수정 -->
+						<div class="tbl-wrap tbl-type1 tit-length3 tbl-depth">
+							<table>
+								<caption>Peer-F/B 작성</caption>
+								<colgroup>
+									<col style="width:12%"/>
+									<col style="width:14%"/>
+									<col style="width:8%"/>
+									<col style="width:10%"/>
+									<col style="width:12%"/>
+									<col style="width:auto"/>
+									<col style="width:16%"/>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col"><span>Peer-F/B 대상</span></th>
+										<th scope="col"><span>조직</span></th>
+										<th scope="col"><span>반기 구분</span></th>
+										<th scope="col"><span>상태</span></th>
+										<th scope="col"><span>Peer-F/B 구분</span></th>
+										<th scope="col"><span>제목</span></th>
+										<th scope="col"><span>작성/Skip</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="tl"> <!-- 2019-05-29 수정 -->
+											<span class="img"><img src="/images/temp-user.png" alt=""></span> 홍길동
+										</td>
+										<td class="dot">기업문화DT/AI팀 기업문화DT/AI팀</td>
+										<td>상반기</td>
+										<td><span class="peer-step step2">진행중</span></td>
+										<td>조직 단위</td>
+										<td class="tl"><span class="list-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트 시스템 구축 프로젝트</span></span></td> <!-- 2019-10-10 skip 추가 -->
+										<td>
+											<button type="button" class="btn-m btn-gray-red-tx"><span>작성</span></button>
+											<button type="button" class="btn-m btn-gray-red-line open-modal" data-target="inp-skip"><span>Skip</span></button> <!-- 2019-09-17 수정 -->
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><span class="peer-step step2">진행중</span></td>
+										<td>조직 단위</td>
+										<td class="tl"><span class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트 시스템 구축 프로젝트</span></span></td> <!-- 2019-10-10 예시 추가 -->
+										<td>
+											<button type="button" class="btn-m btn-gray-red-tx"><span>작성</span></button>
+											<button type="button" class="btn-m btn-gray-red-line disabled"><span>Skip</span></button> <!-- 2019-05-20 비활성 표기 & 클릭 가능 -->
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><span class="peer-step step2">진행중</span></td>
+										<td>조직 단위</td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트 시스템 구축 프로젝트</span></a></td>
+										<td>
+											<button type="button" class="btn-m btn-gray-red-tx"><span>작성</span></button>
+											<button type="button" class="btn-m btn-gray-red-line cancel open-modal" data-target="can-skip"><span>Skip취소</span></button> <!-- 2019-09-17 수정 -->
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><span class="peer-step step2">진행중</span></td>
+										<td>조직 단위</td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트 시스템 구축 프로젝트</span></a></td>
+										<td>
+											<button type="button" class="btn-m btn-gray-red-tx"><span>작성</span></button>
+											<button type="button" class="btn-m btn-gray-red-line cancel open-modal" data-target="cant-skip"><span>Skip취소</span></button> <!-- 2019-09-17 수정 -->
+										</td>
+									</tr>
+									<tr>
+										<td class="tl"> <!-- 2019-05-29 수정 -->
+											<span class="img"><img src="/images/temp-user.png" alt=""></span> 홍길동
+										</td>
+										<td class="dot">기업문화DT/AI팀 기업문화DT/AI팀</td>
+										<td>상반기</td>
+										<td><span class="peer-step step2">진행중</span></td>
+										<td>조직 단위</td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트 시스템 구축 프로젝트</span></a></td>
+										<td>
+											<button type="button" class="btn-m btn-gray-red-tx"><span>작성</span></button>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><span class="peer-step step2">진행중</span></td>
+										<td>조직 단위</td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트 시스템 구축 프로젝트</span></a></td>
+										<td>
+											<button type="button" class="btn-m btn-gray-red-tx"><span>작성</span></button>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><span class="peer-step step2">진행중</span></td>
+										<td>조직 단위</td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트 시스템 구축 프로젝트</span></a></td>
+										<td>
+											<button type="button" class="btn-m btn-gray-red-tx"><span>작성</span></button>
+										</td>
+									</tr>
+									<tr>
+										<td class="tl"> <!-- 2019-05-29 수정 -->
+											<span class="img"><img src="/images/temp-user.png" alt=""></span> 홍길동
+										</td>
+										<td class="dot">기업문화DT/AI팀 기업문화DT/AI팀</td>
+										<td>상반기</td>
+										<td><span class="peer-step step2">진행중</span></td>
+										<td>조직 단위</td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트 시스템 구축 프로젝트</span></a></td>
+										<td>
+											<button type="button" class="btn-m btn-gray-red-tx"><span>작성</span></button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- // Peer-F/B 리스트 2019-05-14 수정 -->			
+						
+						<div class="paging">
+							<button type="button" class="btn-paging first">처음으로</button>
+							<button type="button" class="btn-paging prev">이전</button>
+							<span>
+								<a href="#" class="on">1</a>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">10</a>
+							</span>
+							<button type="button" class="btn-paging next">다음</button>
+							<button type="button" class="btn-paging end">끝으로</button>
+						</div>
+
+					</div>
+					<!-- // cnt-area - Task Peer-F/B -->
+
+				</div>
+
+		<!--#include file="include-footer.html"-->
+	</div>
+
+	<!-- 2019-09-17 - skip 관련 말풍선 -->
+	
+	<!-- Skip 사유 입력 -->
+	<div class="modal modal_peer-skip" id="inp-skip">
+		<p class="modal-tit">Skip 사유</p>
+		<p class="modal-tx">작성하신 내용은 지정자(리더)에게 전달됩니다.</p>
+		<textarea name="" id="">사유가 들어갑니다. 내용내용</textarea>
+		<div class="btn-group">
+			<button type="button" class="btn-xs"><span><strong>완료/Skip</strong></span></button>
+			<button type="button" class="btn-xs close"><span>취소</span></button>
+		</div>
+	</div>
+
+	<!-- skip 취소 가능 -->
+	<div class="modal modal_peer-skip" id="can-skip">
+		<textarea name="" id="" disabled>사유가 들어갑니다. 내용내용</textarea>
+		<div class="btn-group">
+			<button type="button" class="btn-xs"><span><strong>Skip 취소</strong></span></button>
+			<button type="button" class="btn-xs close"><span>닫기</span></button>
+		</div>
+	</div>
+
+	<!-- Skip 취소 불가 -->
+	<div class="modal modal_peer-skip" id="cant-skip">
+		<p class="modal-tx">리더가 Peer-F/B 결과를 전송중 또는 전송완료하여 Skip 취소를 할 수 없습니다.</p>
+		<textarea name="" id="" disabled>사유가 들어갑니다. 내용내용</textarea>
+		<div class="btn-group">
+			<button type="button" class="btn-xs close"><span>취소</span></button>
+		</div>
+	</div>
+
+</body>
+</html>

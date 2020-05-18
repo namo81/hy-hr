@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title></title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<!-- 달력기능 css / js -->
+	<link rel="stylesheet" href="/css/calendar-ui.css" media="screen, print" />
+	<script src="/js/calendar.js"></script>
+	<!-- // 달력기능 css / js -->
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						동료 TASK
+						<!-- 2018-02-01 - 말풍선 영역 -->
+						<div class="balloon-wrap">
+							<button type="button" class="btn-balloon" data-top="5" data-left="-5"><span>페이지 안내</span></button> <!-- 2018-02-02 수정 -->
+							<div class="cnt-balloon">
+								<div class="cnt">
+									동료가 Task 등록 시 나를 Supporter로 지정한 Task입니다. <br> 나를 개별로 지정하거나 나의 조직을 지정할 경우로 나누어 볼 수 있습니다.
+								</div>
+							</div>
+						</div>
+						<!-- // 말풍선 영역 -->
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span>
+							<span>TASK 관리</span>
+							<strong>동료 TASK</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<!-- cnt-area - 나의 Watching TASK -->
+					<div class="cnt-area task-list">
+						<div class="btn-group top tr">
+							<a href="#" class="btn-m"><span class="ico-btn"><img src="/images/ico_btn-sch.png" alt=""></span><strong>나의 조직 Task 조회</strong></a>  <!-- 2018-01-24 버튼 수정 -->
+						</div>
+
+						<!-- tab 메뉴 -->
+						<div class="tab-menu tab-type1">
+							<ul>
+								<li><a href="#">나의 TASK</a></li>
+								<li class="on"><a href="#">동료 TASK</a></li>
+							</ul>
+						</div>
+						<!-- // tab 메뉴 -->
+
+						<!-- 정렬 선택 -->
+						<div class="page-sort-choice tr"> <!-- 2018-01-25 우측정렬 클래스 추가 -->
+							<div class="inp-radio">
+								<input type="radio" name="type-choice" id="type-me" checked>
+								<label for="type-me"><span class="box"></span> 나를 Suppoter로 지정한 Task</label>
+							</div>
+							<div class="inp-radio">
+								<input type="radio" name="type-choice" id="type-team">
+								<label for="type-team"><span class="box"></span> 나의 조직을 Suppoter로 지정한 Task</label>
+							</div>
+						</div>
+						<!-- // 정렬 선택 -->
+
+						<!-- 2018-01-24 요소 위치 변경 -->
+						<!-- 검색 -->
+						<div class="tbl-top-cnt">
+							<div class="inp-select">
+								<button type="button" class="btn-select" title="연도 선택"><span>2018</span></button>
+								<ul class="select-list">
+									<li><button type="button" class="btn-sel">2018</button></li>
+									<li><button type="button" class="btn-sel">2017</button></li>
+									<li><button type="button" class="btn-sel">2016</button></li>
+								</ul>
+							</div>
+							<div class="inp-select">
+								<button type="button" class="btn-select" title="상태 선택"><span>전체</span></button>
+								<ul class="select-list">
+									<li><button type="button" class="btn-sel">전체</button></li>
+									<li><button type="button" class="btn-sel">Task작성</button></li>
+									<li><button type="button" class="btn-sel">승인요청</button></li>
+									<li><button type="button" class="btn-sel">Task수행중</button></li>
+									<li><button type="button" class="btn-sel">신고완료</button></li>
+									<li><button type="button" class="btn-sel">피드백완료</button></li>
+								</ul>
+							</div>
+							<button type="submit" class="btn-tbl-sch"><span><i class="ico-btn"><img src="/images/ico_btn-sch.png" alt=""></i>조회</span></button> <!-- 2018-01-24 조회버튼 수정 -->			
+						</div>
+						
+						<!-- task 구분표기 안내 -->
+						<div class="tbl-top-cnt">
+							<div class="task-step">
+								<!-- 2018-01-24 구분표기 버튼태그 추가 -->
+								<ol>
+									<li><a href="#"><span class="t-step step1">step1.</span>Task작성중</a></li>
+									<li><a href="#"><span class="t-step step2">step2.</span>승인요청</a></li>
+									<li><a href="#"><span class="t-step step4">step4.</span>Task수행중</a></li>
+									<li><a href="#"><span class="t-step step5">step5.</span>Self-Review완료</a></li>
+									<li><a href="#"><span class="t-step step6">step6.</span>Feedback완료</a></li>
+								</ol>
+								<!-- // 2018-01-24 구분표기 버튼태그 추가 -->
+							</div>
+							<div class="fr"><strong>총 <span class="tx-red">11</span>건</strong></div>
+						</div>
+						<!-- // 2018-01-24 요소 위치 변경 -->
+
+						<!-- task 리스트 -->
+						<div class="tbl-wrap tbl-type1">
+							<table>
+								<caption>동료 Task 리스트</caption>
+								<colgroup>
+									<col style="width:12%"/>
+									<col style="width:auto"/>
+									<col style="width:18%"/>
+									<col style="width:20%"/>
+									<col style="width:9%"/> <!-- 2018-02-20 Task리더 추가 -->
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">상태</th>
+										<th scope="col"><span>Task</span></th>
+										<th scope="col"><span>진행기간</span></th>
+										<th scope="col"><span>Task 작성자</span></th>
+										<th scope="col"><span>Task리더</span></th><!-- 2018-02-20 Task리더 추가 -->
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><span class="t-step step1">Task작성</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트 시스템 구축 프로젝트</span> 외 334건</a> </td>
+										<td>18.01.22 ~ 18.12.12</td>
+										<td>
+											<ul class="mate-list">
+												<li class="proposer"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li> <!-- 2020-02-24 클래스 추가 -->
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+												<li class="dot">...</li>
+											</ul>
+										</td>
+										<td>김팀장</td><!-- 2018-02-20 Task리더 추가 -->
+									</tr>
+									<tr>
+										<td><span class="t-step step1">Task작성</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a> <span class="comment">5</span></td>
+										<td>18.01.22 ~ 18.12.12</td>
+										<td>
+											<ul class="mate-list">
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+												<li class="proposer"><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											</ul>
+										</td>
+										<td>김팀장</td><!-- 2018-02-20 Task리더 추가 -->
+									</tr>
+									<tr>
+										<td><span class="t-step step1">Task작성</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a> <span class="comment">5</span></td>
+										<td>18.01.22 ~ 18.12.12</td>
+										<td>
+											<ul class="mate-list">
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											</ul>
+										</td>
+										<td>김팀장</td><!-- 2018-02-20 Task리더 추가 -->
+									</tr>
+									<tr>
+										<td><span class="t-step step1">Task작성</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a> <span class="comment">5</span></td>
+										<td>18.01.22 ~ 18.12.12</td>
+										<td>
+											<ul class="mate-list">
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											</ul>
+										</td>
+										<td>김팀장</td><!-- 2018-02-20 Task리더 추가 -->
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- <p class="under-desc">※ 과제 종료 7일 전, 자기신고 작성을 위한 알림 메일이 발송됩니다. </p> -->
+						<!-- // task 리스트 -->
+						
+						<!-- paging -->
+						<div class="paging">
+							<button type="button" class="btn-paging first">처음으로</button>
+							<button type="button" class="btn-paging prev">이전</button>
+							<span>
+								<a href="#" class="on">1</a>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">10</a>
+							</span>
+							<button type="button" class="btn-paging next">다음</button>
+							<button type="button" class="btn-paging end">끝으로</button>
+						</div>
+						<!-- // paging -->
+
+					</div>
+					<!-- // cnt-area - 나의 Watching Task  -->
+
+				</div>
+
+		<!--#include file="include-footer.html"-->
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - snamo" >
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+	<title>SKT HR평가 시스템 가이드</title>
+	<link rel="stylesheet" href="/guide/guide.css" media="screen, print" />
+
+	<!-- 프로젝트 관련 CSS 및 JS 파일 로드 -->
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/calendar-ui.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/calendar.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/common.js"></script>
+
+	<!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <![endif]-->
+	
+	<script src="/guide/guide.js"></script>
+
+</head>
+<body>
+<div id="work-list">
+	<div class="title">
+		<h1 class="project-title">SKT HR평가 시스템 가이드</h1>
+		<p class="project-info">
+			<span>&bull; 작업일자 : 2017-12-15 ~ </span>
+			<span>&bull; 담당자 : 서남호</span>
+		</p>
+	</div>
+	<div class="menu">
+		<ul>
+			<li><a href="../index.html">Front</a></li>
+			<li><a href="guide.html" class="view">Guide</a></li>
+		</ul>
+	</div>
+
+	<div class="guide-menu">
+		<ul>
+			<li><a href="#guide-basic">기본 설정</a></li>
+			<li><a href="#guide-common">공통요소</a></li>
+			<li><a href="#guide-title">타이틀</a></li>
+			<li><a href="#guide-button">Button</a></li>
+			<li><a href="#guide-tab">Tab</a></li>
+			<li><a href="#guide-input">input</a></li>
+			<li><a href="#guide-toggle">toggle</a></li>
+			<li><a href="#guide-etc">기타</a></li>
+		</ul>
+	</div>
+
+	<div class="guide">
+		<section id="guide-basic">
+			<h2 class="guide-sec-tit">기본 설정</h2>
+			<div class="guide-sec">
+				<h3 class="guide-stit">Doctype</h3>
+				<p>Html5</p>
+<xmp><!DOCTYPE html>
+</xmp>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">인코딩</h3>
+				<p>UTF-8</p>
+<xmp><meta charset="UTF-8" >
+</xmp>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">크로스브라우징 범위</h3>
+				<ul>
+					<li>- 크롬</li>
+					<li>- IE11 이상</li>
+					<li>- 파이어폭스</li>
+				</ul>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">css 리스트</h3>
+				<ul>
+					<li>- <strong>layout.css</strong> - 기본 레이아웃 및 요소 전체 스타일 <strong class="guide-red">(필수)</strong></li>
+					<li>- <strong>contents.css</strong> - 각 페이지별 레이아웃 <strong class="guide-red">(필수) / 일반 팝업 페이지일 경우 제외 가능</strong></li>
+					<li>- <strong>popup.css</strong> - 일반 팝업용 <strong class="guide-red">(일반 팝업 페이지일 경우 필수)</strong></li>
+					<li>- <strong>calendar-ui.css</strong> - SKT 달력 플러그인용 CSS</li>
+					<li>- <strong>jquery.mCustomScrollbar.css</strong> - 스크롤 디자인용 플러그인 CSS</li>
+				</ul>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">plug in 리스트</h3>
+				<p>jquery.mousewheel.min.js - SKT HR 사이트 접속 환경이 외부 링크를 차단함. 하여 스크롤 디자인에 필요한 추가 js.</p>
+				<ul>
+					<li>- <strong>jquery-1.12.4.min.js</strong> - 기본 Jquery <strong class="guide-red">(필수)</strong></li>
+					<li>- <strong>gnbmenu-v1.0.js</strong> - gnb 및 lnb 기능<strong class="guide-red">(필수)</strong></li>
+					<li>- <strong>banner-tx.js</strong> - 상단 공지사항 배너기능<strong class="guide-red">(필수)</strong></li>
+					<li>- <strong>layerpop.js</strong> - 레이어 팝업 기능</li>
+					<li>- <strong>jquery.mousewheel.min.js</strong> - 스크롤 플러그인에 필요한 js</li>
+					<li>- <strong>jquery.mCustomScrollbar.js</strong> - 스크롤 디자인용 플러그인</li>
+					<li>- <strong>calendar.js</strong> - SKT 달력 플러그인</li>
+					<li>- <strong>common.js</strong> - 공통 js ( input 디자인 / tabmenu 기능 / toggle 기능 / 말풍선 기능 ) <strong class="guide-red">(필수)</strong></li>
+				</ul>
+				<p class="guide-red"><strong>JS파일 적용 순서 <br>jquery-1.12.4.min.js &gt; gnb, banner, 레이어팝업 등 &gt; common.js <br>jquery 파일과 common.js 파일 사이에 플러그인 파일들이 오도록.</strong></p>
+			</div>
+		</section>
+
+		<!-- 기본 ================================================================ 
+		<section id="guide-layout">
+			<h2 class="guide-sec-tit">레이아웃</h2>
+			<div class="guide-sec">
+				<h3 class="guide-stit">항목 타이틀</h3>
+				<p>항목 내용 p 태그 <strong>내용 강조</strong> <strong class="guide-red">내용 강조 + 붉은색</strong></p>
+				<p class="imp">항목 내용 중 특히 유의할 부분</p>
+				<ul>
+					<li>- 항목 내용 리스트1</li>
+					<li>- 항목 내용 리스트2</li>
+					<li>- 항목 내용 리스트3
+						<ul>
+							<li>* 항목 내용 리스트 3-1</li>
+							<li>* 항목 내용 리스트 3-2</li>
+							<li>* 항목 내용 리스트 3-3</li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#" class="guide-link">항목 관련 링크</a>
+
+				<h4 class="guide-sstit">항목 내 소 타이틀</h4>
+				<div class="guide-show">
+				<!-- 코드 작성 
+					실제 적용된 코드가 보이는 화면
+				<!-- // 코드 작성
+				</div>
+<xmp><!-- 코드작성 코드를 그대로 보여주기
+</xmp>
+			</div>
+		</section>-->
+
+		<!-- 공통요소 ================================================================ -->
+		<section id="guide-common">
+			<h2 class="guide-sec-tit">공통요소</h2>
+			<div class="guide-sec">
+				<h3 class="guide-stit">TASK Step</h3>
+				<p>TASK 진행상황을 위한 step 표기.</p>
+				<p>기본 't-step' 클래스에 'step1 ~ step6' 까지 클래스 적용</p>
+				<p>태그는 span 이 아니어도 무관함.</p>
+				<div class="guide-show">
+					<span class="t-step step1">TAKS작성</span>
+					<span class="t-step step2">승인요청</span>
+					<span class="t-step step3">반려</span>
+					<span class="t-step step4">진행중</span>
+					<span class="t-step step5">신고완료</span>
+					<span class="t-step step6">피드백완료</span>
+				</div>
+<xmp><span class="t-step step1">TAKS작성</span>
+<span class="t-step step2">승인요청</span>
+<span class="t-step step3">반려</span>
+<span class="t-step step4">진행중</span>
+<span class="t-step step5">신고완료</span>
+<span class="t-step step6">피드백완료</span>
+</xmp>
+			</div>
+			<div class="guide-sec">				
+				<h3 class="guide-stit">TASK 구분 아이콘</h3>
+				<ul>
+					<li>개인 TASK / 협업 TASK 구분 아이콘</li>
+					<li>kind-task 가 기본이며, 'with' 클래스 추가 시 협업 TASK 아이콘으로 변경됨.</li>
+					<li>텍스트 없이 아이콘만 사용되거나, 아이콘 위치를 우측으로 변경시 CSS 설정 필요.</li>
+					<li>아이콘 이미지 사이즈 : 가로 24px / 세로 15px</li>
+					<li>태그는 span 이 아니어도 무관함.</li>
+				</ul>
+				
+				<div class="guide-show">
+					<span class="kind-task">개인 TASK</span>
+					<span class="kind-task with">협업 TASK</span>
+				</div>
+<xmp><span class="kind-task">개인 TASK</span>
+<span class="kind-task with">협업 TASK</span>
+</xmp>
+			</div>
+			<div class="guide-sec">				
+				<h3 class="guide-stit">사용자 이미지</h3>
+				<ul>
+					<li>사이트 내 사용자 이미지 사용시. </li>
+					<li>이미지 사이즈 : 가로 28px / 세로 28px</li>
+					<li>퍼블리싱 단계에서 원형으로 컷팅 하므로, 이미지는 원형이 아니어도 무관함.</li>
+					<li>태그는 span 이 아니어도 무관함.</li>
+				</ul>
+				
+				<div class="guide-show">
+					<span class="img"><img src="/images/temp-user.png" alt=""></span>
+				</div>
+<xmp><span class="img"><img src="/images/사용자 이미지 경로" alt=""></span>
+</xmp>
+			</div>
+		</section>
+
+		<!-- 타이틀 ================================================================ -->
+		<section id="guide-title">
+			<h2 class="guide-sec-tit">타이틀</h2>
+			<div class="guide-sec">
+				<h3 class="guide-stit">페이지 타이틀</h3>
+				<p>h1, h2, h3 등의 태그와 상관없이 class 에만 스타일 적용됨.</p>
+				<div class="guide-show">
+					<h2 class="title-dep1">타이틀1 <span class="desc">타이틀 옆 안내문구</span></h2>
+				</div>
+<xmp><h2 class="title-dep1">타이틀1 <span class="desc">타이틀 옆 안내문구</span></h2>
+</xmp>
+			</div>
+			<div class="guide-sec">				
+				<h3 class="guide-stit">페이지 내 영역 타이틀</h3>
+				<div class="guide-show">
+					<h2 class="title-dep2">타이틀2 <span class="desc">타이틀 옆 안내문구</span></h2>
+				</div>
+<xmp><h2 class="title-dep2">타이틀2 <span class="desc">타이틀 옆 안내문구</span></h2>
+</xmp>
+			</div>
+			<div class="guide-sec">	
+				<h3 class="guide-stit">영역 타이틀 내 우측 컨텐츠 있을 경우</h3>
+				<p>타이틀 영역이 기본적으로 after 을 통해 clear:both 를 적용하고 있으므로 float 컨텐츠 사용가능.</p>
+				<div class="guide-show">
+					<h2 class="title-dep3">
+						타이틀3 <span class="desc">타이틀 옆 안내문구</span>
+						<div class="fr"><a href="#" class="btn-s">우측 버튼</a></div>
+					</h2>
+				</div>
+<xmp><h2 class="title-dep3">
+	타이틀2 <span class="desc">타이틀 옆 안내문구</span>
+	<div class="fr"><a href="#" class="btn-s">우측 버튼</a></div>
+</h2>
+</xmp>
+			</div>
+		</section>
+	
+		<!-- 버튼 ================================================================ -->
+		<section id="guide-button">
+			<h2 class="guide-sec-tit">버튼</h2>
+			<div class="guide-sec">
+				<h3 class="guide-stit">버튼 사이즈</h3>
+				<h4 class="guide-sstit">a 태그 사용 시</h4>
+				<div class="guide-show">
+				<!-- 코드 작성 -->
+					<a href="#" class="btn-xl">버튼 XL 사이즈</a>
+					<a href="#" class="btn-l">버튼 L 사이즈</a>
+					<a href="#" class="btn-m">버튼 M 사이즈</a>
+					<a href="#" class="btn-s">버튼 S 사이즈</a>
+					<a href="#" class="btn-xs">버튼 XS 사이즈</a>
+				<!-- // 코드 작성 -->
+				</div>
+<xmp><a href="#" class="btn-xl">버튼 XL 사이즈</a>
+<a href="#" class="btn-l">버튼 L 사이즈</a>
+<a href="#" class="btn-m">버튼 M 사이즈</a>
+<a href="#" class="btn-s">버튼 S 사이즈</a>
+<a href="#" class="btn-xs">버튼 XS 사이즈</a>
+</xmp>
+
+				<h4 class="guide-sstit">button 태그 사용 시</h4>
+				<div class="guide-show">
+				<!-- 코드 작성 -->
+					<button type="button" class="btn-xl" onclick=""><span>버튼 XL 사이즈</span></button>
+					<button type="button" class="btn-l" onclick=""><span>버튼 L 사이즈</span></button>
+					<button type="button" class="btn-m" onclick=""><span>버튼 M 사이즈</span></button>
+					<button type="button" class="btn-s" onclick=""><span>버튼 S 사이즈</span></button>
+					<button type="button" class="btn-xs" onclick=""><span>버튼 XS 사이즈</span></button>
+				<!-- // 코드 작성 -->
+				</div>
+<xmp><button type="button" class="btn-xl" onclick=""><span>버튼 XL 사이즈</span></button>
+<button type="button" class="btn-l" onclick=""><span>버튼 L 사이즈</span></button>
+<button type="button" class="btn-m" onclick=""><span>버튼 M 사이즈</span></button>
+<button type="button" class="btn-s" onclick=""><span>버튼 S 사이즈</span></button>
+<button type="button" class="btn-xs" onclick=""><span>버튼 XS 사이즈</span></button>
+</xmp>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">버튼 색상</h3>
+				<div class="guide-show">
+				<!-- 코드 작성 -->
+					<a href="#" class="btn-m btn-red">버튼 Red</a>
+					<a href="#" class="btn-m btn-red2">버튼 Red2</a>
+					<a href="#" class="btn-m btn-red2-outline">버튼 Red2 라인형</a>
+					<a href="#" class="btn-m btn-red3">버튼 Red3</a>
+					<a href="#" class="btn-m btn-gray">버튼 Gray</a>
+					<a href="#" class="btn-m btn-gray2">버튼 Gray2</a>
+				<!-- // 코드 작성 -->
+				</div>
+<xmp><a href="#" class="btn-m btn-red">버튼 Red</a>
+<xmp><a href="#" class="btn-m btn-red2">버튼 Red2</a>
+<a href="#" class="btn-m btn-red2-outline">버튼 Red2 라인형</a>
+<a href="#" class="btn-m btn-red3">버튼 Red3</a>
+<a href="#" class="btn-m btn-gray">버튼 Gray</a>
+<a href="#" class="btn-m btn-gray2">버튼 Gray2</a>
+</xmp>
+			</div>
+		</section>
+
+		<!-- Tab 메뉴 ================================================================ -->
+		<section id="guide-tab">
+			<h2 class="guide-sec-tit">Tab 메뉴</h2>
+			<div class="guide-sec">
+				<h3 class="guide-stit">메뉴만</h3>
+				<p>기본형 탭 메뉴.</p>
+				<p><strong>tab-menu</strong> : 기능 클래스 / <strong>tab-type1</strong> : 스타일 클래스</p>
+				<div class="guide-show">
+					<div class="tab-menu tab-type1">
+						<ul>
+							<li class="on"><a href="#tab-cnt1">탭메뉴 1</a></li>
+							<li><a href="#tab-cnt2">탭메뉴 2</a></li>
+						</ul>
+					</div>
+					<div class="tab-menu tab-type1">
+						<ul>
+							<li class="on"><a href="#tab-cnt1">탭메뉴 1</a></li>
+							<li><a href="#tab-cnt2">탭메뉴 2</a></li>
+							<li><a href="#tab-cnt2">탭메뉴 3</a></li>
+							<li><a href="#tab-cnt2">탭메뉴 4</a></li>
+						</ul>
+					</div>
+				</div>
+<xmp><div class="tab-menu tab-type1 count3">
+	<ul>
+		<li class="on"><a href="#tab-cnt1">탭메뉴 1</a></li>
+		<li><a href="#tab-cnt2">탭메뉴 2</a></li>
+		<li><a href="#tab-cnt3">탭메뉴 3</a></li>
+	</ul>
+</div>
+<div class="tab-menu tab-type1 count4">
+	<ul>
+		<li class="on"><a href="#tab-cnt1">탭메뉴 1</a></li>
+		<li><a href="#tab-cnt2">탭메뉴 2</a></li>
+		<li><a href="#tab-cnt2">탭메뉴 3</a></li>
+		<li><a href="#tab-cnt2">탭메뉴 4</a></li>
+	</ul>
+</div>
+</xmp>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">컨텐츠 포함</h3>
+				<p>컨텐츠와 묶어서 사용할 경우</p>
+				<p>탭메뉴 버튼의 href 값을 통해 해당 컨텐츠 hide / show</p>
+				<p>탭메뉴의 갯수와 컨텐츠 갯수는 일치시켜야 함.</p>
+				<div class="guide-show">
+					<div class="tab-wrap">
+						<div class="tab-menu tab-type1 count3">
+							<ul>
+								<li class="on"><a href="#tab-cnt1">탭메뉴 1</a></li>
+								<li><a href="#tab-cnt2">탭메뉴 2</a></li>
+								<li><a href="#tab-cnt3">탭메뉴 3</a></li>
+							</ul>
+						</div>
+
+						<!-- 탭 컨텐츠 1 -->
+						<div class="tab-cnt" id="tab-cnt1">
+							탭 컨텐츠 111
+						</div>
+
+						<!-- 탭 컨텐츠 2 -->
+						<div class="tab-cnt" id="tab-cnt2">
+							탭 컨텐츠 222
+						</div>
+
+						<!-- 탭 컨텐츠 3 -->
+						<div class="tab-cnt" id="tab-cnt3">
+							탭 컨텐츠 333
+						</div>
+					</div>
+				</div>
+<xmp><div class="tab-wrap">
+	<div class="tab-menu tab-type1 count3">
+		<ul>
+			<li class="on"><a href="#tab-cnt1">탭메뉴 1</a></li>
+			<li><a href="#tab-cnt2">탭메뉴 2</a></li>
+			<li><a href="#tab-cnt3">탭메뉴 3</a></li>
+		</ul>
+	</div>
+
+	<!-- 탭 컨텐츠 1 -->
+	<div class="tab-cnt" id="tab-cnt1">
+		탭 컨텐츠 111
+	</div>
+
+	<!-- 탭 컨텐츠 2 -->
+	<div class="tab-cnt" id="tab-cnt2">
+		탭 컨텐츠 222
+	</div>
+
+	<!-- 탭 컨텐츠 3 -->
+	<div class="tab-cnt" id="tab-cnt3">
+		탭 컨텐츠 333
+	</div>
+</div>
+</xmp>
+			</div>
+		</section>
+
+		<!-- input ================================================================ -->
+		<section id="guide-input">
+			<h2 class="guide-sec-tit">input</h2>
+			<div class="guide-sec">
+				<h3 class="guide-stit">기본 text</h3>
+				<div class="guide-show">
+					<input type="text" name="" title="" placeholder="기본형">
+				</div>
+<xmp><input type="text" name="" title="" placeholder="기본형">
+</xmp>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">radio 버튼</h3>
+				<p>label 의 for 값과 input radio 의 id 값을 일치 시켜주어야 함.</p>
+				<p>기본적으로 연속 2개를 사용할 경우 2번째 부터 margin-left:15px 가 자동으로 적용</p>
+				<div class="guide-show">
+					<div class="inp-radio">
+						<input type="radio" name="radio-set" id="no" checked>
+						<label for="no"><span class="box"></span> 라디오버튼 - N</label>
+					</div>
+					<div class="inp-radio">
+						<input type="radio" name="radio-set" id="yes">
+						<label for="yes"><span class="box"></span> 라디오버튼 - Y</label>
+					</div>
+				</div>
+<xmp><div class="inp-radio">
+	<input type="radio" name="radio-set" id="no" checked>
+	<label for="no"><span class="box"></span> 라디오버튼 - N</label>
+</div>
+<div class="inp-radio">
+	<input type="radio" name="radio-set" id="yes">
+	<label for="yes"><span class="box"></span> 라디오버튼 - Y</label>
+</div>
+</xmp>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">checkbox 버튼</h3>
+				<h4 class="guide-sstit">일반형 (checkbox + label)</h3>
+				<p>label 의 for 값과 input radio 의 id 값을 일치 시켜주어야 함.</p>
+				<p>기본적으로 연속 2개를 사용할 경우 2번째 부터 margin-left:15px 가 자동으로 적용</p>
+				<div class="guide-show">
+					<div class="inp-check">
+						<input type="checkbox" name="" id="check1">
+						<label for="check1"><span class="box"></span> 체크박스</label>
+					</div>
+				</div>
+<xmp><div class="inp-check">
+	<input type="checkbox" name="" id="check1">
+	<label for="check1"><span class="box"></span> 체크박스</label>
+</div>
+</xmp>
+				<h4 class="guide-sstit">단독형 (checkbox)</h3>
+				<p>checkbox 만 보여야 할 경우 <strong class="guide-red">non-tx</strong> 클래스 추가</p>
+				<div class="guide-show">
+					<div class="inp-check non-tx">
+						<input type="checkbox" name="" id="check2">
+						<label for="check2"><span class="box"></span> 체크박스</label>
+					</div>
+				</div>
+<xmp><div class="inp-check non-tx">
+	<input type="checkbox" name="" id="check2">
+	<label for="check2"><span class="box"></span> 체크박스</label>
+</div>
+</xmp>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">달력</h3>
+				<h4 class="guide-sstit">1개일 경우</h3>
+				<p>Jquery-ui 활용</p>
+				<p>웹 접근성에 맞도록 수정된 버전</p>
+				<p>input 영역 가로 사이즈는 현재 150px 로 고정.</p>
+				<div class="guide-show">
+					<div class="inp-cal">
+						<input type="text" class="" id="dSDate">
+						<button type="button" class="btn-cal" onclick="ViewCalendar(this,document.all.dSDate,'none','yyyy-mm-dd','ClickRight1','S',0,0);" style="cursor:hand;">
+							<img src="/images/ico_date.png">
+						</button>
+					</div>
+				</div>
+<xmp><div class="inp-cal">
+	<input type="text" class="" id="dSDate">
+	<button type="button" class="btn-cal" onclick="ViewCalendar(this,document.all.dSDate,'none','yyyy-mm-dd','ClickRight1','S',0,0);" style="cursor:hand;">
+		<img src="/images/ico_date.png">
+	</button>
+</div>
+</xmp>
+				<h4 class="guide-sstit">2개일 경우</h3>
+				<div class="guide-show">
+					<div class="inp-cal">
+						<span><input type="text" class="" id="bSDate"></span><i>~</i><span><input type="text" class="" id="bEDate"></span>
+						<button type="button" class="btn-cal" onclick="ViewCalendar(this,document.all.bSDate,document.all.bEDate,'yyyy-mm-dd','ClickRight1','I',0,0);" style="cursor:hand;"><img src="/images/ico_date.png"></button>
+					</div>
+				</div>
+<xmp><div class="inp-cal">
+	<span><input type="text" class="" id="bSDate"></span><i>~</i><span><input type="text" class="" id="bEDate"></span>
+	<button type="button" class="btn-cal" onclick="ViewCalendar(this,document.all.bSDate,document.all.bEDate,'yyyy-mm-dd','ClickRight1','I',0,0);" style="cursor:hand;"><img src="/images/ico_date.png"></button>
+</div>
+</xmp>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">DropDown</h3>
+				<p>width 는 100%. 특정 사이즈로 사용할 경우 width 값 설정 필요.</p>
+				<p>select 스타일 디자인을 위한 dropdown 메뉴. 실제 select 요소는 사용하지 않음.</p>
+				<div class="guide-show">
+					<div class="inp-select">
+						<button type="button" class="btn-select" title="이메일 계정 선택"><span>직접선택</span></button>
+						<ul class="select-list	">
+							<li><button type="button" class="btn-sel">직접선택</button></li>
+							<li><button type="button" class="btn-sel">nate.com</button></li>
+							<li><button type="button" class="btn-sel">daum.net</button></li>
+						</ul>
+					</div>
+				</div>
+<xmp><div class="inp-select">
+	<button type="button" class="btn-select" title="이메일 계정 선택"><span>직접선택</span></button>
+	<ul class="select-list">
+		<li><button type="button" class="btn-sel">직접선택</button></li>
+		<li><button type="button" class="btn-sel">nate.com</button></li>
+		<li><button type="button" class="btn-sel">daum.net</button></li>
+	</ul>
+</div>
+</xmp>
+			</div>
+			<div class="guide-sec">
+				<h3 class="guide-stit">Select</h3>
+				<p>width 는 100%. 특정 사이즈로 사용할 경우 width 값 설정 필요.</p>
+				<p>select 요소를 활용한 디자인 변경방식. 개발 시 select 요소만 컨트롤해주면 됨.</p>
+				<div class="guide-show">
+					<div class="new-select">
+						<select name="" title="이메일 계정 선택">
+							<option value="">직접선택</option>
+							<option value="">nate.com</option>
+							<option value="">daum.net</option>
+						</select>
+					</div>
+					<div class="new-select">
+						<select name="" title="이메일 계정 선택" disabled>
+							<option value="">직접선택</option>
+							<option value="">nate.com</option>
+							<option value="">daum.net</option>
+						</select>
+					</div>
+				</div>
+<xmp><div class="new-select">
+	<select name="" title="이메일 계정 선택">
+		<option value="">직접선택</option>
+		<option value="">nate.com</option>
+		<option value="">daum.net</option>
+	</select>
+<div class="new-select">
+	<select name="" title="이메일 계정 선택" disabled>
+		<option value="">직접선택</option>
+		<option value="">nate.com</option>
+		<option value="">daum.net</option>
+	</select>
+</div>
+</div>
+</xmp>
+			</div>
+		</section>
+
+		<!-- toggle 컨텐츠 ================================================================ -->
+		<section id="guide-toggle">
+			<h2 class="guide-sec-tit">toggle 컨텐츠</h2>
+			<div class="guide-sec">
+				<h3 class="guide-stit">단독형</h3>
+				<p>버튼인 'btn-tgl' + 컨텐츠인 'tgl-cnt' 구조.</p>
+				<p>버튼 클릭시 버튼에 'on' 클래스가 토글 됨.</p>
+				<p>버튼에 'on' 클래스 있을 경우 해당 컨텐츠 show.</p>
+				<div class="guide-show">
+					<button type="button" class="btn-tgl btn-s"><span>토글 버튼 - 단독</span></button>
+					<div class="tgl-cnt">
+						토글 컨텐츠 영역
+					</div>
+				</div>
+<xmp><button type="button" class="btn-tgl btn-s"><span>토글 버튼 - 단독</span></button>
+<div class="tgl-cnt">
+	토글 컨텐츠 영역
+</div>
+</xmp>
+			</div>			
+			<div class="guide-sec">
+				<h3 class="guide-stit">리스트 타입</h3>
+				<div class="guide-show">
+					<div class="tgl-wrap">
+						<ul>
+							<li>
+								<button type="button" class="btn-tgl"><span>토글 버튼1</span></button>
+								<div class="tgl-cnt">
+									토글 컨텐츠 영역1
+								</div>
+							</li>
+							<li>
+								<button type="button" class="btn-tgl"><span>토글 버튼2</span></button>
+								<div class="tgl-cnt">
+									토글 컨텐츠 영역2
+								</div>
+							</li>
+							<li>
+								<button type="button" class="btn-tgl on"><span>토글 버튼3</span></button>
+								<div class="tgl-cnt">
+									토글 컨텐츠 영역3
+								</div>
+							</li>
+							<li>
+								<button type="button" class="btn-tgl"><span>토글 버튼4</span></button>
+								<div class="tgl-cnt">
+									토글 컨텐츠 영역4
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+<xmp><div class="tgl-wrap">
+	<ul>
+		<li>
+			<button type="button" class="btn-tgl"><span>토글 버튼1</span></button>
+			<div class="tgl-cnt">
+				토글 컨텐츠 영역1
+			</div>
+		</li>
+		<li>
+			<button type="button" class="btn-tgl"><span>토글 버튼2</span></button>
+			<div class="tgl-cnt">
+				토글 컨텐츠 영역2
+			</div>
+		</li>
+		<li>
+			<button type="button" class="btn-tgl on"><span>토글 버튼3</span></button>
+			<div class="tgl-cnt">
+				토글 컨텐츠 영역3
+			</div>
+		</li>
+		<li>
+			<button type="button" class="btn-tgl"><span>토글 버튼4</span></button>
+			<div class="tgl-cnt">
+				토글 컨텐츠 영역4
+			</div>
+		</li>
+	</ul>
+</div>
+</xmp>
+			</div>
+		</section>
+
+		<!-- etc ================================================================ -->
+		<section id="guide-etc">
+			<h2 class="guide-sec-tit">etc</h2>
+			<div class="guide-sec">
+				<h3 class="guide-stit">말풍선</h3>
+				<p>버튼(btn-balloon) + 말풍선 컨텐츠(cnt-balloon) 구조</p>
+				<p>컨텐츠는 버튼 하단에 맞추어 자동으로 조정</p>
+				<p>버튼의 속성값 중 data-top / data-left 값을 추가하면 컨텐츠 위치 조정됨.</p>
+				<p>말풍선 위쪽 화살표는 after 요소에 border 로 생성. 디자인 변경시 CSS 수정 및 제거.</p>
+				
+				<div class="guide-show">
+					<button type="button" class="btn-balloon btn-s btn-white" data-top="10" data-left="0"><span>말풍선 띄우기</span></button>
+					<div class="cnt-balloon">
+						<div class="cnt">
+							말풍선 내용 입니다.
+						</div>
+						<button type="button" class="btn-balloon-close">말풍선 닫기</button>
+					</div>
+				</div>
+<xmp><button type="button" class="btn-balloon btn-s btn-white" data-top="10" data-left="0"><span>말풍선 띄우기</span></button>
+<div class="cnt-balloon">
+	<div class="cnt">
+		말풍선 내용 입니다.
+	</div>
+	<button type="button" class="btn-balloon-close">말풍선 닫기</button>
+</div>
+</xmp>
+			</div>
+		</section>
+
+	</div>
+	<a href="#work-list" class="guide-top">Top</a>	
+</div>
+</body>
+</html>

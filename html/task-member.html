@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title></title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						Task 현황 리더용
+						<!-- 2018-02-01 - 말풍선 영역 -->
+						<div class="balloon-wrap">
+							<button type="button" class="btn-balloon" data-top="5" data-left="-5"><span>페이지 안내</span></button> <!-- 2018-02-02 수정 -->
+							<div class="cnt-balloon">
+								<div class="cnt">
+									나의 구성원들이 등록한 Task 현황 전체를 볼 수 있습니다.
+								</div>
+							</div>
+						</div>
+						<!-- // 말풍선 영역 -->
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span>
+							<span>Task 관리</span>
+							<strong>Task 현황 리더용</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<!-- cnt-area - 구성원 Task -->
+					<div class="cnt-area task-list">
+
+						<!-- tab 메뉴 -->
+						<div class="tab-menu tab-type1">
+							<ul>
+								<li><a href="#">Task 승인/관리</a></li>
+								<li class="on"><a href="#">Task 현황 리더용</a></li>
+								<li><a href="#">Task 현황 임원용</a></li>
+							</ul>
+						</div>
+						<!-- // tab 메뉴 -->
+						
+						<!-- 구성원리스트 -->
+						<div class="my-team-task">
+							<ul>
+								<!-- 2018-01-08 전체 추가 -->
+								<li>
+									<a href="#">
+										<span class="total">전체</span>
+										<strong class="count">12</strong>
+									</a>
+								</li>
+								<!-- // 2018-01-08 전체 추가 -->
+								<li>
+									<a href="#">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">홍길동동(파)</span>
+										<strong class="count">1075</strong>
+									</a>
+								</li>
+								<li class="on"> <!-- 선택 시 on 클래스 추가 -->
+									<a href="#">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">홍길동(파)</span>
+										<strong class="count">1002</strong>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="proposer"> <!-- 2020-02-25 추가 -->
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">홍길동</span>
+										<strong class="count">12</strong>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">홍길동홍길동 홍길동홍길동</span>
+										<strong class="count">2</strong>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">홍길동홍길동</span>
+										<strong class="count">122</strong>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">홍길동</span>
+										<strong class="count">1</strong>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">홍길동홍길동</span>
+										<strong class="count">12</strong>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">홍길동홍길동 홍길동홍길동</span>
+										<strong class="count">12</strong>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">홍길동홍길동</span>
+										<strong class="count">12</strong>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">홍길동홍길동</span>
+										<strong class="count">12</strong>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- // 구성원리스트 -->
+
+						<!-- task 현황판 2018-01-15 수정 -->
+						<div class="task-board">
+							<ul class="task-list count4"> <!-- 2018-01-15 'count4' 클래스 추가 -->
+								<li class="on"> <!-- 선택된 상태 - on 클래스 추가 -->
+									<a href="#">
+										<span class="title total">전체</span>
+										<span class="count">123</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="t-step step4">step4.</span> <!-- 2018-01-25 상태표기 블릿 추가 -->
+										<span class="title">Task수행중</span>
+										<span class="count zero">0</span> <!-- 진행중인 건이 없을 경우 zero 클래스 추가 -->
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="t-step step5">step5.</span><!-- 2018-01-25 상태표기 블릿 추가 -->
+										<span class="title">Self-Review완료</span>
+										<span class="count">3</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="t-step step6">step6.</span><!-- 2018-01-25 상태표기 블릿 추가 -->
+										<span class="title">Feedback완료</span>
+										<span class="count">5</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- // task 현황판 2018-01-15 수정 -->
+						
+						<div class="tbl-top-cnt"> <!-- 2018-01-08 tr 클래스 제거 -->
+							<div class="inp-select">
+								<button type="button" class="btn-select" title="연도 선택"><span>2018</span></button>
+								<ul class="select-list">
+									<li><button type="button" class="btn-sel">2018</button></li>
+									<li><button type="button" class="btn-sel">2017</button></li>
+									<li><button type="button" class="btn-sel">2016</button></li>
+								</ul>
+							</div>
+							<div class="inp-select">
+								<button type="button" class="btn-select" title="연도 선택"><span>2018</span></button>
+								<ul class="select-list">
+									<li><button type="button" class="btn-sel">2018</button></li>
+									<li><button type="button" class="btn-sel">2017</button></li>
+									<li><button type="button" class="btn-sel">2016</button></li>
+								</ul>
+							</div>
+							<input type="text" name="" placeholder="이름" style="width:200px; vertical-align:middle; margin-right:3px;">
+							<button type="submit" class="btn-tbl-sch"><span><i class="ico-btn"><img src="/images/ico_btn-sch.png" alt=""></i>조회</span></button> <!-- 2018-01-24 조회버튼 수정 -->
+						</div>
+
+						<!-- 2018-07-05 radio 추가 -->
+						<div class="page-sort-choice">
+							<div class="inp-radio">
+								<input type="radio" name="sort-select" id="sort-task" checked="">
+								<label for="sort-task" class="on"><span class="box"></span> Task별로 보기</label>
+							</div>
+							<div class="inp-radio">
+								<input type="radio" name="sort-select" id="sort-member">
+								<label for="sort-member"><span class="box"></span> 구성원별로 보기</label>
+							</div>
+						</div>
+						<!-- // 2018-07-05 radio 추가 -->
+
+						<!-- task 리스트 -->
+						<!-- 2018-01-25 리스트 상단 수정 -->
+						<div class="tbl-top-cnt tr">
+							<strong>총 <span class="tx-red">11</span>건</strong>
+						</div>
+						<!-- // 2018-01-25 리스트 상단 수정 -->
+
+						<div class="tbl-wrap tbl-type1 tit-length1"> <!-- 2018-01-17 Task현황(팀장, 임원용) 일때 tit-length1 클래스 추가  -->
+							<table>
+								<caption>Task 현황</caption>
+								<colgroup>
+									<col style="width:12%"/>
+									<col style="width:auto"/>
+									<col style="width:20%"/>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">상태</th>
+										<th scope="col"><span>Task</span></th>
+										<th scope="col"><span>진행기간</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><span class="t-step step1">Task작성</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트 시스템 구축 프로젝트 시스템 구축 프로젝트</span> 외 234건</a> <span class="comment">5345</span></td>
+										<td>18.01.22 ~ 18.12.12</td>
+									</tr>
+									<tr>
+										<td><span class="t-step step1">Task작성</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a> <span class="comment">5</span></td>
+										<td>18.01.22 ~ 18.12.12</td>
+									</tr>
+									<tr>
+										<td><span class="t-step step2">승인요청</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a> <span class="comment">5</span></td>
+										<td>18.01.22 ~ 18.12.12</td>
+									</tr>
+									<tr>
+										<td><span class="t-step step1">Task작성</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a> <span class="comment">5</span></td>
+										<td>18.01.22 ~ 18.12.12</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- // task 리스트 -->
+
+						<!-- paging -->
+						<div class="paging">
+							<button type="button" class="btn-paging first">처음으로</button>
+							<button type="button" class="btn-paging prev">이전</button>
+							<span>
+								<a href="#" class="on">1</a>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">10</a>
+							</span>
+							<button type="button" class="btn-paging next">다음</button>
+							<button type="button" class="btn-paging end">마지막</button>
+						</div>
+						<!-- // paging -->
+
+					</div>
+					<!-- // cnt-area - 구성원 Task -->
+
+				</div>
+
+		<!--#include file="include-footer.html"-->
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title></title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+	<script src="/js/layerpop_func.js"></script> <!-- layerpop 기능 2018-06-19 함수형 -->
+
+	<!-- 달력기능 css / js -->
+	<link rel="stylesheet" href="/css/calendar-ui.css" media="screen, print" />
+	<script src="/js/calendar.js"></script>
+	<!-- // 달력기능 css / js -->
+
+	<script>
+		$(function(){
+			// 레이어 팝업 호출
+			$('.open-layer').click(function(){
+				layerOpenBtn($(this));
+				calBtn();
+			});
+
+			// 레이어 팝업 닫기
+			$('.close-layer').click(function(){
+				layerClose();
+			});
+
+			// 기간 설정 버튼 활성화기능 2018-06-20
+			function calBtn(){
+				$('.cal-btns').children('.btn-s').each(function(){
+					$(this).click(function(){
+						$(this).addClass('on').siblings('.btn-s').removeClass('on');
+					});
+				});
+			}
+		});
+	</script>
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->				
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						타이틀
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span>
+							<span><a href="#">나의 Task</a></span>
+							<strong>타이틀</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->					
+
+					<!-- cnt-area - 나의 Task 상세 -->
+					<div class="cnt-area task-detail-wrap">
+						<!-- 상세 내용 -->
+						<div class="detail-wrap">
+							<div class="detail-top">
+								<h3 class="title-dep2">타이틀</h3>
+								<div class="fr"><button type="button" class="btn-m open-layer" data-target="layerpop-org-peer-reg" data-layerset="hidden">조직 Peer-F/B 등록</button> <!-- 2018-06-19 버튼 수정 -->
+							</div>
+							
+						</div>
+						<!-- // 상세 내용 -->
+					</div>
+					<!-- // cnt-area - 나의 Task 상세 -->
+
+				</div>
+		
+		<!--#include file="include-footer.html"-->
+	</div>
+
+<!-- 레이어팝업 -->
+<div class="layer-pop" id="layerpop-org-peer-reg">
+	<div class="layer-bg"></div>
+	<div class="layer-cnt">
+		<div class="layer-top">
+			<h2 class="title-dep2">조직 Peer-F/B 등록</h2>
+		</div>
+		<div class="layer-mid">
+			
+			<div class="detail-org">
+				<ul>
+					<li>
+						<span class="title">제목</span>
+						<span class="tx">
+							2018년 기업문화 DT-CoE -  <!-- 2018-06-14 수정 --> <br> <!-- 2018-06-18 br 추가 -->
+							<input type="text" name="" placeholder="* 제목을 추가 입력하세요."> <!-- 2018-06-14 수정 -->
+						</span>
+					</li>
+					<li>
+						<span class="title">Peer-F/B 대상</span>
+						<!-- <span class="tx">기업문화 DT-CoE</span> -->
+						
+						<!-- 2018-06-21 select case 추가 -->
+						<div class="tx">
+							<div class="new-select" style="z-index: 100;">
+								<select name="">
+									<option value="">기업문화 DT-CoE</option>
+								</select>
+							</div>
+						</div>
+						<!-- // 2018-06-21 select case 추가 -->
+					</li>
+					<li>
+						<span class="title">Task/업무 수행기간</span>
+						<div class="tx">
+							<div class="cal-btns">
+								<button type="button" class="btn-s btn-gray-line"><span>상반기</span></button>
+								<button type="button" class="btn-s btn-gray-line"><span>하반기</span></button>
+								<button type="button" class="btn-s btn-gray-line"><span>1분기</span></button>
+								<button type="button" class="btn-s btn-gray-line"><span>2분기</span></button>
+								<button type="button" class="btn-s btn-gray-line"><span>3분기</span></button>
+								<button type="button" class="btn-s btn-gray-line"><span>4분기</span></button>
+							</div>
+							<div class="inp-cal">
+								<span><input type="text" class="" id="bSDate"></span><i>~</i><span><input type="text" class="" id="bEDate"></span>
+								<button type="button" class="btn-cal" onclick="ViewCalendar(this,document.all.bSDate,document.all.bEDate,'yyyy-mm-dd','ClickRight1','I',0,0);" style="cursor:hand;"><img src="/images/ico_date.png"></button>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="tips">
+				<h3 class="title">Tips</h3>
+				<ul>
+					<li>제목은 연도 + 조직명 + 입력내용 으로 등록됩니다.</li> <!-- 2018-06-14 수정 -->
+					<li>등록 시 시작전 상태로 등록 되며, 상세 페이지에서 Peer-F/B 대상자 별로 Reviewer를 지정 및 F/B 요청 해야 합니다.</li>
+				</ul>
+			</div>
+
+			<div class="btn-group tc">
+				<a href="#" class="btn-l btn-red2">등록</a>
+			</div>
+
+		</div>
+		<button type="button" class="btn-close close-layer">닫기</button>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>Task Peer-Feedback 진행현황</title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/layerpop.js"></script> <!-- layerpop 기능 -->
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<!-- 달력기능 css / js -->
+	<link rel="stylesheet" href="/css/calendar-ui.css" media="screen, print" />
+	<script src="/js/calendar.js"></script>
+	<!-- // 달력기능 css / js -->
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->				
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						Task 승인/관리
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span>
+							<span><a href="#">나의 Task</a></span>
+							<strong>Task 승인/관리</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->					
+
+					<!-- cnt-area - 나의 Task 상세 -->
+					<div class="cnt-area task-detail-wrap">
+						<!-- 상세 내용 -->
+						<div class="detail-wrap">
+							<div class="detail-top">
+								<h3 class="title-dep2">Task 정보 
+									<span class="kind-task with">공통Task</span> <!-- 공통 task 일 경우 'width' 클래스 추가 -->
+									<span class="t-step step3">Task 수행중</span>
+								</h3>
+								<div class="fr"><a href="#layer-peerFB-state" class="btn-m open-layer-top" data-layerset="fixed">진행 현황</a></div>
+							</div>
+							
+						</div>
+						<!-- // 상세 내용 -->
+					</div>
+					<!-- // cnt-area - 나의 Task 상세 -->
+
+				</div>
+		
+		<!--#include file="include-footer.html"-->
+	</div>
+
+<!-- 레이어팝업 -->
+<div class="layer-pop" id="layer-peerFB-state">
+	<div class="layer-bg"></div>
+	<div class="layer-cnt">
+		<div class="layer-top">
+			<h2 class="title-dep2">Task Peer-Feedback 진행현황</h2>
+		</div>
+		<div class="layer-mid">
+			<!-- 수정 내역 -->
+			<div class="peerFB-list">
+				<ul>
+					<li>
+						<span class="num">1</span>
+						<span class="name">정사원</span>
+						<span class="state">미완료</span>
+						<span><button type="button" class="btn-m"><span><i class="ico-btn"><img src="/images/ico_timer.png" alt=""></i>독려</span></button></span>
+					</li>
+					<li>
+						<span class="num">2</span>
+						<span class="name">정사원</span>
+						<span class="state">미완료</span>
+						<span><button type="button" class="btn-m"><span><i class="ico-btn"><img src="/images/ico_timer.png" alt=""></i>독려</span></button></span>
+					</li>
+					<li>
+						<span class="num">3</span>
+						<span class="name">정사원</span>
+						<span class="state">미완료</span>
+						<span><button type="button" class="btn-m"><span><i class="ico-btn"><img src="/images/ico_timer.png" alt=""></i>독려</span></button></span>
+					</li>
+					<li>
+						<span class="num">4</span>
+						<span class="name">정사원</span>
+						<span class="state">미완료</span>
+						<span><button type="button" class="btn-m"><span><i class="ico-btn"><img src="/images/ico_timer.png" alt=""></i>독려</span></button></span>
+					</li>
+					<li>
+						<span class="num">5</span>
+						<span class="name">정사원</span>
+						<span class="state comp">완료</span>
+						<span></span>
+					</li>
+					<li>
+						<span class="num">6</span>
+						<span class="name">정사원</span>
+						<span class="state comp">완료</span>
+						<span></span>
+					</li>
+				</ul>
+			</div>
+			<div class="btn-group tr">
+				<button type="button" class="btn-m"><span><i class="ico-btn"><img src="/images/ico_timer.png" alt=""></i> 미완료자 전체 독려</span></button>
+			</div>
+			<!-- // 수정 내역 -->
+
+			<div class="btn-group tc">
+				<a href="#" class="btn-l btn-red2">확인</a>
+			</div>
+
+		</div>
+		<button type="button" class="btn-close close-layer">닫기</button>
+	</div>
+</div>
+</body>
+</html>

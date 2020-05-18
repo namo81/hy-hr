@@ -1,0 +1,18 @@
+
+/* nanumgothic */
+@import url(//cdn.jsdelivr.net/font-nanum/1.0/nanumgothic/nanumgothic.css);
+@font-face{
+	font-family:"Nanum Gothic"; 
+	font-weight:normal;
+    src:url('nanumGothic/nanum-gothic-regular.woff2') format('woff');
+}
+@font-face{
+	font-family:"Nanum Gothic"; 
+	font-weight:700;
+    src:url('nanumGothic/nanum-gothic-700.woff2') format('woff');
+}
+@font-face{
+	font-family:"Nanum Gothic"; 
+	font-weight:800;
+    src:url('nanumGothic/nanum-gothic-800.woff2') format('woff');
+}

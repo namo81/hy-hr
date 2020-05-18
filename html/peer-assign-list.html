@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>Peer 지정/관리</title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						Peer 지정/관리
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span>
+							<span>Peer-Feedback</span>
+							<strong>Peer 지정/관리</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<!-- cnt-area - Task Peer-F/B -->
+					<div class="cnt-area task-list">
+
+						<!-- 2018-04-24 상단 공통 안내문구 / 2018-06-14 버튼 추가 / 2019-05-30 수정 -->
+						<div class="page-top-notice">
+							<h3 class="title">활용 Tips</h3> <!-- 2018-04-25 문구 수정 -->
+							<ul>
+								<li><i class="ico-btn"><img src="/images/ico_import.png" alt=""></i> : Peer-F/B 시행 기간이 도래하여 Peer 지정이 필요한 건입니다. </li>
+								<li>협업 Task의 경우, 종료 시점에 협업 구성원(Taskmate) 간의 Peer-F/B을 시행해야 합니다. <br>'유사한' 협업 Task를 기반으로 Peer-F/B을 '이미' 시행하였거나, 그 외 <span class="tx-red">'중복</span>'의 관점에서 불필요하다고 판단될 경우에는  <span class="tx-red">'Skip'</span>을 활용해 주시기 바랍니다</li><!-- 2019-05-29 추가 -->
+								<li>Process : 시작전 &gt; 진행중 &gt; 완료(전송전) &gt; 완료(결과조회)</li>
+							</ul>
+							<!-- <a href="#" class="btn-l btn-red2">조직 Peer-F/B 등록</a> -->
+						</div>
+						<!-- // 2018-04-24 상단 공통 안내문구 / 2018-06-14 버튼 추가 / 2019-05-30 수정 -->
+
+						<!-- 상단 조회  -->
+						<div class="tbl-top-cnt tr">
+							<div class="fl">
+								<!-- 2018-03-29 수정 -->
+								<div class="new-select" style="width:100px">
+									<select name="" id="">
+										<option value="">2018</option>
+										<option value="">2017</option>
+										<option value="">2016</option>
+									</select>
+								</div>
+								<!-- // 2018-03-29 수정 -->
+								<!-- 2018-05-18 구분 추가 -->
+								<div class="new-select" style="width:120px">
+									<select name="" id="">
+										<option value="">구분 전체</option>
+										<option value="">Task</option>
+										<option value="">조직</option>
+									</select>
+								</div>
+								<!-- // 2018-05-18 구분 추가 -->
+								<div class="new-select" style="width:160px">
+									<select name="" id="">
+										<option value="">Peer-F/B 상태 전체</option>
+										<option value="">진행중</option>
+										<option value="">전송대기</option>
+									</select>
+								</div>
+								<button type="submit" class="btn-tbl-sch"><span><i class="ico-btn"><img src="/images/ico_btn-sch.png" alt=""></i>조회</span></button>
+								<!-- <span class="desc-process">※ Process : 시작전 <i>&gt;</i> 진행중 <i>&gt;</i> 완료(전송전) <i>&gt;</i> 완료(결과조회) </span> 2018-04-18 추가 / 2018-04-24 삭제 -->
+							</div>
+							<div class="fr">
+								<strong>총 <span class="tx-red">11</span>건</strong>
+							</div>
+						</div>
+
+						<!-- Peer-F/B 리스트 2018-04-24 수정 // 2019-09-03 수정 -->
+						<div class="tbl-wrap tbl-type1">
+							<table>
+								<caption>Peer 지정/관리 리스트</caption>
+								<!-- 2019-10-07 수정 -->
+								<colgroup>
+									<col style="width:9%"/>
+									<col style="width:13%"/>
+									<col style="width:auto"/>
+									<col style="width:17%"/>
+									<col style="width:14%"/>
+									<col style="width:12%"/>
+								</colgroup>
+								<!-- // 2019-10-07 수정 -->
+								<thead>
+									<tr>
+										<th scope="col"><span>구분</span></th>
+										<th scope="col"><span>Peer-F/B 상태</span></th>
+										<th scope="col"><span>제목</span></th>
+										<th scope="col"><span>수행기간</span></th>
+										<th scope="col"><span>Peer-F/B 대상</span></th>
+										<th scope="col"><span>지정자</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>조직 단위</td>
+										<td><span class="peer-step step1">시작전</span></td> <!-- 2018-04-18 peer-F/B step 추가 -->
+										<td class="tl">
+											<i class="ico-btn"><img src="/images/ico_import.png" alt=""></i> <!-- 2018-04-24 느낌표 추가 -->
+											<a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트 시스템 구축 프로젝트</span></a>
+										</td>
+										<td>'18.01.01~'18.01.01</td>
+										<td>
+											<ul class="mate-list">
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											</ul>
+										</td>
+										<td>홍길동</td>
+									</tr>
+									<tr>
+										<td>Task</td>
+										<td><span class="peer-step step2">진행중</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span><i class="ico-need">Reviewer 전원 Skip</i> SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a> </td>
+										<td>'18.01.01~'18.01.01</td>
+										<td>
+											<ul class="mate-list">
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+												<li class="dot">...</li>
+											</ul>
+										</td>
+										<td>홍길동</td>
+									</tr>
+									<tr>
+										<td>Task</td>
+										<td><span class="peer-step step3">완료(전송전)</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a><!--  <span class="comment">5</span> --></td>
+										<td>'18.01.01~'18.01.01</td>
+										<td>
+											<ul class="mate-list">
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											</ul>
+										</td>
+										<td>홍길동</td>
+									</tr>
+									<tr>
+										<td>Task</td>
+										<td><span class="peer-step step4">완료(결과조회)</span></td>
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a> </td>
+										<td>'18.01.01~'18.01.01</td>
+										<td>
+											<ul class="mate-list">
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											</ul>
+										</td>
+										<td>홍길동</td>
+									</tr>
+									<tr>
+										<td>Task</td>
+										<td><span class="peer-step step5">Skip</span></td> <!-- 2018-08-01 skip 추가 -->
+										<td class="tl"><a href="#" class="btn-title"><span>SK텔레콤 전사 HR평가 시스템 구축 프로젝트</span></a> </td>
+										<td>'18.01.01~'18.01.01</td>
+										<td>
+											<ul class="mate-list">
+												<li><span class="img"><img src="/images/temp-user.png" alt=""></span>홍길동</li>
+											</ul>
+										</td>
+										<td>홍길동</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- // Peer-F/B 리스트 2018-04-18 수정 // 2019-09-03 수정 -->			
+						
+						<div class="paging">
+							<button type="button" class="btn-paging first">처음으로</button>
+							<button type="button" class="btn-paging prev">이전</button>
+							<span>
+								<a href="#" class="on">1</a>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">10</a>
+							</span>
+							<button type="button" class="btn-paging next">다음</button>
+							<button type="button" class="btn-paging end">끝으로</button>
+						</div>
+
+						<!-- 2018-05-18 버튼 추가 -->
+						<div class="btn-group tr">
+							<a href="#" class="btn-l btn-red2">조직 Peer-F/B 등록</a>
+						</div>
+						<!-- // 2018-05-18 버튼 추가 -->
+
+					</div>
+					<!-- // cnt-area - Task Peer-F/B -->
+
+				</div>
+
+		<!--#include file="include-footer.html"-->
+	</div>
+
+</body>
+</html>

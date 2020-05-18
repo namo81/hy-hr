@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>결과 조회</title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mousewheel.min.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<script>
+		$(function(){
+			/* select 색상변경 */
+			/* 2018-11-12 수정 및 추가 */
+			$('select[name=sel-case-b]').each(function(){
+				if($(this).find('option').is(':selected') && $(this).find('option').hasClass('bg-b')) $(this).addClass('bg-b');
+				else $(this).removeClass('bg-b');
+
+				$(this).change(function(){
+					var $val = $(this).val(),
+					$tg;					
+					$(this).find('option').each(function(){
+						if($(this).hasClass('bg-b')) $tg = $(this).val();						
+					});		
+					if($val == $tg) $(this).addClass('bg-b');	
+					else $(this).removeClass('bg-b');						
+				});
+			});
+
+			/* 2018-11-12 수정 및 추가 */
+			$('select[name=sel-case-y]').each(function(){
+				$(this).change(function(){
+					var $val = $(this).val(),
+					$tg;					
+					$(this).find('option').each(function(){
+						if(!$(this).hasClass('bg-y')) $tg = $(this).val();						
+					});		
+					if($val == $tg) $(this).removeClass('bg-y');	
+					else $(this).addClass('bg-y');						
+				});
+			});
+
+		});
+	</script>
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->				
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						보상 설정 : MI
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span> 
+							<span><a href="#">Talent-Session</a></span> 
+							<strong>보상 설정 : MI</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<!-- cnt-area -->
+					<div class="cnt-area ts-reward">
+
+						<!-- 2019-10-14 탭 메뉴 추가 -->
+						<div class="tab-type2">
+							<ul>
+								<li><a href="#">성과 Review</a></li>
+								<li><a href="#">IB (Incentive Bonus)</a></li>
+								<li class="on"><a href="#">MI (Merit Increase)</a></li>
+							</ul>
+						</div>
+						<!-- // 2019-10-14 탭 메뉴 추가 -->
+
+						<!-- 꼭 확인하세요! -->
+						<div class="page-top-notice">
+							<h3 class="title">보상설정 Process</h3>
+							<div class="reward-step">
+								<ul>
+									<li class="fin">[MI] 1차 Review 완료</li>  <!-- 완료 시 fin -->
+									<li class="ing">[MI] 2차 Review 완료</li> <!-- 진행 중 ing -->
+								</ul>
+							</div>
+							<!-- 2018-11-26 수정 및 추가 -->
+							<!-- 완료 전 -->
+							<p>※ 보상 설정이 진행중인 상태를 나타내며, 최종 단계까지 완료 시에도 본인이 입력한 정보로 출력됩니다.</p>
+							<!-- 완료 후
+							<p class="reward-desc">본 화면의 정보는 본인께서 입력한 정보로 출력되며,<br>최종 단계에서 확정 된 정보와 차이가 있을 수 있습니다.<br>구성원별 최종 결과는 종합 Feedback에서 개인별로 확인하실 수 있습니다.</p> -->
+							<!-- // 2018-11-26 수정 및 추가 -->
+						</div>
+						<!-- // 꼭 확인하세요! -->
+
+						<!-- tab-wrap -->
+						<div class="tab-wrap">
+							<!-- tab-menu -->
+							<div class="tab-menu tab-type1">
+								<ul>
+									<li class="on"><a href="#tab-cnt1">A Band</a></li>
+									<li><a href="#tab-cnt1-1">B Band</a></li>
+									<li><a href="#tab-cnt2">보상 특이자</a></li>
+								</ul>
+							</div>
+							<!-- // tab-menu -->
+
+							<!-- tab-cnt1 - A Band -->
+							<div class="tab-cnt" id="tab-cnt1">
+								<!-- 보상 재원 -->
+								<h4 class="title-dep3">보상 재원</h4>
+								<div class="tbl-type3">
+									<table>
+										<caption>보상 재원</caption>
+										<colgroup>
+											<col style="width:15%"/>
+											<col style="width:10%"/>
+											<col style="width:auto"/>
+											<col style="width:15%"/>
+											<col style="width:15%"/>
+											<col style="width:15%"/>
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">구분</th> <!-- 2018-10-15 수정 -->
+												<th scope="col">인원</th>
+												<th scope="col">보상 재원 구분 <br><i>(조직성과 보상 : 추가기여 보상)</i></th><!-- 2018-10-02 수정 -->
+												<th scope="col">조직성과 보상</th>
+												<th scope="col">추가기여 보상</th>
+												<th scope="col">소계</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>기본 보상 재원</td> <!-- 2018-10-24 수정 -->
+												<td>5</td>
+												<td>90 : 10</td>
+												<td class="tr">450%</td>
+												<td class="tr">50%</td>
+												<td class="tr">500%</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td>보상 가능 재원</td> <!-- 2018-10-24 수정 -->
+												<td>3</td>
+												<td>-</td>
+												<td class="tx-red tr">385%</td>
+												<td class="tx-red tr">115%</td>
+												<td class="tx-red tr">500%</td>
+											</tr>
+										</tfoot>
+									</table>
+									<div class="border-box"></div>
+								</div>
+
+								<!-- 보상 배분 -->
+								<div class="tbl-top-cnt">
+									<h4 class="title-dep3 fl">보상 배분</h4>
+									<!-- 2018-10-17 수정 -->
+									<div class="fr">
+										<button type="button" class="btn-xs btn-red2-outline" style="border:1px solid #838383;"><span>보상 배분 가이드</span></button>
+										<button type="button" class="btn-xs btn-gray3"><span>엑셀 다운로드</span></button> <!-- 2018-10-23 클래스 수정 -->
+										<button type="button" class="btn-xs btn-gray3"><span>엑셀 업로드</span></button> <!-- 2018-10-23 클래스 수정 -->
+									</div>
+									<!-- // 2018-10-17 수정 -->
+								</div>
+								
+								<div class="tbl-fixed tbl-reward-set">
+									<table class="tbl-title">
+										<caption>보상 재원 타이틀</caption>
+										<!-- 2018-10-17 수정 -->
+										<colgroup>
+											<col style="width:102px"/>
+											<col style="width:105px"/>
+											<col style="width:142px"/>
+											<col style="width:143px"/>
+											<col style="width:69px"/>
+											<col style="width:72px"/>
+											<col style="width:70px"/>
+											<col style="width:68px"/>
+											<col style="width:67px"/>
+											<col style="width:71px"/>
+										</colgroup>
+										<!-- 2018-10-02 수정 -->
+										<thead>
+											<!-- 2019-10-14 수정 -->
+											<tr>
+												<th scope="col" rowspan="2">조직</th>
+												<th scope="col" rowspan="2">이름<br>(사번)</th>
+												<th scope="col" rowspan="2">실력등급</th> <!-- 2018-11-02 용어 변경 // 2018-10-15 수정 -->
+												<th scope="col" rowspan="2">성과 Review</th> <!-- 2018-11-02 용어 변경 // 2018-10-15 수정 // 2019-10-14 수정 -->
+												<th scope="col" colspan="3" class="group">조직성과 보상분<br>(Self-Design)</th><!-- 2018-10-15 수정 -->
+												<th scope="col" rowspan="2">추가기여<br>보상분</th>
+												<th scope="col" rowspan="2">총합</th>
+												<th scope="col" rowspan="2">추가기여<br>보상 사유<br>(F/B용)</th>
+											</tr>
+											<tr>
+												<th scope="col" >기본</th>
+												<th scope="col">조정</th>
+												<th scope="col">조정 後</th>
+											</tr>
+											<!-- // 2019-10-14 수정 -->
+										</thead>
+										<!-- // 2018-10-02 수정 -->
+										<tfoot>
+											<tr>
+												<td colspan="4">합계</td>
+												<td>45,000%</td>
+												<td>-45,000%</td>
+												<td><span class="tx-red">38,500</span>%</td>
+												<td><span class="tx-red">11,500</span>%</td>
+												<td><span class="tx-red">50,000</span>%</td>
+												<td></td>
+											</tr>
+										</tfoot>
+										<!-- // 2018-10-17 수정 -->
+									</table>
+
+									<div class="tbl-cnt">
+										<!-- 2018-10-17 수정 -->
+										<table>
+											<caption>보상 재원 내용</caption>
+											<colgroup>
+												<col style="width:102px"/>
+												<col style="width:105px"/>
+												<col style="width:142px"/>
+												<col style="width:143px"/>
+												<col style="width:69px"/>
+												<col style="width:72px"/>
+												<col style="width:70px"/>
+												<col style="width:68px"/>
+												<col style="width:67px"/>
+												<col style="width:55px"/>
+											</colgroup>
+											<tbody>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화DT CoE 기업문화DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동홍길동홍길동</span>(2012100)</a></td>
+													<!-- 2019-10-14 수정 -->
+													<td>
+														<button type="button" class="btn-tx btn-balloon-c"><span>MARKET TOP</span></button>
+														<div class="cnt-balloon">
+															<textarea name="" id="" readonly>입력한 내용이 출력됩니다. Readonly 처리 됩니다.</textarea>
+															<div class="bnts">
+																<button type="button" class="btn-xs btn-balloon-close"><span>닫기</span></button>
+															</div>
+														</div>
+													</td>
+													<!-- // 2019-10-14 수정 -->
+													<td>
+														<select name="sel-case-y">
+															<option value="1">일이삼사오육칠팔</option>
+															<option value="2" class="bg-y">일이삼사오육칠팔</option>
+															<option value="3" class="bg-y">일이삼사오육칠팔</option>
+															<option value="4" class="bg-y">일이삼사오육칠팔</option>
+														</select>
+													</td> <!-- // 2018-11-12  select name, 배경색용 클래스 추가 -->
+													<td class="tr">90%</td>
+													<td class="tr">- 0%</td> <!-- 2018-10-15 수정 -->
+													<td class="tr">385%</td>
+													<td><input type="text" name="">%</td>
+													<td class="tr">45%</td>
+													<td>
+														<button type="button" class="btn-s btn-balloon-c btn-gray2"><span>입력</span></button>
+														<!-- <button type="button" class="btn-s btn-balloon-c"><span>확인</span></button> <!-- 입력된 내용이 있을 경우 btn-gray2 클래스 제거 -->
+														<div class="cnt-balloon">
+															<textarea name="" id=""></textarea>
+															<div class="bnts">
+																<button type="submit" class="btn-xs"><span>확인</span></button>
+																<button type="button" class="btn-xs btn-balloon-close"><span>취소</span></button>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화DT CoE 기업문화DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동홍길동홍길동</span>(2012100)</a></td>
+													<!-- 2019-10-14 수정 -->
+													<td>
+														<button type="button" class="btn-tx btn-balloon-c"><span>MARKET TOP</span></button>
+														<div class="cnt-balloon">
+															<textarea name="" id="" readonly>입력한 내용이 출력됩니다. Readonly 처리 됩니다.</textarea>
+															<div class="bnts">
+																<button type="button" class="btn-xs btn-balloon-close"><span>닫기</span></button>
+															</div>
+														</div>
+													</td>
+													<!-- // 2019-10-14 수정 -->
+													<td>
+														<select name="sel-case-y">
+															<option value="1">일이삼사오육칠팔</option>
+															<option value="2" class="bg-y">일이삼사오육칠팔</option>
+															<option value="3" class="bg-y">일이삼사오육칠팔</option>
+															<option value="4" class="bg-y">일이삼사오육칠팔</option>
+														</select>
+													</td> <!-- // 2018-11-12  select name, 배경색용 클래스 추가 -->
+													<td class="tr">90%</td>
+													<td class="tr">- 0%</td> <!-- 2018-10-15 수정 -->
+													<td class="tr">385%</td>
+													<td><input type="text" name="">%</td>
+													<td class="tr">45%</td>
+													<td>
+														<button type="button" class="btn-s btn-balloon-c btn-gray2"><span>입력</span></button>
+														<!-- <button type="button" class="btn-s btn-balloon-c"><span>확인</span></button> <!-- 입력된 내용이 있을 경우 btn-gray2 클래스 제거 -->
+														<div class="cnt-balloon">
+															<textarea name="" id=""></textarea>
+															<div class="bnts">
+																<button type="submit" class="btn-xs"><span>확인</span></button>
+																<button type="button" class="btn-xs btn-balloon-close"><span>취소</span></button>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화DT CoE 기업문화DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동홍길동홍길동</span>(2012100)</a></td>
+													<!-- 2019-10-14 수정 -->
+													<td>INTERMEDIATE</td>
+													<!-- // 2019-10-14 수정 -->
+													<td>
+														<select name="sel-case-y">
+															<option value="1">일이삼사오육칠팔</option>
+															<option value="2" class="bg-y">일이삼사오육칠팔</option>
+															<option value="3" class="bg-y">일이삼사오육칠팔</option>
+															<option value="4" class="bg-y">일이삼사오육칠팔</option>
+														</select>
+													</td> <!-- // 2018-11-12  select name, 배경색용 클래스 추가 -->
+													<td class="tr">90%</td>
+													<td class="tr">- 0%</td> <!-- 2018-10-15 수정 -->
+													<td class="tr">385%</td>
+													<td><input type="text" name="">%</td>
+													<td class="tr">45%</td>
+													<td>
+														<button type="button" class="btn-s btn-balloon-c btn-gray2"><span>입력</span></button>
+														<!-- <button type="button" class="btn-s btn-balloon-c"><span>확인</span></button> <!-- 입력된 내용이 있을 경우 btn-gray2 클래스 제거 -->
+														<div class="cnt-balloon">
+															<textarea name="" id=""></textarea>
+															<div class="bnts">
+																<button type="submit" class="btn-xs"><span>확인</span></button>
+																<button type="button" class="btn-xs btn-balloon-close"><span>취소</span></button>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화DT CoE 기업문화DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동홍길동홍길동</span>(2012100)</a></td>
+													<!-- 2019-10-14 수정 -->
+													<td>ENTRY</td>
+													<!-- // 2019-10-14 수정 -->
+													<td>
+														<select name="sel-case-y">
+															<option value="1">일이삼사오육칠팔</option>
+															<option value="2" class="bg-y">일이삼사오육칠팔</option>
+															<option value="3" class="bg-y">일이삼사오육칠팔</option>
+															<option value="4" class="bg-y">일이삼사오육칠팔</option>
+														</select>
+													</td> <!-- // 2018-11-12  select name, 배경색용 클래스 추가 -->
+													<td class="tr">90%</td>
+													<td class="tr">- 0%</td> <!-- 2018-10-15 수정 -->
+													<td class="tr">385%</td>
+													<td><input type="text" name="">%</td>
+													<td class="tr">45%</td>
+													<td>
+														<button type="button" class="btn-s btn-balloon-c btn-gray2"><span>입력</span></button>
+														<!-- <button type="button" class="btn-s btn-balloon-c"><span>확인</span></button> <!-- 입력된 내용이 있을 경우 btn-gray2 클래스 제거 -->
+														<div class="cnt-balloon">
+															<textarea name="" id=""></textarea>
+															<div class="bnts">
+																<button type="submit" class="btn-xs"><span>확인</span></button>
+																<button type="button" class="btn-xs btn-balloon-close"><span>취소</span></button>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화DT CoE 기업문화DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동홍길동홍길동</span>(2012100)</a></td>
+													<!-- 2019-10-14 수정 -->
+													<td>
+														<button type="button" class="btn-tx btn-balloon-c"><span>회사 TOP</span></button>
+														<div class="cnt-balloon">
+															<textarea name="" id="" readonly>입력한 내용이 출력됩니다. Readonly 처리 됩니다.</textarea>
+															<div class="bnts">
+																<button type="button" class="btn-xs btn-balloon-close"><span>닫기</span></button>
+															</div>
+														</div>
+													</td>
+													<!-- // 2019-10-14 수정 -->
+													<td>
+														<select name="sel-case-y">
+															<option value="1">일이삼사오육칠팔</option>
+															<option value="2" class="bg-y">일이삼사오육칠팔</option>
+															<option value="3" class="bg-y">일이삼사오육칠팔</option>
+															<option value="4" class="bg-y">일이삼사오육칠팔</option>
+														</select>
+													</td> <!-- // 2018-11-12  select name, 배경색용 클래스 추가 -->
+													<td class="tr">90%</td>
+													<td class="tr">- 0%</td> <!-- 2018-10-15 수정 -->
+													<td class="tr">385%</td>
+													<td><input type="text" name="">%</td>
+													<td class="tr">45%</td>
+													<td>
+														<button type="button" class="btn-s btn-balloon-c btn-gray2"><span>입력</span></button>
+														<!-- <button type="button" class="btn-s btn-balloon-c"><span>확인</span></button> <!-- 입력된 내용이 있을 경우 btn-gray2 클래스 제거 -->
+														<div class="cnt-balloon">
+															<textarea name="" id=""></textarea>
+															<div class="bnts">
+																<button type="submit" class="btn-xs"><span>확인</span></button>
+																<button type="button" class="btn-xs btn-balloon-close"><span>취소</span></button>
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- // 2018-10-17 수정 -->
+
+									<!-- 2018-10-17 수정 -->
+									<table class="tbl-footer">
+										<caption>보상 재원 합계</caption>
+										<colgroup>
+											<col class="foot-td-first mi"/>
+											<col style="width:69px"/>
+											<col style="width:72px"/>
+											<col style="width:70px"/>
+											<col style="width:68px"/>
+											<col style="width:67px"/>
+											<col style="width:71px"/>
+										</colgroup>
+										<tfoot>
+											<tr>
+												<td>합계</td>
+												<td>45,000%</td>
+												<td></td>
+												<td><span class="tx-red">38,500</span>%</td>
+												<td><span class="tx-red">11,500</span>%</td>
+												<td><span class="tx-red">50,000</span>%</td>
+												<td></td>
+											</tr>
+										</tfoot>
+									</table>
+									<!-- // 2018-10-17 수정 -->
+								</div>
+
+								<!-- 2018-10-17 추가 -->
+								<p class="reward-notice">추가기여 보상 대상자는 「소수의 高성과자」에 한하여 선정해 주십시오</p> <!-- 2019-10-14 수정 -->
+								
+								<!-- 2018-10-23 버튼명 수정 -->
+								<div class="btn-group">
+									<button type="submit" class="btn-l btn-red2-outline"><span>MI 초기화</span></button>
+									<button type="submit" class="btn-l btn-red2-outline"><span>MI 임시 저장</span></button>
+									<button type="submit" class="btn-l btn-red2"><span>MI 확정/전송</span></button>
+								</div>
+								<!-- // 2018-10-23 버튼명 수정 -->
+							</div>
+							<!-- // tab-cnt1 - A Band -->							
+
+							<!-- tab-cnt1-1 - B Band -->
+							<div class="tab-cnt" id="tab-cnt1-1">
+								<!-- 보상 재원 -->
+								<h4 class="title-dep3">보상 재원</h4>
+								<div class="tbl-type3">
+									<table>
+										<caption>보상 재원</caption>
+										<colgroup>
+											<col style="width:15%"/>
+											<col style="width:10%"/>
+											<col style="width:auto"/>
+											<col style="width:15%"/>
+											<col style="width:15%"/>
+											<col style="width:15%"/>
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">구분</th> <!-- 2018-10-15 수정 -->
+												<th scope="col">인원</th>
+												<th scope="col">보상 재원 구분 <br><i>(조직성과 보상 : 추가기여 보상)</i></th><!-- 2018-10-02 수정 -->
+												<th scope="col">조직성과 보상</th>
+												<th scope="col">추가기여 보상</th>
+												<th scope="col">소계</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>기본 보상 재원</td> <!-- 2018-10-24 수정 -->
+												<td>5</td>
+												<td>90 : 10</td>
+												<td class="tr">450%</td>
+												<td class="tr">50%</td>
+												<td class="tr">500%</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td>보상 가능 재원</td> <!-- 2018-10-24 수정 -->
+												<td>3</td>
+												<td>-</td>
+												<td class="tx-red tr">385%</td>
+												<td class="tx-red tr">115%</td>
+												<td class="tx-red tr">500%</td>
+											</tr>
+										</tfoot>
+									</table>
+									<div class="border-box"></div>
+								</div>
+
+								<!-- 보상 배분 -->
+								<div class="tbl-top-cnt">
+									<h4 class="title-dep3 fl">보상 배분</h4>
+									<!-- 2018-10-17 수정 -->
+									<div class="fr">
+										<button type="button" class="btn-xs btn-red2-outline" style="border:1px solid #838383;"><span>보상 배분 가이드</span></button>
+										<button type="button" class="btn-xs btn-gray3"><span>엑셀 다운로드</span></button> <!-- 2018-10-23 클래스 수정 -->
+										<button type="button" class="btn-xs btn-gray3"><span>엑셀 업로드</span></button> <!-- 2018-10-23 클래스 수정 -->
+									</div>
+									<!-- // 2018-10-17 수정 -->
+								</div>
+								
+								<div class="tbl-fixed tbl-reward-set">
+									<table class="tbl-title">
+										<caption>보상 재원 타이틀</caption>
+										<!-- 2018-10-17 수정 -->
+										<colgroup>
+											<col style="width:102px"/>
+											<col style="width:105px"/>
+											<col style="width:142px"/>
+											<col style="width:143px"/>
+											<col style="width:69px"/>
+											<col style="width:72px"/>
+											<col style="width:70px"/>
+											<col style="width:68px"/>
+											<col style="width:67px"/>
+											<col style="width:71px"/>
+										</colgroup>
+										<!-- 2018-10-02 수정 -->
+										<thead>
+											<tr>
+												<th scope="col" rowspan="2">조직</th>
+												<th scope="col" rowspan="2">이름<br>(사번)</th>
+												<th scope="col" colspan="2" class="group">전 단계 평가자 의견</th> <!-- 2018-11-02 용어 변경 --> <!-- 2018-10-15 수정 -->
+												<th scope="col" colspan="3" class="group">조직성과 보상분<br>(Self-Design)</th><!-- 2018-10-15 수정 -->
+												<th scope="col" rowspan="2">추가기여<br>보상분</th>
+												<th scope="col" rowspan="2">총합</th>
+												<th scope="col" rowspan="2">추가기여<br>보상 사유<br>(F/B용)</th>
+											</tr>
+											<tr>
+												<th scope="col" class="line">실력등급</th> <!-- 2018-10-15 수정 -->
+												<th scope="col" >성과 Review 결과</th> <!-- 2018-10-15 수정 -->
+												<th scope="col" >기본</th>
+												<th scope="col">조정</th>
+												<th scope="col">조정 後</th>
+											</tr>
+										</thead>
+										<!-- // 2018-10-02 수정 -->
+										<tfoot>
+											<tr>
+												<td colspan="4">합계</td>
+												<td>45,000%</td>
+												<td>-45,000%</td>
+												<td><span class="tx-red">38,500</span>%</td>
+												<td><span class="tx-red">11,500</span>%</td>
+												<td><span class="tx-red">50,000</span>%</td>
+												<td></td>
+											</tr>
+										</tfoot>
+										<!-- // 2018-10-17 수정 -->
+									</table>
+
+									<div class="tbl-cnt">
+										<!-- 2018-10-17 수정 -->
+										<table>
+											<caption>보상 재원 내용</caption>
+											<colgroup>
+												<col style="width:102px"/>
+												<col style="width:105px"/>
+												<col style="width:142px"/>
+												<col style="width:143px"/>
+												<col style="width:69px"/>
+												<col style="width:72px"/>
+												<col style="width:70px"/>
+												<col style="width:68px"/>
+												<col style="width:67px"/>
+												<col style="width:55px"/>
+											</colgroup>
+											<tbody>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화DT CoE 기업문화DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동홍길동홍길동</span>(2012100)</a></td>
+													<td>
+														<select name="">
+															<option value="">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+															<option value="" class="bg-y">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+														</select>
+													</td>
+													<td>
+														<select name="">
+															<option value="">일이삼사오육칠팔</option>
+															<option value="" class="bg-y">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+														</select>
+													</td>
+													<td class="tr">90%</td>
+													<td class="tr">- 0%</td> <!-- 2018-10-15 수정 -->
+													<td class="tr">385%</td>
+													<td><input type="text" name="">%</td>
+													<td class="tr">45%</td>
+													<td>
+														<button type="button" class="btn-s btn-balloon-c btn-gray2"><span>입력</span></button>
+														<!-- <button type="button" class="btn-s btn-balloon-c"><span>확인</span></button> 입력된 내용이 있을 경우 btn-gray2 클래스 제거 -->
+														<div class="cnt-balloon">
+															<textarea name="" id=""></textarea>
+															<div class="bnts">
+																<button type="submit" class="btn-xs"><span>확인</span></button>
+																<button type="button" class="btn-xs btn-balloon-close"><span>취소</span></button>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화DT CoE 기업문화DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>
+														<select name="">
+															<option value="">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+															<option value="" class="bg-y">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+														</select>
+													</td>
+													<td>
+														<select name="">
+															<option value="">일이삼사오육칠팔</option>
+															<option value="" class="bg-y">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+															<option value="">일이삼사오육칠팔</option>
+														</select>
+													</td>
+													<td class="tr">90%</td>
+													<td class="tr">- 0%</td> <!-- 2018-10-15 수정 -->
+													<td class="tr">385%</td>
+													<td><input type="text" name="">%</td>
+													<td class="tr">45%</td>
+													<td>
+														<button type="button" class="btn-s btn-balloon-c btn-gray2"><span>입력</span></button>
+														<!-- <button type="button" class="btn-s btn-balloon-c"><span>확인</span></button> 입력된 내용이 있을 경우 btn-gray2 클래스 제거 -->
+														<div class="cnt-balloon">
+															<textarea name="" id=""></textarea>
+															<div class="bnts">
+																<button type="submit" class="btn-xs"><span>확인</span></button>
+																<button type="button" class="btn-xs btn-balloon-close"><span>취소</span></button>
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- // 2018-10-17 수정 -->
+
+									<!-- 2018-10-17 수정 -->
+									<table class="tbl-footer">
+										<caption>보상 재원 합계</caption>
+										<colgroup>
+											<col class="foot-td-first mi"/>
+											<col style="width:69px"/>
+											<col style="width:72px"/>
+											<col style="width:70px"/>
+											<col style="width:68px"/>
+											<col style="width:67px"/>
+											<col style="width:71px"/>
+										</colgroup>
+										<tfoot>
+											<tr>
+												<td>합계</td>
+												<td>45,000%</td>
+												<td></td>
+												<td><span class="tx-red">38,500</span>%</td>
+												<td><span class="tx-red">11,500</span>%</td>
+												<td><span class="tx-red">50,000</span>%</td>
+												<td></td>
+											</tr>
+										</tfoot>
+									</table>
+									<!-- // 2018-10-17 수정 -->
+								</div>
+
+								<!-- 2018-10-17 추가 -->
+								<p class="reward-notice">추가기여 보상 대상자는 「소수의 高성과자」에 한하여 선정해 주십시오</p> <!-- 2019-10-11 수정 -->
+								
+								<!-- 2018-10-23 버튼명 수정 -->
+								<div class="btn-group">
+									<button type="submit" class="btn-l btn-red2-outline"><span>MI 초기화</span></button>
+									<button type="submit" class="btn-l btn-red2-outline"><span>MI 임시 저장</span></button>
+									<button type="submit" class="btn-l btn-red2"><span>MI 확정/전송</span></button>
+								</div>
+								<!-- // 2018-10-23 버튼명 수정 -->
+							</div>
+							<!-- // tab-cnt1-1 - B Band -->
+
+							<!-- tab-cnt2 - 보상 특이자 -->
+							<div class="tab-cnt" id="tab-cnt2">								
+								<div class="tbl-top-cnt tr">
+									<button type="button" class="btn-xs btn-gray"><span>엑셀 다운로드</span></button>
+								</div>
+								
+								<div class="tbl-fixed">
+									<table class="tbl-title"> <!-- 2018-11-06 추가 및 수정 -->
+										<caption>보상 특이자 타이틀</caption>
+										<!-- 2019-10-28 수정 -->
+										<colgroup>
+											<col style="width:126px"/>
+											<col style="width:95px"/>
+											<col style="width:122px"/>
+											<col style="width:250px"/>
+											<col style="width:158px"/>
+											<col style="width:158px"/>
+										</colgroup>
+										<!-- 2019-10-28 수정 -->
+										<thead>
+											<tr>
+												<th scope="col">조직</th>
+												<th scope="col">이름<br>(사번)</th>
+												<th scope="col">특이사항</th>
+												<th scope="col">보상 비대상 사유</th>
+												<th scope="col">리더의 Review(1차 평가)<br>추천항목</th><!-- 2019-10-28 수정 -->
+												<th scope="col">리더의 Review(1차 평가)<br>실력등급</th><!-- 2019-10-28 수정 -->
+											</tr>
+										</thead>
+									</table>
+
+									<div class="tbl-cnt">
+										<table>
+											<caption>보상 특이자 내용</caption>
+											<!-- 2019-10-28 수정 -->
+											<colgroup>
+												<col style="width:126px"/>
+												<col style="width:95px"/>
+												<col style="width:122px"/>
+												<col style="width:250px"/>
+												<col style="width:158px"/>
+												<col style="width:141px"/>
+											</colgroup>
+											<!-- 2019-10-28 수정 -->
+											<tbody>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE 기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+												<tr>
+													<td><span class="txt-ellipsis">기업문화 DT CoE기업문화 DT CoE</span></td>
+													<td><a href="#"><span class="txt-ellipsis">홍길동</span>(2012100)</a></td>
+													<td>신입</td>
+													<td>비대상 사유가 들어갑니다.</td>
+													<td>Unsatisfactory 대상</td>
+													<td>INTERMEDIATE</td>
+												</tr>
+											</tbody>
+										</table><!-- // 2018-11-06 추가 및 수정 -->
+									</div>
+
+								</div>
+							</div>
+							<!-- // tab-cnt2 - 보상 특이자 -->
+						</div>
+						<!-- // tab-wrap -->
+						
+					</div>
+					<!-- // cnt-area -->
+
+				</div>
+		
+		<!--#include file="include-footer.html"-->
+	</div>
+
+</body>
+</html>

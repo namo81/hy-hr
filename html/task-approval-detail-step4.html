@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="author" content="SK MNS - namo" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title></title>
+	<link rel="stylesheet" href="/css/layout.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/contents.css" media="screen, print" />
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css" media="screen, print" />
+	<script src="/js/jquery-1.12.4.min.js"></script>
+	<script src="/js/gnbmenu-v1.0.js"></script>
+	<script src="/js/banner-tx.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.js"></script>
+	<script src="/js/common.js"></script>
+
+	<!-- 달력기능 css / js -->
+	<link rel="stylesheet" href="/css/calendar-ui.css" media="screen, print" />
+	<script src="/js/calendar.js"></script>
+	<!-- // 달력기능 css / js -->
+	
+	<!-- 2017-12-28 파일명 노출 추가 -->
+	<script>
+		$(function(){
+			$('#add-file').on('change',function(){
+				var fn = $(this).val();
+				$('.file-name').val(fn);
+			});
+
+			// 2018-02-21 수정 - taskmate 정보 토글
+			$('.btn-taskmate').click(function(){
+				$(this).parent().toggleClass('on');
+				replySet(190);
+			});
+		});
+
+		
+		replyBtm(190); // 2018-01-24 코멘트 입력 하단 고정 함수.
+	</script>
+	<!-- // 2017-12-28 파일명 노출 추가 -->
+
+</head>
+<body>
+	<div id="wrap">
+		<!--#include file="include-top.html"-->
+
+				<!-- 컨텐츠 영역 -->
+				<div class="cnt-wrap">
+					<!-- 페이지 타이틀 & location -->
+					<h2 class="title-dep1">
+						Task 승인/관리 상세
+						<div class="location fr">
+							<span><a href="#">&bull; HOME</a></span>
+							<span>Task 관리</span>
+							<span><a href="#">Task 승인/관리</a></span>
+							<strong>Task 승인/관리 상세</strong>
+						</div>
+					</h2>
+					<!-- // 페이지 타이틀 & location -->
+
+					<!-- cnt-area - Task 승인/관리 상세 -->
+					<div class="cnt-area task-detail-wrap">
+						<!-- 상세 내용 -->
+						<div class="detail-wrap">
+							<!-- 2018-01-11 동료Task 일 경우 유저 정보 추가 -->
+							<div class="detail-top">
+								<h3 class="title-dep2">Task 정보
+									<span class="img"><img src="/images/temp-user.png" alt=""></span>
+									<span class="name">홍길동</span>
+									<span class="kind-task with">협업Task</span> <!-- 협업 task 일 경우 'width' 클래스 추가 -->
+									<span class="t-step step5">Review완료</span>
+								</h3>
+								<div class="fr">
+									<a href="#" class="btn-m"><span class="ico-btn"><img src="/images/ico_btn-history.png" alt=""></span>진행 History</a> <!-- 2018-01-24 버튼 수정 -->
+								</div>
+							</div>
+							<!-- // 2018-01-11 동료Task 일 경우 유저 정보 추가 -->
+
+							<!-- task 상세 -->
+							<div class="detail-task">
+								<table>
+									<caption>Task 정보</caption>
+									<colgroup>
+										<col style="width:16%"/>
+										<col style="width:auto;"/>
+										<col style="width:16%"/>
+										<col style="width:18%"/>
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">Task명</th>
+											<td colspan="3">SKT HR 평가 시스템 구축</td>
+										</tr>
+										<tr>
+											<th scope="row"><label for="task-position">직무</label></th>
+											<td colspan="3"><input type="text" name="" id="task-position" value="기획" style="width:160px;" readonly></td>
+										</tr>
+										<tr>
+											<th scope="row"><label for="task-goal">목표</label></th>
+											<td colspan="3"><textarea name="" rows="" cols="" id="task-goal"></textarea></td>
+										</tr>
+										<tr>
+											<th scope="row">기간</th>
+											<td>
+												<div class="inp-cal">
+													<span><input type="text" class="" id="bSDate"></span><i>~</i><span><input type="text" class="" id="bEDate"></span>
+													<button type="button" class="btn-cal" onclick="ViewCalendar(this,document.all.bSDate,document.all.bEDate,'yyyy-mm-dd','ClickRight1','I',0,0);" style="cursor:hand;"><img src="/images/ico_date.png"></button>
+												</div>
+											</td>
+											<th scope="row">가중치</th>
+											<td class="tr"><input type="text" name="" value="" style="width:70px; margin-right:5px; text-align:right"> <strong>%</strong></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- // task 상세 -->				
+							
+							<!-- 2차 - 2018-02-21 Task Peer-F/B -->
+							<div class="self-review"> 
+								<div class="sr-top">
+									<span class="title-peer">Task Peer-F/B</span>
+									<a href="#" class="btn-m btn-white"><!-- <i class="ico-btn"><img src="/images/" alt=""></i> -->F/B확인</a>
+									<!-- <a href="#" class="btn-m btn-white"><i class="ico-btn"><img src="/images/" alt=""></i>결과확인</a> -->
+								</div>
+							</div>
+							<!-- // 2차 - 2018-02-19 Task Peer-F/B -->
+
+							<!-- Taskmate 정보 - 2018-02-20 수정 -->
+							<div class="detail-coworker">
+								<h4 class="title-dep3">
+									Taskmate 정보
+									<div class="fr">총 <span class="tx-red">11</span> 명 (구성원 제외)</div>
+								</h4>
+								
+								<div class="taskmate-view">
+									<ul>
+										<li>
+											<button type="button" class="btn-taskmate"><i class="img"><img src="/images/temp-user.png" alt=""></i> 홍길동 / HR팀</button>
+											<div class="coworker-view">
+												<table>
+													<caption>CO-Worker Task 정보</caption>
+													<colgroup>
+														<col style="width:15%"/>
+														<col style="width:auto;"/>
+														<col style="width:15%"/>
+														<col style="width:20%"/>
+													</colgroup>
+													<tbody>
+														<tr>
+															<th scope="col">&bull; 기간</th>
+															<td>2018.01.01 ~ 2018.10.10</td>
+															<th scope="col">&bull; 가중치</th>
+															<td>30%</td>
+														</tr>
+														<tr>
+															<th scope="col" colspan="4">&bull; 목표</th>
+														</tr>
+														<tr>
+															<td colspan="4">SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. 1. Task 입니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. </td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</li>
+										<li>
+											<button type="button" class="btn-taskmate"><i class="img"><img src="/images/temp-user.png" alt=""></i> 홍길동 / HR팀</button>
+											<div class="coworker-view">
+												<table>
+													<caption>CO-Worker Task 정보</caption>
+													<colgroup>
+														<col style="width:15%"/>
+														<col style="width:auto;"/>
+														<col style="width:15%"/>
+														<col style="width:20%"/>
+													</colgroup>
+													<tbody>
+														<tr>
+															<th scope="col">&bull; 기간</th>
+															<td>2018.01.01 ~ 2018.10.10</td>
+															<th scope="col">&bull; 가중치</th>
+															<td>30%</td>
+														</tr>
+														<tr>
+															<th scope="col" colspan="4">&bull; 목표</th>
+														</tr>
+														<tr>
+															<td colspan="4">SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. 1. Task 입니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. </td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</li>
+										<li>
+											<button type="button" class="btn-taskmate"><i class="img"><img src="/images/temp-user.png" alt=""></i> 홍길동 / HR팀</button>
+											<div class="coworker-view">
+												<table>
+													<caption>CO-Worker Task 정보</caption>
+													<colgroup>
+														<col style="width:15%"/>
+														<col style="width:auto;"/>
+														<col style="width:15%"/>
+														<col style="width:20%"/>
+													</colgroup>
+													<tbody>
+														<tr>
+															<th scope="col">&bull; 기간</th>
+															<td>2018.01.01 ~ 2018.10.10</td>
+															<th scope="col">&bull; 가중치</th>
+															<td>30%</td>
+														</tr>
+														<tr>
+															<th scope="col" colspan="4">&bull; 목표</th>
+														</tr>
+														<tr>
+															<td colspan="4">SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. 1. Task 입니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. <br>SKT HR평가 시스템 구축에 대하여 아래와 같은 Task를 설정합니다. </td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</li>
+									</ul>
+								</div>
+								
+							</div>
+							<!-- // Taskmate 정보 - 2018-02-20 수정 -->
+
+							<div class="btn-group">
+								<a href="#" class="btn-l btn-red2-outline">목록</a>
+								<a href="#" class="btn-l btn-red2">수정완료</a>
+							</div>
+
+						</div>
+						<!-- // 상세 내용 -->
+
+						<!-- Coaching &amp; F/B -->
+						<div class="comment-wrap tab-wrap">
+							<h3 class="title-dep2">Coaching &amp; F/B</h3>
+							<div class="tab-menu">
+								<ul>
+									<li class="on"><a href="#tab-cnt1">Comment</a></li>
+									<li><a href="#tab-cnt2">파일함</a></li>
+									<li><a href="#tab-cnt3">구성원</a></li>
+								</ul>
+							</div>
+
+							<!-- Comment -->
+							<div class="tab-cnt" id="tab-cnt1">
+								<div class="cmt-list mCustomScrollbar scroll-btm">
+									<ul>
+										<li>
+											<div class="comment-top">
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">최사원</span>
+												<span class="date">2018.01.02 14:24</span>
+											</div>
+											<p class="task-name">[App &amp; ICT 통합 마케팅 추진 프로그램]</p>
+											<p class="comment-tx">
+												미팅 내용 공유해주세요. 디자인 시안은 2종 이상 가는 것이 좋겠습니다.
+											</p>
+										</li>
+										<li class="my">
+											<div class="comment-top">
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">최사원원</span>
+												<span class="date">2018.01.02 14:24</span>
+												<a href="#" class="btn-cmt-modify"><img src="/images/ico_cmt-modify.png" alt="수정"></a>
+												<a href="#" class="btn-cmt-del"><img src="/images/ico_cmt-del.png" alt="삭제"></a>
+											</div>
+											<p class="task-name">[App &amp; ICT 통합 마케팅 추진 프로그램]</p>
+											<p class="comment-tx">
+												<span class="ico-secret"><img src="/images/ico_secret2.png" alt=""></span> <!-- 비밀글 아이콘 -->
+												미팅 내용 공유해주세요. 디자인 시안은 2종 이상 가는 것이 좋겠습니다.
+											</p>
+											<p class="file"><a href="#" class="btn-file-down">SKT프로젝트.pptx</a></p> <!-- 첨부파일 -->
+										</li>
+										<!-- 댓글 수정 case -->
+										<li class="my">
+											<div class="comment-top">
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">최사원</span>
+												<span class="date">2018.01.02 14:24</span>
+											</div>
+											<p class="task-name">[App &amp; ICT 통합 마케팅 추진 프로그램]</p>
+											<p class="comment-modify">
+												<textarea name="" id="">미팅 내용 공유해주세요. 디자인 시안은 2종 이상 가는 것이 좋겠습니다.</textarea>
+											</p>
+											<div class="btns">
+												<div class="fl">
+													<a href="#" class="btn-file-down">SKT프로젝트.pptx <img src="/images/ico_cmt-del.png" alt="삭제"></a>
+												</div>
+												<div class="fr">
+													<a href="#" class="btn-xs">확인</a>
+													<a href="#" class="btn-xs">취소</a>
+												</div>
+											</div>
+										</li>
+										<!-- // 댓글 수정 case -->
+										<li>
+											<div class="comment-top">
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">최사원</span>
+												<span class="date">2018.01.02 14:24</span>
+											</div>
+											<p class="task-name">[App &amp; ICT 통합 마케팅 추진 프로그램]</p>
+											<p class="comment-tx">
+												미팅 내용 공유해주세요. 디자인 시안은 2종 이상 가는 것이 좋겠습니다.
+											</p>
+										</li>
+									</ul>
+								</div>
+
+								<!-- 2018-01-24 댓글쓰기 - 하단고정 -->
+								<div class="cmt-fixed">
+									<!-- 2018-01-24 크게보기 버튼 수정 -->
+									<div class="btn-group">
+										<a href="#" class="btn-view">크게보기</a>
+									</div>
+									<!-- // 2018-01-24 크게보기 버튼 수정 -->
+
+									<div class="cmt-input">
+										<textarea name="" rows="" cols=""></textarea>
+										<!-- 2017-12-28 수정 -->
+										<div class="info">
+											<input type="text" class="file-name" value="">
+											<p class="count">3000/3000</p>
+										</div>
+										<!-- // 2017-12-28 수정 -->
+										<div class="btns">
+											<div class="inp-file">
+												<label for="add-file" class="">파일첨부</label><!-- 파일 첨부상태일 경우 'on' 클래스 추가 -->
+												<input type="file" class="" id="add-file">
+											</div>
+											<button type="button" class="btn-secret" title="코멘트 작성자, Task작성자, Taskmate, 승인자만 볼 수 있습니다"><span>비밀</span></button><!-- 비밀설정 일 경우 'on' 클래스 추가 2018-01-22 title 속성 추가 -->
+											<button type="submit" class="btn-reg"><span>등록</span></button>
+										</div>
+									</div>
+								</div>
+								<!-- // 2018-01-24 댓글쓰기 - 하단고정 -->
+							</div>
+
+							<!-- 파일함 - 2018-01-25 수정 -->
+							<div class="tab-cnt" id="tab-cnt2">
+								<div class="file-list">
+									<ul>
+										<li class="file-ppt">
+											<a href="#" title="SKT 프로젝트 기획수정_171220 기획수정_171220 기획수정_171220.ppt">SKT 프로젝트 기획수정_171220 기획수정_171220 기획수정_171220.ppt</a>
+											<span class="date">2018/01/25</span>
+										</li>
+										<li class="file-doc">
+											<a href="#" title="SKT 프로젝트 기획수정_171220.doc">SKT 프로젝트 기획수정_171220.doc</a>
+											<span class="date">2018/01/25</span>
+										</li>
+										<li class="file-xls">
+											<a href="#" title="SKT 프로젝트 기획수정_171220.xls">SKT 프로젝트 기획수정_171220.xls</a>
+											<span class="date">2018/01/25</span>
+										</li>
+										<li class="file-pdf">
+											<a href="#" title="SKT 프로젝트 기획수정_171220.pdf">SKT 프로젝트 기획수정_171220.pdf</a>
+											<span class="date">2018/01/25</span>
+										</li>
+										<li class="file-img">
+											<a href="#" title="SKT 프로젝트 기획수정_171220.img">SKT 프로젝트 기획수정_171220.img</a>
+											<span class="date">2018/01/25</span>
+										</li>
+										<li>
+											<a href="#" title="SKT 프로젝트 기획수정_171220.etc">SKT 프로젝트 기획수정_171220.etc</a>
+											<span class="date">2018/01/25</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- // 파일함 - 2018-01-25 수정 -->
+
+							<!-- 구성원 -->
+							<div class="tab-cnt" id="tab-cnt3">
+								<!-- Taskmate -->
+								<div class="side-member-list">
+									<h3 class="title-dep3">Taskmate <span class="tx-red">15</span></h3>
+									<div class="box">
+										<ul>
+											<li>
+												<span class="num">1</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="team">UX디자인팀</span>
+											</li>
+											<li>
+												<span class="num">2</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="team">UX디자인팀</span>
+											</li>
+											<li>
+												<span class="num">3</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="team">UX디자인</span>
+											</li>
+											<li>
+												<span class="num">3</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="team">UX디자인팀</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- // Taskmate -->
+
+								<!-- Supporter -->
+								<div class="side-member-list">
+									<h3 class="title-dep3">
+										Supporter <span class="tx-red">15</span>
+										<div class="fr"><a href="#" class="btn-m"><span class="ico-btn"><img src="/images/ico_people.png" alt=""></span> 추가하기</a></div>
+									</h3>
+									<div class="box">
+										<ul>
+											<li>
+												<span class="num">1</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="team">UX디자인팀</span>
+											</li>
+											<li>
+												<span class="num">2</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="team">UX디자인팀</span>
+											</li>
+											<li>
+												<span class="num">3</span>
+												<span class="img"><img src="/images/temp-user.png" alt=""></span>
+												<span class="name">홍길동</span>
+												<span class="team">UX디자인팀</span>
+											</li>
+											<!-- 팀 전체 case -->
+											<li>
+												<span class="num">4</span>
+												<span class="img"><img src="/images/ico_team-all.png" alt=""></span>
+												<strong class="team">UX디자인팀 전체</strong>
+											</li>
+											<!-- // 팀 전체 case -->
+										</ul>
+									</div>
+								</div>
+								<!-- Supporter -->
+
+								<!-- Task리더 -->
+								<div class="side-member-list approval">
+									<h3 class="title-dep3">Task리더</h3>
+									<div class="box">
+										<span class="img"><img src="/images/temp-user.png" alt=""></span>
+										<span class="name">홍길동</span>
+										<span class="team">UX디자인팀</span>
+									</div>
+								</div>
+								<!-- Task리더 -->
+
+							</div>
+						</div>
+						<!-- // Coaching &amp; F/B -->
+
+					</div>
+					<!-- // cnt-area - Task 승인/관리 상세 -->
+
+				</div>
+
+		<!--#include file="include-footer.html"-->
+	</div>
+
+</body>
+</html>
