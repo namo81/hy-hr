@@ -1658,3 +1658,18 @@
 	/* T세션 임원 상세 */
 	.ts-target-select.ex .tbl-cnt li p.col-1 { width:206px; }
 }
+
+/* hynix evaluation system */
+.hy-evl-need-org .tbl-cnt ul { width:100%; vertical-align:-5px; }
+.hy-evl-need-org .tbl-cnt li { position:relative; width:100%; z-index:0;}
+.hy-evl-need-org .tbl-cnt li.on { background:#fff7e6; z-index:1; }
+.hy-evl-need-org .tbl-cnt li > a { position:absolute; width:100%; height:calc(100% + 2px); top:-1px; left:0; text-indent:-10000px; box-sizing:border-box; }
+.hy-evl-need-org .tbl-cnt li.on > a { border: 2px solid #9e7b54; }
+.hy-evl-need-org .tbl-cnt li + li { border-top: 1px solid #dadada; }
+.hy-evl-need-org .tbl-cnt li:after { content: ""; display: block; clear: both; }
+.hy-evl-need-org .tbl-cnt li p { float: left; padding: 12px 0; font-size: 13px; line-height: 19px; color: #393939; text-align: center; }
+.hy-evl-need-org .tbl-cnt li p + p { border-left: 1px solid #979797; }
+.hy-evl-need-org .tbl-cnt .col-1 { width:480px }
+.hy-evl-need-org .tbl-cnt .col-2 { width:261px }
+.hy-evl-need-org .tbl-cnt .col-3 { width:149px }
+.tbl-ogr-view { margin-top: 26px;}
