@@ -86,31 +86,7 @@
 										<li class="on">
 											<p class="col-1 tl">ICT개발 1팀</p>
 											<p class="col-2">김팀장</p>
-											<p class="col-3"><span class="tx-red">수립전</span></p>
-											<a href="#">선택</a>
-										</li>
-										<li>
-											<p class="col-1 tl">ICT개발 2팀</p>
-											<p class="col-2">나팀장</p>
-											<p class="col-3"><span>완료</span></p>
-											<a href="#">선택</a>
-										</li>
-										<li>
-											<p class="col-1 tl">서비스기획팀</p>
-											<p class="col-2">다팀장</p>
-											<p class="col-3"><span>승인요청</span></p>
-											<a href="#">선택</a>
-										</li>
-										<li>
-											<p class="col-1 tl">ICT개발 1팀</p>
-											<p class="col-2">김팀장</p>
-											<p class="col-3"><span class="tx-red">수립전</span></p>
-											<a href="#">선택</a>
-										</li>
-										<li>
-											<p class="col-1 tl">ICT개발 1팀</p>
-											<p class="col-2">김팀장</p>
-											<p class="col-3"><span class="tx-red">수립전</span></p>
+											<p class="col-3"><span class="tx-red">승인요청</span></p>
 											<a href="#">선택</a>
 										</li>
 									</ul>
@@ -119,6 +95,7 @@
 
 							<div class="tbl-ogr-view">
 								<h4 class="title-dep4">ICT개발 1팀</h4>
+								
 								<div class="tbl-fixed">
 									<table class="tbl-title">
 										<caption>보상 재원 타이틀</caption>
@@ -151,16 +128,7 @@
 												<td>CL2</td>
 												<td>팀원</td>
 												<td>-</td>
-												<td>
-													<select name=""> 
-														<option value="1">선택</option>
-														<option value="2" class="bg-y">일이삼사오육칠팔</option> 
-														<option value="3">일이삼사오육칠팔</option>
-														<option value="4">일이삼사오육칠팔</option>
-														<option value="5">일이삼사오육칠팔</option>
-														<option value="6">일이삼사오육칠팔</option>
-													</select>
-												</td>
+												<td>-</td>
 												<td><a href="#" class="open-layer">김담당</a></td>
 												<td><a href="#">김상위담당</a></td>
 											</tr>
@@ -170,16 +138,7 @@
 												<td>CL2</td>
 												<td>팀원</td>
 												<td>-</td>
-												<td>
-													<select name=""> 
-														<option value="1">선택</option>
-														<option value="2" class="bg-y">일이삼사오육칠팔</option> 
-														<option value="3">일이삼사오육칠팔</option>
-														<option value="4">일이삼사오육칠팔</option>
-														<option value="5">일이삼사오육칠팔</option>
-														<option value="6">일이삼사오육칠팔</option>
-													</select>
-												</td>
+												<td>-</td>
 												<td><a href="#" class="open-layer">김담당</a></td>
 												<td><a href="#">김상위담당</a></td>
 											</tr>
@@ -189,16 +148,7 @@
 												<td>CL2</td>
 												<td>팀원</td>
 												<td>-</td>
-												<td>
-													<select name=""> 
-														<option value="1">선택</option>
-														<option value="2" class="bg-y">일이삼사오육칠팔</option> 
-														<option value="3">일이삼사오육칠팔</option>
-														<option value="4">일이삼사오육칠팔</option>
-														<option value="5">일이삼사오육칠팔</option>
-														<option value="6">일이삼사오육칠팔</option>
-													</select>
-												</td>
+												<td>-</td>
 												<td><a href="#" class="open-layer">김담당</a></td>
 												<td><a href="#">김상위담당</a></td>
 											</tr>
@@ -207,17 +157,8 @@
 												<td>홍길동</td>
 												<td>CL2</td>
 												<td>팀원</td>
-												<td><a href="#layerpop-inp-nameSeh" class="open-layer" data-layerset="fixed">내역111</a></td>
-												<td>
-													<select name=""> 
-														<option value="1">선택</option>
-														<option value="2" class="bg-y">일이삼사오육칠팔</option> 
-														<option value="3">일이삼사오육칠팔</option>
-														<option value="4">일이삼사오육칠팔</option>
-														<option value="5">일이삼사오육칠팔</option>
-														<option value="6">일이삼사오육칠팔</option>
-													</select>
-												</td>
+												<td><a href="#layerpop-inp-nameSeh" class="open-layer" data-layerset="fixed">내역</a></td>
+												<td>휴직</td>
 												<td><a href="#layerpop-list-vacation" class="open-layer">김담당</a></td>
 												<td><a href="#">김상위담당</a></td>
 											</tr>
@@ -228,8 +169,8 @@
 
 
 							<div class="btn-group">
-								<button type="submit" class="btn-l btn-red2-outline"><span>임시 저장</span></button>
-								<button type="submit" class="btn-l btn-red2"><span>승인요청</span></button>
+								<a href="#layerpop-inp-enroll-return" class="btn-l btn-red2-outline open-layer"><span>반려</span></a>
+								<button type="submit" class="btn-l btn-red2"><span>승인</span></button>
 							</div>
 
 						</div>
@@ -242,6 +183,71 @@
 				</div>
 		
 		<!--#include file="include-footer.html"-->
+	</div>
+
+
+	<!-- 레이어팝업 -->
+	<div class="layer-pop" id="layerpop-inp-enroll-return">
+		<div class="layer-bg"></div>
+		<div class="layer-cnt sm">
+			<div class="layer-top">
+				<h2 class="title-dep2">반려사유 등록</h2>
+			</div>
+			<div class="layer-mid">
+				
+				<div class="layer-container">
+					<div class="tbl-type4">
+						<table>
+							<caption>반려사유 등록</caption>
+							<colgroup>
+								<col style="width:121px">
+								<col style="width:auto">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">반려사유</th>
+									<td>
+										<div class="return-txt">
+											반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유 반려사유</td>
+										</div>
+									</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="btn-group tc">
+					<a href="#" class="btn-l btn-red2-outline close-layer">취소</a>
+					<a href="#" class="btn-l btn-red2">완료</a>
+				</div>
+
+			</div>
+			<button type="button" class="btn-close close-layer">닫기</button>
+		</div>
+	</div>
+
+	<div class="layer-pop" id="layerpop-list-vacation">
+		<div class="layer-bg"></div>
+		<div class="layer-cnt sm">
+			<div class="layer-top">
+				<h2 class="title-dep2">휴직/파견 내역</h2>
+			</div>
+			<div class="layer-mid">
+				
+				<div class="search-cnt">
+					<input type="text" name="" placeholder="" style="width: 215px;vertical-align: middle;">
+					<button type="button" class="btn-tbl-sch"><span><i class="ico-btn seh"></i>조회</span></button>
+					<textarea name="" rows="" cols="" id="" readonly="" tabindex="-1" placeholder="이름을 검색하세요."></textarea>
+				</div>
+
+				<div class="btn-group tc">
+					<a href="#" class="btn-l btn-red2-outline close-layer">취소</a>
+					<a href="#" class="btn-l btn-red2">선택완료</a>
+				</div>
+
+			</div>
+			<button type="button" class="btn-close close-layer">닫기</button>
+		</div>
 	</div>
 
 </body>

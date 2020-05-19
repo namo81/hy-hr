@@ -206,8 +206,7 @@
 				<div class="guide-show">
 					<h2 class="title-dep1">타이틀1 <span class="desc">타이틀 옆 안내문구</span></h2>
 				</div>
-<xmp><h2 class="title-dep1">타이틀1 <span class="desc">타이틀 옆 안내문구</span></h2>
-</xmp>
+				<xmp><h2 class="title-dep1">타이틀1 <span class="desc">타이틀 옆 안내문구</span></h2></xmp>
 			</div>
 			<div class="guide-sec">				
 				<h3 class="guide-stit">페이지 내 영역 타이틀</h3>
@@ -217,6 +216,27 @@
 <xmp><h2 class="title-dep2">타이틀2 <span class="desc">타이틀 옆 안내문구</span></h2>
 </xmp>
 			</div>
+
+			<div class="guide-sec">				
+				<h3 class="guide-stit">페이지 내 영역 타이틀 - 블릿 스타일</h3>
+				<div class="guide-show">
+					<h2 class="title-dep2 bullet">타이틀2 </h2>
+				</div>
+				<xmp><h2 class="title-dep2 bullet">타이틀2 <span class="desc">타이틀 옆 안내문구</span></h2></xmp>
+			</div>
+
+			<div class="guide-sec">	
+				<h3 class="guide-stit">페이지 내 영역 타이틀 - dep4</h3>
+				<p></p>
+				<div class="guide-show">
+					<h2 class="title-dep4">
+						타이틀3 
+					</h2>
+				</div>
+				<xmp><h2 class="title-dep4">타이틀2</h2></xmp>
+			</div>
+
+
 			<div class="guide-sec">	
 				<h3 class="guide-stit">영역 타이틀 내 우측 컨텐츠 있을 경우</h3>
 				<p>타이틀 영역이 기본적으로 after 을 통해 clear:both 를 적용하고 있으므로 float 컨텐츠 사용가능.</p>
@@ -226,12 +246,13 @@
 						<div class="fr"><a href="#" class="btn-s">우측 버튼</a></div>
 					</h2>
 				</div>
-<xmp><h2 class="title-dep3">
-	타이틀2 <span class="desc">타이틀 옆 안내문구</span>
-	<div class="fr"><a href="#" class="btn-s">우측 버튼</a></div>
-</h2>
-</xmp>
+				<xmp><h2 class="title-dep3">
+					타이틀2 <span class="desc">타이틀 옆 안내문구</span>
+					<div class="fr"><a href="#" class="btn-s">우측 버튼</a></div>
+				</h2>
+				</xmp>
 			</div>
+
 		</section>
 	
 		<!-- 버튼 ================================================================ -->
@@ -294,6 +315,18 @@
 <a href="#" class="btn-m btn-gray2">버튼 Gray2</a>
 </xmp>
 			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">버튼에 icon 있을경우</h3>
+				<div class="guide-show">
+				<!-- 코드 작성 -->
+					<a href="#" class="btn-m"><i class="ico-btn seh"></i>버튼</a> 
+				<!-- // 코드 작성 -->
+				</div>
+				<xmp><a href="#" class="btn-m"><i class="ico-btn seh"></i>버튼</a></xmp>
+			</div>
+
+
 		</section>
 
 		<!-- Tab 메뉴 ================================================================ -->
@@ -407,6 +440,24 @@
 <xmp><input type="text" name="" title="" placeholder="기본형">
 </xmp>
 			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">textarea</h3>
+				<div class="clear">
+					<div class="guide-show fl">
+						<textarea type="text" name="" title="" placeholder="textarea" style="min-height: 100px;"></textarea>
+					</div>
+					<div class="guide-show fl">
+						<textarea type="text" name="" title="" readonly placeholder="textarea 읽기전용일때" style="min-height: 100px;"></textarea>
+					</div>
+			</div>
+			<xmp><input type="text" name="" title="" placeholder="textarea">
+<input type="text" readonly name="" title="" placeholder="textarea">
+			</xmp>
+		</div>
+
+
+
 
 			<div class="guide-sec">
 				<h3 class="guide-stit">radio 버튼</h3>
@@ -560,6 +611,450 @@
 </xmp>
 			</div>
 		</section>
+
+		<!-- table style ================================================================ -->
+		<section id="guide-table">
+			<h2 class="guide-sec-tit">table</h2>
+			<div class="guide-sec">
+				<h3 class="guide-stit">type1</h3>
+				<div class="guide-show">
+					<div class="tbl-type1">
+						<table>
+							<caption>휴직/파견 내역</caption>
+							<colgroup>
+								<col style="width:auto">
+								<col style="width:25%">
+								<col style="width:25%">
+								<col style="width:25%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">사번</th> 
+									<th scope="col">성명</th>
+									<th scope="col">직무역량레벨</th>
+									<th scope="col">직책</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<xmp><div class="tbl-type1">
+					<table>
+						<caption>table 제목</caption>
+						<colgroup>
+							<col style="width:auto">
+							<col style="width:25%">
+							<col style="width:25%">
+							<col style="width:25%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">사번</th> 
+								<th scope="col">성명</th>
+								<th scope="col">직무역량레벨</th>
+								<th scope="col">직책</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>466312</td>
+								<td>양동철</td>
+								<td>CL5</td>
+								<td>팀원</td>
+							</tr>
+							<tr>
+								<td>466312</td>
+								<td>양동철</td>
+								<td>CL5</td>
+								<td>팀원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+					</xmp>
+			</div>
+			
+			<div class="guide-sec">
+				<h3 class="guide-stit">type2</h3>
+				<div class="guide-show">
+					<div class="tbl-type2">
+						<table>
+							<caption>휴직/파견 내역</caption>
+							<colgroup>
+								<col style="width:auto">
+								<col style="width:25%">
+								<col style="width:25%">
+								<col style="width:25%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">사번</th> 
+									<th scope="col">성명</th>
+									<th scope="col">직무역량레벨</th>
+									<th scope="col">직책</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<xmp><div class="tbl-type2">
+					<table>
+						<caption>table 제목</caption>
+						<colgroup>
+							<col style="width:auto">
+							<col style="width:25%">
+							<col style="width:25%">
+							<col style="width:25%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">사번</th> 
+								<th scope="col">성명</th>
+								<th scope="col">직무역량레벨</th>
+								<th scope="col">직책</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>466312</td>
+								<td>양동철</td>
+								<td>CL5</td>
+								<td>팀원</td>
+							</tr>
+							<tr>
+								<td>466312</td>
+								<td>양동철</td>
+								<td>CL5</td>
+								<td>팀원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+					</xmp>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">type3</h3>
+				<div class="guide-show">
+					<div class="tbl-type3">
+						<table>
+							<caption>휴직/파견 내역</caption>
+							<colgroup>
+								<col style="width:auto">
+								<col style="width:25%">
+								<col style="width:25%">
+								<col style="width:25%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">사번</th> 
+									<th scope="col">성명</th>
+									<th scope="col">직무역량레벨</th>
+									<th scope="col">직책</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<xmp><div class="tbl-type3">
+					<table>
+						<caption>table 제목</caption>
+						<colgroup>
+							<col style="width:auto">
+							<col style="width:25%">
+							<col style="width:25%">
+							<col style="width:25%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">사번</th> 
+								<th scope="col">성명</th>
+								<th scope="col">직무역량레벨</th>
+								<th scope="col">직책</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>466312</td>
+								<td>양동철</td>
+								<td>CL5</td>
+								<td>팀원</td>
+							</tr>
+							<tr>
+								<td>466312</td>
+								<td>양동철</td>
+								<td>CL5</td>
+								<td>팀원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+					</xmp>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">type4</h3>
+				<div class="guide-show">
+					<div class="tbl-type4">
+						<table>
+							<caption>휴직/파견 내역</caption>
+							<colgroup>
+								<col style="width:auto">
+								<col style="width:25%">
+								<col style="width:25%">
+								<col style="width:25%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">사번</th> 
+									<th scope="col">성명</th>
+									<th scope="col">직무역량레벨</th>
+									<th scope="col">직책</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<xmp><div class="tbl-type4">
+					<table>
+						<caption>table 제목</caption>
+						<colgroup>
+							<col style="width:auto">
+							<col style="width:25%">
+							<col style="width:25%">
+							<col style="width:25%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">사번</th> 
+								<th scope="col">성명</th>
+								<th scope="col">직무역량레벨</th>
+								<th scope="col">직책</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>466312</td>
+								<td>양동철</td>
+								<td>CL5</td>
+								<td>팀원</td>
+							</tr>
+							<tr>
+								<td>466312</td>
+								<td>양동철</td>
+								<td>CL5</td>
+								<td>팀원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+					</xmp>
+			</div>
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">type4</h3>
+				<div class="guide-show">
+					<div class="tbl-type4 type01">
+						<table>
+							<caption>휴직/파견 내역</caption>
+							<colgroup>
+								<col style="width:auto">
+								<col style="width:25%">
+								<col style="width:25%">
+								<col style="width:25%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">사번</th> 
+									<th scope="col">성명</th>
+									<th scope="col">직무역량레벨</th>
+									<th scope="col">직책</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<xmp><div class="tbl-type4">
+					<table>
+						<caption>table 제목</caption>
+						<colgroup>
+							<col style="width:auto">
+							<col style="width:25%">
+							<col style="width:25%">
+							<col style="width:25%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">사번</th> 
+								<th scope="col">성명</th>
+								<th scope="col">직무역량레벨</th>
+								<th scope="col">직책</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>466312</td>
+								<td>양동철</td>
+								<td>CL5</td>
+								<td>팀원</td>
+							</tr>
+							<tr>
+								<td>466312</td>
+								<td>양동철</td>
+								<td>CL5</td>
+								<td>팀원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+					</xmp>
+			</div>
+
+
+			<div class="guide-sec">
+				<h3 class="guide-stit">type5</h3>
+				<div class="guide-show">
+					<div class="tbl-type5">
+						<table>
+							<caption>휴직/파견 내역</caption>
+							<colgroup>
+								<col style="width:auto">
+								<col style="width:25%">
+								<col style="width:25%">
+								<col style="width:25%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">사번</th> 
+									<th scope="col">성명</th>
+									<th scope="col">직무역량레벨</th>
+									<th scope="col">직책</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<xmp><div class="tbl-type5">
+					<table>
+						<caption>table 제목</caption>
+						<colgroup>
+							<col style="width:auto">
+							<col style="width:25%">
+							<col style="width:25%">
+							<col style="width:25%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">사번</th> 
+								<th scope="col">성명</th>
+								<th scope="col">직무역량레벨</th>
+								<th scope="col">직책</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>466312</td>
+								<td>양동철</td>
+								<td>CL5</td>
+								<td>팀원</td>
+							</tr>
+							<tr>
+								<td>466312</td>
+								<td>양동철</td>
+								<td>CL5</td>
+								<td>팀원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+					</xmp>
+			</div>
+		</section>
+		<!-- table style ================================================================ -->
 
 		<!-- toggle 컨텐츠 ================================================================ -->
 		<section id="guide-toggle">

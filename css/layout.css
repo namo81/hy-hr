@@ -115,6 +115,7 @@ footer .footer-logo > img { vertical-align:top; }
 .tl { text-align:left !important; }
 .tr { text-align:right !important; }
 
+.clear:after {content: "";display: block; clear: both;}
 .fl { float:left; }
 .fr { float:right; }
 
@@ -199,6 +200,7 @@ select { height:33px; line-height:24px; border-radius:3px; }
 
 input[type=text][readonly], input[type=number][readonly], textarea[readonly]  { background:#f2f3f5; }
 input[type=text][readonly].normal, input[type=number][readonly].normal, textarea[readonly].normal  { background:#fff; }
+textarea[readonly]::placeholder {color: #afafaf;}
 
 .inp-set { display:block; }
 .inp-set + .inp-set { margin-top:8px; }
@@ -315,7 +317,10 @@ input.cal:read-only { background:#fff; }
 .btn-s { display:inline-block; height:26px; padding:0 12px; font-size:12px; line-height:22px; background:#fff; color:#353535; border:1px solid #888; box-sizing:border-box; vertical-align:middle; text-align:center; border-radius:3px; letter-spacing:0em; font-weight:bold; }
 .btn-xs { display:inline-block; height:20px; padding:1px 7px 1px; font-size:11px; line-height:17px; color:#555; border:1px solid #b4b4b4; box-sizing:border-box; vertical-align:middle; text-align:center; border-radius:2px; background:#fff; letter-spacing:0em; }
 
+/* button에 icon 있을 경우 */
 .ico-btn { display:inline-block; margin-right:3px; vertical-align:middle; line-height:normal; }
+.ico-btn.seh { width: 14px;height: 14px;background: url(../images/ico_btn-sch.png) center center no-repeat;}
+
 
 .btn-m:hover { background-color:#ddd; }
 .btn-l:hover, .btn-s:hover, .btn-xs:hover { background-color:#fafbfc; }
@@ -373,6 +378,7 @@ input.cal:read-only { background:#fff; }
 .btn-tbl-sch { display:inline-block; height:31px; padding:0px 10px; font-size:12px; line-height:29px; font-weight:bold; background:#f8f8f8; color:#353535; box-sizing:border-box; vertical-align:middle; text-align:center; border-radius:3px; border:1px solid #838383; }
 .btn-tbl-sch:hover { background:#ddd; }
 
+
 .btn-guide { display:inline-block; padding:3px 0 3px 20px; font-size:13px; color:#343537; background:url(/images/ico_guide.png) no-repeat left top; vertical-align:middle; }
 .btn-guide > span { display:inline-block; padding-bottom:2px; border-bottom:1px solid #797979; font-weight:normal; }
 .btn-guide:hover { color:#ff7800; background-position:left bottom; }
@@ -403,6 +409,9 @@ input.cal:read-only { background:#fff; }
 .btn-secret.on { color:#f74934; font-weight:bold; background-position:10px -58px; }
 .btn-secret-reset { display:none; width:16px; height:16px; text-indent:-10000px; background:url(/images/ico_del2.png) no-repeat 0 0; vertical-align: middle;}
 .btn-secret.on + .btn-secret-reset { display:inline-block; }
+
+
+
 
 .tx-btns { display:inline-block; vertical-align:middle; margin-right:-4px; }
 .tx-btns > a, .tx-btns > button { position:relative; display:inline-block; margin-right:20px; }
@@ -468,6 +477,8 @@ td .btn-title .ico-need { display:inline-block; margin-right:5px; padding-left:1
 .tbl-type4 td { padding:10px 5px; color:#2b2a2a; border-bottom:1px solid #e0e0e0;}
 .tbl-type4 tr:last-child td { border-color:#a5a5a5; }
 .tbl-type4 td.tl { padding-left:15px; }
+.tbl-type4.type01 th {padding: 14px 5px;}
+.tbl-type4.type01 td {padding: 13px 5px;}
 
 .tbl-type5 th, .tbl-type5 td { font-size:13px; line-height:17px; color:#000; background:#f7f7f7; border:1px solid #a5a5a5; border-right:none;}
 .tbl-type5 td { padding:20px; background:#fff; color:#535353; }
@@ -499,7 +510,7 @@ td .btn-title .ico-need { display:inline-block; margin-right:5px; padding-left:1
 .tbl-fixed .tbl-title th + th { border-left:1px solid #979797; }
 .tbl-fixed .tbl-title th .normal { font-weight:normal; }
 .tbl-fixed .tbl-title th.line, .tbl-fixed td.line { border-left:1px solid #979797; }
-.tbl-fixed .tbl-cnt { max-height:300px; overflow-x:hidden; overflow-y:scroll; }
+.tbl-fixed .tbl-cnt { max-height:300px; overflow-x:hidden; overflow-y:auto; }
 .tbl-fixed td { padding:7px 15px; font-size:13px; line-height:18px; border-top:1px solid #dadada; text-align:center; }
 .tbl-fixed td.tl { padding-left:20px; }
 .tbl-fixed tr:first-child td { border-top:none; }
@@ -599,12 +610,13 @@ ul.under-desc li { margin:3px 0; font-size:12px; line-height:1.4em; color:#92929
 .layer-pop { position:absolute; display:none; width:100%; height:100%; top:0; left:0; z-index:900; }
 .layer-pop .layer-bg { position:fixed; width:100%; height:100%; top:0; left:0; background:url(/images/blank.png); z-index:100; }
 .layer-pop .layer-cnt { position:absolute; width:670px; top:20%; left:50%; margin-left:-335px; padding:20px; background:#fff; z-index:101; box-sizing:border-box; }
+.layer-pop .layer-cnt.sm {width: 566px; margin-left: -283px;}
 .layer-pop .btn-close { position:absolute; width:25px; height:25px; top:25px; right:25px; text-indent:-10000px; background:url(/images/ico_close.png) no-repeat left top; }
 
 .layer-top { padding:12px 5px; border-bottom:2px solid #5b5b5b;}
 .layer-top .title-dep2, .layer-top .title-dep3 { margin-bottom:0; }
 .layer-mid { padding:15px 12px; }
-.layer-pop .btn-group { margin:30px 0 10px; }
+.layer-pop .btn-group { margin:30px 0 0; }
 
 .layer-pop.alert .layer-cnt { width:490px; margin-left:-245px; }
 .layer-pop.alert .msg { font-size:15px; line-height:19px; }

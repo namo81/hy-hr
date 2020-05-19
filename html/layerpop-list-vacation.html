@@ -16,15 +16,7 @@
 	<script src="/js/jquery.mousewheel.min.js"></script>
 	<script src="/js/jquery.mCustomScrollbar.js"></script>
 	<script src="/js/common.js"></script>
-	<script>
-		$(function(){
-			$('.hy-evl-need-org').find('.tbl-cnt').find('a').each(function(){
-				$(this).click(function(){
-					$(this).parent('li').addClass('on').siblings().removeClass('on');
-				});
-			});
-		});
-	</script>
+
 </head>
 <body>
 	<div id="wrap">
@@ -84,31 +76,31 @@
 								<div class="tbl-cnt">
 									<ul>
 										<li class="on">
-											<p class="col-1 tl">ICT개발 1팀</p>
+											<p class="col-1">ICT개발 1팀</p>
 											<p class="col-2">김팀장</p>
 											<p class="col-3"><span class="tx-red">수립전</span></p>
 											<a href="#">선택</a>
 										</li>
 										<li>
-											<p class="col-1 tl">ICT개발 2팀</p>
+											<p class="col-1">ICT개발 2팀</p>
 											<p class="col-2">나팀장</p>
 											<p class="col-3"><span>완료</span></p>
 											<a href="#">선택</a>
 										</li>
 										<li>
-											<p class="col-1 tl">서비스기획팀</p>
+											<p class="col-1">서비스기획팀</p>
 											<p class="col-2">다팀장</p>
 											<p class="col-3"><span>승인요청</span></p>
 											<a href="#">선택</a>
 										</li>
 										<li>
-											<p class="col-1 tl">ICT개발 1팀</p>
+											<p class="col-1">ICT개발 1팀</p>
 											<p class="col-2">김팀장</p>
 											<p class="col-3"><span class="tx-red">수립전</span></p>
 											<a href="#">선택</a>
 										</li>
 										<li>
-											<p class="col-1 tl">ICT개발 1팀</p>
+											<p class="col-1">ICT개발 1팀</p>
 											<p class="col-2">김팀장</p>
 											<p class="col-3"><span class="tx-red">수립전</span></p>
 											<a href="#">선택</a>
@@ -207,7 +199,7 @@
 												<td>홍길동</td>
 												<td>CL2</td>
 												<td>팀원</td>
-												<td><a href="#layerpop-inp-nameSeh" class="open-layer" data-layerset="fixed">내역111</a></td>
+												<td><a href="#layerpop-list-vacation" class="open-layer">내역</a></td>
 												<td>
 													<select name=""> 
 														<option value="1">선택</option>
@@ -218,7 +210,7 @@
 														<option value="6">일이삼사오육칠팔</option>
 													</select>
 												</td>
-												<td><a href="#layerpop-list-vacation" class="open-layer">김담당</a></td>
+												<td><a href="#" class="open-layer">김담당</a></td>
 												<td><a href="#">김상위담당</a></td>
 											</tr>
 										</tbody>
@@ -242,6 +234,63 @@
 				</div>
 		
 		<!--#include file="include-footer.html"-->
+	</div>
+
+
+	<!-- 레이어팝업 -->
+	<div class="layer-pop" id="layerpop-list-vacation">
+		<div class="layer-bg"></div>
+		<div class="layer-cnt sm">
+			<div class="layer-top">
+				<h2 class="title-dep2">휴직/파견 내역</h2>
+			</div>
+			<div class="layer-mid">
+				
+				<div class="layer-container">
+					<div class="tbl-type4 type01">
+						<table>
+							<caption>휴직/파견 내역</caption>
+							<colgroup>
+								<col style="width:auto">
+								<col style="width:25%">
+								<col style="width:25%">
+								<col style="width:25%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">사번</th> 
+									<th scope="col">성명</th>
+									<th scope="col">직무역량레벨</th>
+									<th scope="col">직책</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>466312</td>
+									<td>양동철</td>
+									<td>CL5</td>
+									<td>팀원</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="education-list">
+						<ul>
+							<li>
+								<span>학/석사 신입</span>
+								<p>2020/04/30~2020/08/31</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="btn-group tc">
+					<a href="#" class="btn-l btn-red2 close-layer">닫기</a>
+				</div>
+
+			</div>
+			<button type="button" class="btn-close close-layer">닫기</button>
+		</div>
 	</div>
 
 </body>
